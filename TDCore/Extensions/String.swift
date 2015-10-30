@@ -8,15 +8,15 @@
 
 import Foundation
 
-extension String {
+public extension String {
     
     /// Convenience method to trim whitespace and newline characters from `self`.
-    mutating func removeWhiteSpace() {
-        self = self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+    mutating func trimWhitespace() {
+        self = self.whitespaceTrimmedString()
     }
     
     /// Convenience method to create a new string from `self`, trimmed from whitespace and newline characters.
-    func whiteSpaceRemovedString() -> String {
+    func whitespaceTrimmedString() -> String {
         return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
     }
 }

@@ -16,7 +16,7 @@ import Foundation
 
  - returns: `true` if `d1.compare(d2)` returns `.OrderedDescending`.
 */
-func >(d1:NSDate, d2:NSDate) -> Bool {
+public func >(d1:NSDate, d2:NSDate) -> Bool {
     return d1.compare(d2) == .OrderedDescending
 }
 
@@ -28,7 +28,7 @@ func >(d1:NSDate, d2:NSDate) -> Bool {
  
  - returns: `true` if `d1.compare(d2)` returns `.OrderedAscending`.
  */
-func <(d1:NSDate, d2:NSDate) -> Bool {
+public func <(d1:NSDate, d2:NSDate) -> Bool {
     return d1.compare(d2) == .OrderedAscending
 }
 
@@ -41,7 +41,7 @@ func <(d1:NSDate, d2:NSDate) -> Bool {
  - returns: `true` if `d1.compare(d2)` is not `.OrderedAscending`.
  */
 
-func >=(d1:NSDate, d2:NSDate) -> Bool {
+public func >=(d1:NSDate, d2:NSDate) -> Bool {
     return d1.compare(d2) != .OrderedAscending
 }
 
@@ -54,6 +54,6 @@ func >=(d1:NSDate, d2:NSDate) -> Bool {
  - returns: `true` if `d1.compare(d2)` is not `.OrderedDescending`.
  */
 
-func <=(d1:NSDate, d2:NSDate) -> Bool {
+public func <=(d1:NSDate, d2:NSDate) -> Bool {
     return d1.compare(d2) != .OrderedDescending
 }

@@ -10,7 +10,7 @@ import Foundation
 
 import SafariServices
 
-extension UIViewController {
+public extension UIViewController {
     
     /**
      

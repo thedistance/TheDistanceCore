@@ -21,7 +21,7 @@ public final class ObjectObserver:NSObject, Observer {
     public let keypath:String
     
     /// The block to run when the oberservation occurs.
-    private let completion:(note:NSNotification) -> ()
+    private let completion:(keypath:String, object:NSObject, change:[String:AnyObject]?) -> ()
     
     /// The object to to observe `keypath` on.
     public let object:NSObject
@@ -46,7 +46,7 @@ public final class ObjectObserver:NSObject, Observer {
      - parameter completion: The block to perform when `keypath` is set on `object`.
      
      */
-    public init(keypath:String, object:NSObject, options: NSKeyValueObservingOptions = [.Old, .New], context:UnsafeMutablePointer<Void> = nil, completion:(note:NSNotification) -> ()) {
+    public init(keypath:String, object:NSObject, options: NSKeyValueObservingOptions = [.Old, .New], context:UnsafeMutablePointer<Void> = nil, completion:(keypath:String, object:NSObject, change:[String:AnyObject]?) -> ()) {
         
         
         self.keypath = keypath
@@ -60,9 +60,13 @@ public final class ObjectObserver:NSObject, Observer {
         beginObserving()
     }
     
-    /// Called when the registered notification is observed.
-    private func observe(note:NSNotification) {
-        completion(note: note)
+    public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        
+        if let key = keyPath,
+        let obj = object as? NSObject
+            where obj == self.object && key == self.keypath {
+            completion(keypath: self.keypath, object: self.object, change: change)
+        }
     }
     
     /// Registers `self` to observe `center` for `name` restricted to `object`.

@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSError {
+public extension NSError {
     
     /// Converts an NSURLError to have a more friendly user error message using the `userFacingDescription()` and `userFacingRecoverySuggestion()` methods on `NSURLError`.
     func userFacingError() -> NSError {
@@ -29,7 +29,7 @@ extension NSError {
     }
 }
 
-extension NSURLError {
+public extension NSURLError {
     
     /// Returns a more friendly error than 'NSURL error -1001`.
     func userFacingDescription() -> String? {

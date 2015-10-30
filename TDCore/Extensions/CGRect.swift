@@ -8,16 +8,28 @@
 
 import Foundation
 
-extension CGRect {
+public extension CGRect {
     
-    /// Creates a new `CGRect` based on `self` with the given `insets`. This allows non-symmetric insets, where `CGRectInset` does not.
-    func rectWithInsets(insets:UIEdgeInsets) -> CGRect {
+    /**
+
+    Creates a new `CGRect` based on `self` with the given `insets`. This allows non-symmetric insets, where `CGRectInset` does not.
+
+     - parameter insets: The insets to create the new rect from.
+     - parameter capsToZero: Whether or not the width and height of the new rect should be non-negative. The default value is `true`.
+     - returns
+     */
+    func rectWithInsets(insets:UIEdgeInsets, capsToZero:Bool = true) -> CGRect {
         
         var newRect = self
         newRect.origin.x += insets.left
         newRect.origin.y += insets.top
         newRect.size.width -= insets.totalXInset
         newRect.size.height -= insets.totalYInset
+        
+        if capsToZero {
+            newRect.size.width = max(0, newRect.size.width)
+            newRect.size.height = max(0, newRect.size.height)
+        }
         
         return newRect
     }

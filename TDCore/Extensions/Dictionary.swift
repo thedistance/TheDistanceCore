@@ -9,7 +9,7 @@
 import Foundation
 
 
-extension Dictionary {
+public extension Dictionary {
     
     /// Convenience method to assign all values in `source` to self.
     mutating func assignValuesFrom<S: SequenceType where S.Generator.Element == (Key,Value)>(source: S) {

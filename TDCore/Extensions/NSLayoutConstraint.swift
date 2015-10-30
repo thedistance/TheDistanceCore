@@ -8,7 +8,35 @@
 
 import Foundation
 
-extension NSLayoutConstraint {
+/// Constraints are said to be equal if both first and second items are `NSObject`s that are equal, and that the attributes, mulipliers, constants and priorities are equal
+public func ==(c1:NSLayoutConstraint, c2:NSLayoutConstraint) -> Bool {
+    
+    guard let fi1 = c1.firstItem as? NSObject,
+        let fi2 = c2.firstItem as? NSObject,
+        let si1 = c1.secondItem as? NSObject?,
+        let si2 = c2.secondItem as? NSObject?
+        else {
+            return false
+    }
+    
+    return fi1 == fi2 &&
+        si1 == si2 &&
+        c1.relation == c2.relation &&
+        c1.firstAttribute == c2.firstAttribute &&
+        c1.secondAttribute == c2.secondAttribute &&
+        c1.multiplier == c2.multiplier &&
+        c1.constant == c2.constant &&
+        c1.priority == c2.priority
+    
+}
+
+public extension NSLayoutConstraint {
+    
+    override func isEqual(object: AnyObject?) -> Bool {
+        guard let constr = object as? NSLayoutConstraint else { return false }
+        
+        return self == constr
+    }
     
     /**
      
@@ -57,43 +85,49 @@ extension NSLayoutConstraint {
      - parameter view: The first item in the created `NSLayoutConstraint`s.
      - parameter to: The second item in the created `NSLayoutConstraint`s.
      - parameter withInsets: The `constant` parameter to align the two `UIView`s by. The negative values of `.bottom` and `.right` are used to match the common use of `UIEdgeInsets`. The default value is `UIEdgeInsetsZero`.
+     - parameter relativeToMargin: Tuple of `Bool`s for whether each constraint should be relative to the margin or not. Default is all false.
      
      - returns: An array of `NSLayoutConstraint`s, ordered: top, left, bottom, right.
      
     */
-    static func constraintsToAlign(view view1:UIView, to view2:UIView, withInsets insets:UIEdgeInsets = UIEdgeInsetsZero) -> [NSLayoutConstraint] {
+    static func constraintsToAlign(view view1:UIView, to view2:UIView, withInsets insets:UIEdgeInsets = UIEdgeInsetsZero, relativeToMargin:(top:Bool, left:Bool, bottom:Bool, right:Bool) = (false, false, false, false)) -> [NSLayoutConstraint] {
         
         var constraints = [NSLayoutConstraint]()
         
+        let topAttribute:NSLayoutAttribute = relativeToMargin.top ? .TopMargin : .Top
+        let leadingAttribute:NSLayoutAttribute = relativeToMargin.left ? .LeadingMargin : .Leading
+        let bottomAttribute:NSLayoutAttribute = relativeToMargin.bottom ? .BottomMargin : .Bottom
+        let trailingAttribute:NSLayoutAttribute = relativeToMargin.right ? .TrailingMargin : .Trailing
+        
         constraints.append(NSLayoutConstraint(item:view1,
-            attribute:.Top,
+            attribute:topAttribute,
             relatedBy:.Equal,
             toItem:view2,
-            attribute:.Top,
+            attribute:topAttribute,
             multiplier:1.0,
             constant:insets.top))
         
         constraints.append(NSLayoutConstraint(item:view1,
-            attribute:.Leading,
+            attribute:leadingAttribute,
             relatedBy:.Equal,
             toItem:view2,
-            attribute:.Leading,
+            attribute:leadingAttribute,
             multiplier:1.0,
             constant:insets.left))
         
         constraints.append(NSLayoutConstraint(item:view1,
-            attribute:.Bottom,
+            attribute:bottomAttribute,
             relatedBy:.Equal,
             toItem:view2,
-            attribute:.Bottom,
+            attribute:bottomAttribute,
             multiplier:1.0,
             constant:-insets.bottom))
         
         constraints.append(NSLayoutConstraint(item:view1,
-            attribute:.Trailing,
+            attribute:trailingAttribute,
             relatedBy:.Equal,
             toItem:view2,
-            attribute:.Trailing,
+            attribute:trailingAttribute,
             multiplier:1.0,
             constant:-insets.right))
         
