@@ -39,19 +39,35 @@ class DateTests: XCTestCase {
         let timeComps = NSDateComponents(units: timeUnits, fromComponents: comps)
         let specialComps = NSDateComponents(units: specialUnits, fromComponents: comps)
         
+        var dateElements:[NSCalendarUnit] = [.Year, .Month, .Day]
         for unit in dateUnits.elements() {
             // test date has been copied and time hasn't
             XCTAssertEqual(comps.valueForComponent(unit), dateComps.valueForComponent(unit))
             XCTAssertEqual(NSNotFound, timeComps.valueForComponent(unit))
             XCTAssertEqual(NSNotFound, specialComps.valueForComponent(unit))
+            
+            if let index = dateElements.indexOf(unit) {
+                dateElements.removeAtIndex(index)
+            } else {
+                XCTFail("Unable to find calendar unit \(unit) in \(dateElements)")
+            }
         }
+        XCTAssertEqual(0, dateElements.count, "Date elements not correctly enumerated")
         
+        var timeElements:[NSCalendarUnit] = [.Hour, .Minute, .Second]
         for unit in timeUnits.elements() {
             // test time has been copied and date hasn't
             XCTAssertEqual(comps.valueForComponent(unit), timeComps.valueForComponent(unit))
             XCTAssertEqual(NSNotFound, dateComps.valueForComponent(unit))
             XCTAssertEqual(NSNotFound, specialComps.valueForComponent(unit))
+            
+            if let index = timeElements.indexOf(unit) {
+                timeElements.removeAtIndex(index)
+            } else {
+                XCTFail("Unable to find calendar unit \(unit) in \(timeElements)")
+            }
         }
+        XCTAssertEqual(0, timeElements.count, "Time elements not correctly enumerated")
         
         XCTAssertEqual(comps.timeZone, specialComps.timeZone)
         XCTAssertNil(dateComps.timeZone)
