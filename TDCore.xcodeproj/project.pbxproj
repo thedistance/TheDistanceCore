@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A58541151BE782E700AE8A0B /* ParallaxScrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */; };
 		A5A7B3311BE3A2A0005D52D0 /* TDCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A5A7B3301BE3A2A0005D52D0 /* TDCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5A7B3381BE3A2A1005D52D0 /* TDCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A7B32D1BE3A2A0005D52D0 /* TDCore.framework */; };
 		A5A7B33D1BE3A2A1005D52D0 /* TDCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B33C1BE3A2A1005D52D0 /* TDCoreTests.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxScrollable.swift; sourceTree = "<group>"; };
 		A5A7B32D1BE3A2A0005D52D0 /* TDCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TDCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A7B3301BE3A2A0005D52D0 /* TDCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDCore.h; sourceTree = "<group>"; };
 		A5A7B3321BE3A2A0005D52D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				A5A7B35F1BE3A2CC005D52D0 /* Enums.swift */,
+				A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */,
 				A5A7B36A1BE3B461005D52D0 /* Observers */,
 			);
 			path = Classes;
@@ -292,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A58541151BE782E700AE8A0B /* ParallaxScrollable.swift in Sources */,
 				A5A7B3541BE3A2C4005D52D0 /* CGRect.swift in Sources */,
 				A5A7B3701BE3B461005D52D0 /* Observer.swift in Sources */,
 				A5A7B35C1BE3A2C4005D52D0 /* UIDevice.swift in Sources */,
@@ -498,6 +502,7 @@
 				A5A7B3431BE3A2A1005D52D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5A7B3441BE3A2A1005D52D0 /* Build configuration list for PBXNativeTarget "TDCoreTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +511,7 @@
 				A5A7B3461BE3A2A1005D52D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
