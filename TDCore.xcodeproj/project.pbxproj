@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A58541151BE782E700AE8A0B /* ParallaxScrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */; };
+		A58541191BE78C4F00AE8A0B /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58541181BE78C4F00AE8A0B /* DateTests.swift */; };
 		A5A7B3311BE3A2A0005D52D0 /* TDCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A5A7B3301BE3A2A0005D52D0 /* TDCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5A7B3381BE3A2A1005D52D0 /* TDCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A7B32D1BE3A2A0005D52D0 /* TDCore.framework */; };
 		A5A7B33D1BE3A2A1005D52D0 /* TDCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B33C1BE3A2A1005D52D0 /* TDCoreTests.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxScrollable.swift; sourceTree = "<group>"; };
+		A58541181BE78C4F00AE8A0B /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		A5A7B32D1BE3A2A0005D52D0 /* TDCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TDCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A7B3301BE3A2A0005D52D0 /* TDCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDCore.h; sourceTree = "<group>"; };
 		A5A7B3321BE3A2A0005D52D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				A5A7B3751BE3D54F005D52D0 /* StringTests.swift */,
 				A5A7B37A1BE3DCCE005D52D0 /* URLTests.swift */,
 				A5A7B37C1BE3DDB6005D52D0 /* DictionaryTests.swift */,
+				A58541181BE78C4F00AE8A0B /* DateTests.swift */,
 				A5A7B3791BE3D678005D52D0 /* Classes Tests */,
 				A5A7B33E1BE3A2A1005D52D0 /* Info.plist */,
 			);
@@ -322,6 +325,7 @@
 				A5A7B3741BE3BDB1005D52D0 /* ConstraintsTests.swift in Sources */,
 				A5A7B37B1BE3DCCE005D52D0 /* URLTests.swift in Sources */,
 				A5A7B37D1BE3DDB6005D52D0 /* DictionaryTests.swift in Sources */,
+				A58541191BE78C4F00AE8A0B /* DateTests.swift in Sources */,
 				A5A7B33D1BE3A2A1005D52D0 /* TDCoreTests.swift in Sources */,
 				A5A7B3781BE3D674005D52D0 /* ObserverTests.swift in Sources */,
 				A5A7B3761BE3D54F005D52D0 /* StringTests.swift in Sources */,
