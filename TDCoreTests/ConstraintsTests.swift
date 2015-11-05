@@ -50,15 +50,15 @@ class ConstraintsTests: XCTestCase {
         
         // test width only
         let constrs1 = NSLayoutConstraint.constraintsToSize(view1, toWidth: size1.width, andHeight: nil)
-        XCTAssertEqual([cW], constrs1)
+        XCTAssert([cW] == constrs1)
         
         // test height only
         let constrs2 = NSLayoutConstraint.constraintsToSize(view1, toWidth: nil, andHeight: size1.height)
-        XCTAssertEqual([cH], constrs2)
+        XCTAssert([cH] == constrs2)
         
         // test width & height order
         let constrs3 = NSLayoutConstraint.constraintsToSize(view1, toWidth: size1.width, andHeight: size1.height)
-        XCTAssertEqual([cW, cH], constrs3)
+        XCTAssert([cW, cH] == constrs3)
     }
     
     func testAlignView() {
@@ -98,7 +98,7 @@ class ConstraintsTests: XCTestCase {
             multiplier: 1.0,
             constant: -20)
         
-        XCTAssertEqual([cTop, cLead, cBottom, cTrail], constrs)
+        XCTAssert([cTop, cLead, cBottom, cTrail] == constrs)
         
         // test relative
         let cTopRel = NSLayoutConstraint(item: view1,
@@ -136,11 +136,8 @@ class ConstraintsTests: XCTestCase {
         let constrsRel = NSLayoutConstraint.constraintsToAlign(view: view1, to: view2, withInsets: UIEdgeInsetsMake(5, 10, 15, 20), relativeToMargin: (true, true, true, true))
         
         
-        XCTAssertEqual([cTopRel, cLeadRel, cBottomRel, cTrailRel], constrsRel)
-        
-        XCTAssertNotEqual([cTop, cLead, cBottom, cTrail], constrsRel)
-        XCTAssertNotEqual([cTopRel, cLeadRel, cBottomRel, cTrailRel], constrs)
+        XCTAssert([cTopRel, cLeadRel, cBottomRel, cTrailRel] == constrsRel)
+        XCTAssert([cTop, cLead, cBottom, cTrail] != constrsRel)
+        XCTAssert([cTopRel, cLeadRel, cBottomRel, cTrailRel] != constrs)
     }
-    
-    
 }

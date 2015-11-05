@@ -30,13 +30,35 @@ public func ==(c1:NSLayoutConstraint, c2:NSLayoutConstraint) -> Bool {
     
 }
 
-public extension NSLayoutConstraint {
+public func !=(c1:NSLayoutConstraint, c2:NSLayoutConstraint) -> Bool {
+    return !(c1 == c2)
+}
+
+/// Uses `==` on the constraints in the two arrays. This allows `isEqual(_:)` to remain the unchanged for `NSLayoutConstraint` but allows two arrays to be compared.
+public func ==(c1:[NSLayoutConstraint], c2:[NSLayoutConstraint]) -> Bool {
     
-    override func isEqual(object: AnyObject?) -> Bool {
-        guard let constr = object as? NSLayoutConstraint else { return false }
+    guard c1.count == c2.count else { return false }
+    
+    for (n, c) in c1.enumerate() {
+        let other = c2[n]
         
-        return self == constr
+        if other != c {
+            return false
+        }
     }
+    
+    return true
+}
+
+/// Uses `==` on the constraints in the two arrays. This allows `isEqual(_:)` to remain the unchanged for `NSLayoutConstraint` but allows two arrays to be compared.
+public func !=(c1:[NSLayoutConstraint], c2:[NSLayoutConstraint]) -> Bool {
+    
+    return !(c1 == c2)
+}
+
+
+
+public extension NSLayoutConstraint {
     
     /**
      
