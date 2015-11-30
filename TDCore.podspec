@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'TDCore/Classes/**/*.swift', 'TDCore/Extensions/**/*.swift'
+  s.source_files = 'TDCore/Classes/**/*.swift', 'TDCore/Extensions/**/*.swift', 'TDCore/Protocols/**/*.swift'
   s.requires_arc = true
 end
