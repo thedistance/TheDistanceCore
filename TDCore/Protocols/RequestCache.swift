@@ -53,17 +53,19 @@ public extension RequestCache {
         #endif
     }
     
-    public func timeSinceLastRequest(string:String) -> NSTimeInterval? {
+    public func dateOfLastRequest(string:String) -> NSDate? {
         
         let fullKey:String = getFullKey(string)
-        
         let defaults = NSUserDefaults.standardUserDefaults()
+        return defaults.objectForKey(fullKey) as? NSDate
+    }
+    
+    public func timeSinceLastRequest(string:String) -> NSTimeInterval? {
         
-        if let dateOfLastRequest:NSDate = defaults.objectForKey(fullKey) as? NSDate{
-            
+        
+        if let dateOfLastRequest = dateOfLastRequest(string) {
             let elapsedTime = NSDate().timeIntervalSinceDate(dateOfLastRequest)
             return elapsedTime
-            
         }
     
         return nil
@@ -102,6 +104,10 @@ public extension RequestCache {
     
     public func successfullyRequested(key:RequestCacheKeyType) {
         successfullyRequested(key.keyString)
+    }
+    
+    public func dateOfLastRequest(key:RequestCacheKeyType) -> NSDate? {
+        return dateOfLastRequest(key.keyString)
     }
     
     public func getFullKey(key:RequestCacheKeyType) -> String {
