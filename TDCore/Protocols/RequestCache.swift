@@ -8,22 +8,31 @@
 
 import Foundation
 
+/// Internal `enum` for  ensuring Automated Testing and Live builds don't share cached dates.
 enum RequestCacheType : String {
+    /// Suffixes a key if the `TESTING` linked flag is defined and visible to Swift.
     case Test = "test_"
+    /// Suffixes a key for none testing situations
     case Live = "live_"
 }
 
+/// Protocol defining the requirements of an object to be used as a key in a `RequestCache`.
 public protocol RequestCacheKey {
  
+    /// Required for caching the dates of successful request in `NSUserDefaults`.
     var keyString:String { get }
     
+    /// Should return all the possible keys. This can be used to clear caches, such as on log out.
     static var allValues:[Self] { get }
 }
 
+/// Protocol defining the requirements for an object that can be used to determine expiration of a persistent store based on a time interval.
 public protocol RequestCache {
     
+    /// Key Type that can be used for calling methods using `enum`s.
     typealias RequestCacheKeyType:RequestCacheKey
     
+    /// - retuns:
     func getFullKey(string:String) -> String
     
     func timeSinceLastRequest(string:String) -> NSTimeInterval?
