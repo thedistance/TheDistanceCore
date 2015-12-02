@@ -8,6 +8,18 @@
 
 import Foundation
 
+/**
+ 
+ Convenience creator for even `UIEdgeInsets`.
+ 
+ - parameter inset: The amount for each side of the inset.
+ - returns: A `UIEdgeInsets` with `top`, `left`, `bottom` and `right` all set to `inset`.
+*/
+public func UIEdgeInsetsMakeEqual(inset:CGFloat) -> UIEdgeInsets {
+    
+    return UIEdgeInsetsMake(inset, inset, inset, inset)
+}
+
 public extension UIEdgeInsets {
     
     /// Returns `top + bottom` for use in calculating size with an inset.
