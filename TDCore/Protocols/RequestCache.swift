@@ -16,6 +16,9 @@ enum RequestCacheType : String {
     case Live = "live_"
 }
 
+/// Notification Name posted when a request successfully completes. The object associated with this notificatoin is the `keyString` for this cached request.
+public let RequestCacheSuccessfullyUpdatedNotificationKey = "UpdatedRequestCache"
+
 /// Protocol defining the requirements of an object to be used as a key in a `RequestCache`.
 public protocol RequestCacheKey {
  
@@ -91,8 +94,11 @@ public extension RequestCache {
         let fullKey:String = getFullKey(string)
         let defaults = NSUserDefaults.standardUserDefaults()
         dispatch_async(dispatch_get_main_queue()) { () -> () in
+            
             defaults.setObject(NSDate(), forKey: fullKey)
             defaults.synchronize()
+            
+            NSNotificationCenter.defaultCenter().postNotificationName(RequestCacheSuccessfullyUpdatedNotificationKey, object: string)
         }
     }
     
