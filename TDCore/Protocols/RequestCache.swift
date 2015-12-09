@@ -44,7 +44,11 @@ public protocol RequestCache {
     
     func successfullyRequested(string:String)
     
+    func dateOfLastRequest(string:String) -> NSDate?
+    
     func clearCachedRequestDates()
+    
+    func clearCachedRequestDate(string:String)
     
     // Enum methods
     
@@ -53,6 +57,10 @@ public protocol RequestCache {
     func successfullyRequested(key:RequestCacheKeyType)
     
     func getFullKey(key:RequestCacheKeyType) -> String
+    
+    func dateOfLastRequest(key:RequestCacheKeyType) -> NSDate?
+    
+    func clearCachedRequestDate(key:RequestCacheKeyType)
 }
 
 public extension RequestCache {
@@ -104,13 +112,17 @@ public extension RequestCache {
     
     /// Removes all the dates set for successful requests
     public func clearCachedRequestDates() {
-        
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        for cacheKey in RequestCacheKeyType.allValues {
-            let fullKey:String = getFullKey(cacheKey)
-            defaults.removeObjectForKey(fullKey)
-        }
+        RequestCacheKeyType.allValues.forEach({ clearCachedRequestDate($0) })
+    }
+    
+    /// Removes the cache date for the given key. This can be used to clear out specific requests, such as on user log in / out.
+    public func clearCachedRequestDate(string:String) {
+        let fullKey:String = getFullKey(string)
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(fullKey)
+    }
+    
+    public func clearCachedRequestDate(key:RequestCacheKeyType) {
+        clearCachedRequestDate(key.keyString)
     }
     
     public func shouldIgnoreCacheForRequest(key:RequestCacheKeyType, basedOnInterval interval:NSTimeInterval = 180) -> Bool{
