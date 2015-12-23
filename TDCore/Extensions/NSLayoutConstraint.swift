@@ -122,7 +122,7 @@ public extension NSLayoutConstraint {
         let trailingAttribute:NSLayoutAttribute = relativeToMargin.right ? .TrailingMargin : .Trailing
         
         constraints.append(NSLayoutConstraint(item:view1,
-            attribute:topAttribute,
+            attribute:.Top,
             relatedBy:.Equal,
             toItem:view2,
             attribute:topAttribute,
@@ -130,7 +130,7 @@ public extension NSLayoutConstraint {
             constant:insets.top))
         
         constraints.append(NSLayoutConstraint(item:view1,
-            attribute:leadingAttribute,
+            attribute:.Leading,
             relatedBy:.Equal,
             toItem:view2,
             attribute:leadingAttribute,
@@ -138,7 +138,7 @@ public extension NSLayoutConstraint {
             constant:insets.left))
         
         constraints.append(NSLayoutConstraint(item:view1,
-            attribute:bottomAttribute,
+            attribute:.Bottom,
             relatedBy:.Equal,
             toItem:view2,
             attribute:bottomAttribute,
@@ -146,7 +146,7 @@ public extension NSLayoutConstraint {
             constant:-insets.bottom))
         
         constraints.append(NSLayoutConstraint(item:view1,
-            attribute:trailingAttribute,
+            attribute:.Trailing,
             relatedBy:.Equal,
             toItem:view2,
             attribute:trailingAttribute,
