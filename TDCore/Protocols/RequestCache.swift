@@ -101,13 +101,11 @@ public extension RequestCache {
     public func successfullyRequested(string:String) {
         let fullKey:String = getFullKey(string)
         let defaults = NSUserDefaults.standardUserDefaults()
-        dispatch_async(dispatch_get_main_queue()) { () -> () in
             
-            defaults.setObject(NSDate(), forKey: fullKey)
-            defaults.synchronize()
-            
-            NSNotificationCenter.defaultCenter().postNotificationName(RequestCacheSuccessfullyUpdatedNotificationKey, object: string)
-        }
+        defaults.setObject(NSDate(), forKey: fullKey)
+        defaults.synchronize()
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(RequestCacheSuccessfullyUpdatedNotificationKey, object: string)
     }
     
     /// Removes all the dates set for successful requests
