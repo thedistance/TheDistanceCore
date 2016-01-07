@@ -62,6 +62,28 @@ public extension NSLayoutConstraint {
     
     /**
      
+     Convenience method to programmatically create an `NSLayoutConstraint` to size a given `UIView` to a ratio.
+     
+     - parameter view: The `UIView` the returned constraint is configure to.
+     - parameter ratio: The height to width ratio expressed as a multiplier, i.e. 4:3 = 0.75.
+     
+     - returns: An array of `NSLayoutConstraint`s ordered width, height.
+     
+     */
+    static func constraintToSizeView(view:UIView, toRatio ratio:CGFloat) -> NSLayoutConstraint {
+        
+        return NSLayoutConstraint(item: view,
+            attribute: .Height,
+            relatedBy: .Equal,
+            toItem: view,
+            attribute: .Width,
+            multiplier: ratio,
+            constant: 0.0)
+
+    }
+    
+    /**
+     
      Convenience method to programmatically create `NSLayoutConstraint`s to size a given `UIView` to a fixed height, width or both.
 
      - parameter view: The `UIView` the returned constraints are configure to.
