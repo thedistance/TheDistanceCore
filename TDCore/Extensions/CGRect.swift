@@ -33,4 +33,9 @@ public extension CGRect {
         
         return newRect
     }
+    
+    /// The center of this rect as defined by `CGRectGetMidX(_:)` and `CGRectGetMidY(_:)`
+    var center:CGPoint {
+        return CGPointMake(CGRectGetMidX(self), CGRectGetMidY(self))
+    }
 }
