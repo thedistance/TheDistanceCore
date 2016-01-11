@@ -8,6 +8,13 @@
 
 import Foundation
 
+public func +<K,V>(d1:Dictionary<K,V>, d2:Dictionary<K,V>) -> Dictionary<K,V> {
+
+    var new = d1
+    new.assignValuesFrom(d2)
+    
+    return new
+}
 
 public extension Dictionary {
     
