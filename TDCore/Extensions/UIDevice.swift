@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension UIDevice {
+public extension UIDevice {
     
     /**
      

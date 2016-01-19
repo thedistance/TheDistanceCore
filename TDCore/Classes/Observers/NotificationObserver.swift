@@ -54,7 +54,7 @@ public final class NotificationObserver:NSObject, Observer {
     }
     
     /// Called when the registered notification is observed.
-    private func observe(note:NSNotification) {
+    func observe(note:NSNotification) {
         completion(note: note)
     }
     

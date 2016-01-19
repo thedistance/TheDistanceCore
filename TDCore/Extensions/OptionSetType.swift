@@ -9,7 +9,7 @@
 import Foundation
 
 
-extension OptionSetType where Element == Self, RawValue : UnsignedIntegerType {
+public extension OptionSetType where Element == Self, RawValue : UnsignedIntegerType {
     
     /**
      

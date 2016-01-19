@@ -8,13 +8,11 @@
 
 import Foundation
 
-extension NSDateComponents {
+public extension NSDateComponents {
     
     /**
 
      Convenience initialiser for creating a new `NSDateComponets` object as they inherit from `NSObject` and therefore have reference and not value semantics.
-     
-     - warning: This uses `setValue(_:forComponent)` to assign the values to the created `NSDateComponents` object. Consequently `.timeZone` and `.calendar` are not copied to the new object.
      
      - parameter components: The components to copy to the new object.
      - parameter fromComponents: The object to copy the `units` from.
@@ -24,8 +22,27 @@ extension NSDateComponents {
         
         self.init()
         
-        for comp in units.elements() where (comp != .Calendar && comp != .TimeZone) {
-            setValue(fromComponents.valueForComponent(comp), forComponent: comp)
+        for comp in units.elements() {
+            
+            if comp == .TimeZone {
+                timeZone = fromComponents.timeZone
+            } else if comp == .Calendar {
+                calendar = fromComponents.calendar
+            } else {
+                setValue(fromComponents.valueForComponent(comp), forComponent: comp)
+            }
+            
+            /*
+            // doesn't compile...
+            switch comp {
+            case .TimeZone:
+                timeZone = fromComponents.timeZone
+                case .Calendar:
+                calendar = fromComponents.calendar
+            default:
+                setValue(fromComponents.valueForComponent(comp), forComponent: comp)
+            }
+            */
         }
     }
     

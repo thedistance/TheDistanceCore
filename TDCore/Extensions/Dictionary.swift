@@ -8,8 +8,15 @@
 
 import Foundation
 
+public func +<K,V>(d1:Dictionary<K,V>, d2:Dictionary<K,V>) -> Dictionary<K,V> {
 
-extension Dictionary {
+    var new = d1
+    new.assignValuesFrom(d2)
+    
+    return new
+}
+
+public extension Dictionary {
     
     /// Convenience method to assign all values in `source` to self.
     mutating func assignValuesFrom<S: SequenceType where S.Generator.Element == (Key,Value)>(source: S) {

@@ -10,7 +10,7 @@ import Foundation
 
 import SafariServices
 
-extension UIViewController {
+public extension UIViewController {
     
     /**
      
@@ -55,7 +55,7 @@ extension UIViewController: SFSafariViewControllerDelegate {
      
      -seealso: `openInSafari(_:)`
     */
-    func openURL(url:NSURL, fromSourceItem item:UIPopoverSourceType, inViewController:UIViewController? = nil) {
+    public func openURL(url:NSURL, fromSourceItem item:UIPopoverSourceType, inViewController:UIViewController? = nil) {
         if let chromeURL = url.googleChromeURL() where UIApplication.sharedApplication().canOpenURL(NSURL(string: "googlechrome://")!) {
             
             let alert = UIAlertController(title: nil, message: "Open with...", preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -92,7 +92,7 @@ extension UIViewController: SFSafariViewControllerDelegate {
      
      - parameter url: The `NSURL` to open.
     */
-    func openInSafari(url:NSURL) {
+    public func openInSafari(url:NSURL) {
         if #available(iOS 9, *) {
             
             let vc = SFSafariViewController(URL: url)
