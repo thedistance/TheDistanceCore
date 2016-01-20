@@ -18,7 +18,7 @@ public extension UIViewController {
      
      - returns: The root `UIViewController` if `self` is  a `UINavigationController` or `self` if not.
      */
-    func navigationRootViewController() -> UIViewController? {
+    public func navigationRootViewController() -> UIViewController? {
         if let nav = self as? UINavigationController {
             return nav.viewControllers.first
         } else {
@@ -32,7 +32,7 @@ public extension UIViewController {
      
      - returns: The top most `UIViewController` in the stack if `self` is  a `UINavigationController` or `self` if not.
      */
-    func navigationTopViewController() -> UIViewController? {
+    public func navigationTopViewController() -> UIViewController? {
         if let nav = self as? UINavigationController {
             return nav.viewControllers.last
         } else {

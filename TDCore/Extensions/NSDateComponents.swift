@@ -18,7 +18,7 @@ public extension NSDateComponents {
      - parameter fromComponents: The object to copy the `units` from.
      
     */
-    convenience init(units: NSCalendarUnit, fromComponents:NSDateComponents) {
+    public convenience init(units: NSCalendarUnit, fromComponents:NSDateComponents) {
         
         self.init()
         

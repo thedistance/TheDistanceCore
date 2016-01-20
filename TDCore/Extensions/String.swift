@@ -11,12 +11,12 @@ import Foundation
 public extension String {
     
     /// Convenience method to trim whitespace and newline characters from `self`.
-    mutating func trimWhitespace() {
+    public mutating func trimWhitespace() {
         self = self.whitespaceTrimmedString()
     }
     
     /// Convenience method to create a new string from `self`, trimmed from whitespace and newline characters.
-    func whitespaceTrimmedString() -> String {
+    public func whitespaceTrimmedString() -> String {
         return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
     }
 }

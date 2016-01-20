@@ -11,7 +11,7 @@ import Foundation
 public extension NSError {
     
     /// Converts an NSURLError to have a more friendly user error message using the `userFacingDescription()` and `userFacingRecoverySuggestion()` methods on `NSURLError`.
-    func userFacingError() -> NSError {
+    public func userFacingError() -> NSError {
         if self.domain == NSURLErrorDomain,
             let code = NSURLError(rawValue: code),
             let userDescription = code.userFacingDescription() {
@@ -32,7 +32,7 @@ public extension NSError {
 public extension NSURLError {
     
     /// Returns a more friendly error than 'NSURL error -1001`.
-    func userFacingDescription() -> String? {
+    public func userFacingDescription() -> String? {
         switch self {
         case .NotConnectedToInternet:
             return "Your device is not connected to the internet."
@@ -48,7 +48,7 @@ public extension NSURLError {
     }
     
     /// Returns a more friendly error than 'NSURL error -1001`.
-    func userFacingRecoverySuggestion() -> String? {
+    public func userFacingRecoverySuggestion() -> String? {
         
         switch self {
         case .NotConnectedToInternet:

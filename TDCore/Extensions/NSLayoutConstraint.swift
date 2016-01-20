@@ -34,7 +34,7 @@ public func !=(c1:NSLayoutConstraint, c2:NSLayoutConstraint) -> Bool {
     return !(c1 == c2)
 }
 
-/// Uses `==` on the constraints in the two arrays. This allows `isEqual(_:)` to remain the unchanged for `NSLayoutConstraint` but allows two arrays to be compared.
+/// Uses `==` on the constraints in the two arrays. This allows `isEqual(_:)` to remain unchanged for `NSLayoutConstraint` but allows two constraint arrays to be compared.
 public func ==(c1:[NSLayoutConstraint], c2:[NSLayoutConstraint]) -> Bool {
     
     guard c1.count == c2.count else { return false }
@@ -70,7 +70,7 @@ public extension NSLayoutConstraint {
      - returns: An array of `NSLayoutConstraint`s ordered width, height.
      
      */
-    static func constraintToSizeView(view:UIView, toRatio ratio:CGFloat) -> NSLayoutConstraint {
+    public static func constraintToSizeView(view:UIView, toRatio ratio:CGFloat) -> NSLayoutConstraint {
         
         return NSLayoutConstraint(item: view,
             attribute: .Height,
@@ -93,7 +93,7 @@ public extension NSLayoutConstraint {
      - returns: An array of `NSLayoutConstraint`s ordered width, height.
      
     */
-    static func constraintsToSize(view:UIView, toWidth width:CGFloat?, andHeight height:CGFloat?) -> [NSLayoutConstraint] {
+    public static func constraintsToSize(view:UIView, toWidth width:CGFloat?, andHeight height:CGFloat?) -> [NSLayoutConstraint] {
         
         var constraints = [NSLayoutConstraint]()
         
@@ -134,7 +134,7 @@ public extension NSLayoutConstraint {
      - returns: An array of `NSLayoutConstraint`s, ordered: top, left, bottom, right.
      
     */
-    static func constraintsToAlign(view view1:UIView, to view2:UIView, withInsets insets:UIEdgeInsets = UIEdgeInsetsZero, relativeToMargin:(top:Bool, left:Bool, bottom:Bool, right:Bool) = (false, false, false, false)) -> [NSLayoutConstraint] {
+    public static func constraintsToAlign(view view1:UIView, to view2:UIView, withInsets insets:UIEdgeInsets = UIEdgeInsetsZero, relativeToMargin:(top:Bool, left:Bool, bottom:Bool, right:Bool) = (false, false, false, false)) -> [NSLayoutConstraint] {
         
         var constraints = [NSLayoutConstraint]()
         

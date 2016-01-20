@@ -21,7 +21,7 @@ public extension OptionSetType where Element == Self, RawValue : UnsignedInteger
      
      - returns: Any array of options.
      */
-    func elements() -> AnySequence<Self> {
+    public func elements() -> AnySequence<Self> {
         var rawValue = Self.RawValue(1)
         return AnySequence( {
             return anyGenerator({

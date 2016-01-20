@@ -14,11 +14,11 @@ public extension CGRect {
 
     Creates a new `CGRect` based on `self` with the given `insets`. This allows non-symmetric insets, where `CGRectInset` does not.
 
-     - parameter insets: The insets to create the new rect from.
+     - parameter insets: The insets to create the new CGRect from.
      - parameter capsToZero: Whether or not the width and height of the new rect should be non-negative. The default value is `true`.
-     - returns
+
      */
-    func rectWithInsets(insets:UIEdgeInsets, capsToZero:Bool = true) -> CGRect {
+    public func rectWithInsets(insets:UIEdgeInsets, capsToZero:Bool = true) -> CGRect {
         
         var newRect = self
         newRect.origin.x += insets.left
@@ -35,7 +35,7 @@ public extension CGRect {
     }
     
     /// The center of this rect as defined by `CGRectGetMidX(_:)` and `CGRectGetMidY(_:)`
-    var center:CGPoint {
+    public var center:CGPoint {
         return CGPointMake(CGRectGetMidX(self), CGRectGetMidY(self))
     }
 }

@@ -23,12 +23,12 @@ public func UIEdgeInsetsMakeEqual(inset:CGFloat) -> UIEdgeInsets {
 public extension UIEdgeInsets {
     
     /// Returns `top + bottom` for use in calculating size with an inset.
-    var totalYInset:CGFloat {
+    public var totalYInset:CGFloat {
         return top + bottom
     }
     
     /// Returns `left + right` for use in calculating size with an inset.
-    var totalXInset:CGFloat {
+    public var totalXInset:CGFloat {
         return left + right
     }
 }

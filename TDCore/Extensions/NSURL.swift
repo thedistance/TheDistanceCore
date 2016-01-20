@@ -18,7 +18,7 @@ public extension NSURL {
      
      - returns: An `NSURL` suitable for opening an `NSURL` in Google Chrome if the scheme of `self` is `http` or `https`. `nil` otherwise.
     */
-    func googleChromeURL() -> NSURL? {
+    public func googleChromeURL() -> NSURL? {
         
         guard scheme == "http" || scheme == "https" else { return nil }
         

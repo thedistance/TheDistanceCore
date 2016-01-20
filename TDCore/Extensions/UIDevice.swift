@@ -17,7 +17,7 @@ public extension UIDevice {
      - returns: iPads and iPhone '+' s return `.AllButUpsideDown`, other iPhones return `.Portrait`.
      
      */
-    func getDeviceSupportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+    public func getDeviceSupportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad || UIScreen.mainScreen().scale > 2.1 {
             return .AllButUpsideDown

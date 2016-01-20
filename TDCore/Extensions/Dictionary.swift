@@ -19,14 +19,14 @@ public func +<K,V>(d1:Dictionary<K,V>, d2:Dictionary<K,V>) -> Dictionary<K,V> {
 public extension Dictionary {
     
     /// Convenience method to assign all values in `source` to self.
-    mutating func assignValuesFrom<S: SequenceType where S.Generator.Element == (Key,Value)>(source: S) {
+    public mutating func assignValuesFrom<S: SequenceType where S.Generator.Element == (Key,Value)>(source: S) {
         for (k,v) in source {
             self[k] = v
         }
     }
     
     /// Convenience creator to create a dictionary from an array of key-value tuples. This is useful for creating a dictionary from the result of performing `map(_:)` on a dictionary.
-    init<S: SequenceType where S.Generator.Element == (Key,Value)>(_ sequence: S) {
+    public init<S: SequenceType where S.Generator.Element == (Key,Value)>(_ sequence: S) {
         self = [:]
         self.assignValuesFrom(sequence)
     }
@@ -38,7 +38,7 @@ public extension Dictionary {
      - parameter: The closure to be applied to the values, as would be passed to `map(_:)` on an array.
      
      */
-    func mapValues<NewValue>(transform: Value -> NewValue) -> [Key:NewValue] {
+    public func mapValues<NewValue>(transform: Value -> NewValue) -> [Key:NewValue] {
         
         let elements = self.map({ ($0, transform($1)) })
         
@@ -46,7 +46,7 @@ public extension Dictionary {
     }
     
     /// - returns: An array of only the values in `self`.
-    func valuesArray() -> [Value] {
+    public func valuesArray() -> [Value] {
         return self.map({ $0.1 })
     }
 }

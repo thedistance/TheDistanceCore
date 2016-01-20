@@ -37,7 +37,7 @@ public protocol ParallaxScrollable: UIScrollViewDelegate {
 }
 
 
-extension ParallaxScrollable where Self:UIViewController {
+public extension ParallaxScrollable where Self:UIViewController {
     
     /// - returns: The intersection of `headerView` and `parallaxScrollView` in the frame of `parallaxScrollView.superview`.
     public func parallaxHeaderOverlap() -> CGRect {
@@ -96,7 +96,7 @@ extension ParallaxScrollable where Self:UIViewController {
     }
 }
 
-extension ParallaxScrollable {
+public extension ParallaxScrollable {
 
     /**
      
