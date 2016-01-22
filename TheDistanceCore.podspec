@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'TheDistanceCore'
-  s.version = '0.1.1'
+  s.version = '0.2'
   s.license = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.summary = 'Develop faster with convenience functions from The Distance.'
   s.homepage = 'https://bitbucket.org/thedistance/thedistancecore'
