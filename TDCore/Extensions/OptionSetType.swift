@@ -1,9 +1,9 @@
 //
 //  OptionSet.swift
-//  Interchange
+//  TheDistanceCore
 //
 //  Created by Josh Campion on 30/10/2015.
-//  Copyright © 2015 Interchange Management Ltd. All rights reserved.
+//  Copyright © 2015 The Distance. All rights reserved.
 //
 
 import Foundation
