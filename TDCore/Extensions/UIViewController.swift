@@ -54,6 +54,7 @@ extension UIViewController: SFSafariViewControllerDelegate {
      - paramter inViewController: The `UIViewController` that will present the `UIAlertController`. If `nil`, `self` is used to present the `UIAlertController`. The default value is `nil`.
      
      -seealso: `openInSafari(_:)`
+     -seealso: `presentViewController(_:fromSourceItem:inViewController:animated:completion)`.
     */
     public func openURL(url:NSURL, fromSourceItem item:UIPopoverSourceType, inViewController:UIViewController? = nil) {
         if let chromeURL = url.googleChromeURL() where UIApplication.sharedApplication().canOpenURL(NSURL(string: "googlechrome://")!) {
@@ -69,21 +70,36 @@ extension UIViewController: SFSafariViewControllerDelegate {
                 UIApplication.sharedApplication().openURL(chromeURL)
             }))
             
-            switch item {
-            case .View(let view):
-                alert.popoverPresentationController?.sourceView = view
-                alert.popoverPresentationController?.sourceRect = view.bounds
-            case .BarButton(let item):
-                alert.popoverPresentationController?.barButtonItem = item
-            }
-            alert.popoverPresentationController
-            
-            
-            (inViewController ?? self).presentViewController(alert, animated: true, completion: nil)
+            self.presentViewController(alert, fromSourceItem: item)
             
         } else {
             openInSafari(url)
         }
+    }
+    
+    /**
+     
+     Convenience method for presenting a `UIViewController` configuring the `popoverPresentationController` to use a given `UIView` or `UIBarButtonItem`. This is useful for action sheets and `UIActivityViewController`s.
+     
+     - parameter vc: The `UIViewController` to present.
+     - parameter item: Either the `UIView` or `UIBarButtonItem` that the `ActionSheet` style `UIAlertController` will be presented from on Regular-Regular size class devices.
+     - paramter inViewController: The `UIViewController` that will present the `UIAlertController`. If `nil`, `self` is used to present the `UIAlertController`. The default value is `nil`.
+     - parameter animated: Passed to `presentViewController(_:animated:completion:)`
+     - parameter completion: Passed to `presentViewController(_:animated:completion:)`
+     
+     -seealso: `openInSafari(_:)`
+     */
+    public func presentViewController(vc:UIViewController, fromSourceItem item: UIPopoverSourceType, inViewController:UIViewController? = nil, animated:Bool = true, completion: (() -> ())? = nil) {
+        
+        switch item {
+        case .View(let view):
+            vc.popoverPresentationController?.sourceView = view
+            vc.popoverPresentationController?.sourceRect = view.bounds
+        case .BarButton(let item):
+            vc.popoverPresentationController?.barButtonItem = item
+        }
+        
+        (inViewController ?? self).presentViewController(vc, animated: animated, completion: completion)
     }
 
     /**
