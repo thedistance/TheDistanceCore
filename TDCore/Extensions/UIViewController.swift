@@ -13,6 +13,22 @@ import SafariServices
 public extension UIViewController {
     
     /**
+
+     Convenience method for accessing the topmost presented view controller. This is useful when trying in initiate an action, such as a present action, from a UIView subclass that is independent of the `UIViewController` it is residing in.
+     
+     - returns: The `.rootViewController` of the `UIApplication`'s `keyWindow`, or the highest presented view controller. This will return `nil` if and only if there is no root view controller.
+    */
+    public class func topPresentedViewController() -> UIViewController? {
+        
+        var context = UIApplication.sharedApplication().keyWindow?.rootViewController
+        while context?.presentedViewController != nil {
+            context = context?.presentedViewController
+        }
+        
+        return context
+    }
+    
+    /**
      
      Convenience method for handling nested `UIViewController`s in a `UISplitViewController` or other situation where a navigation controller may be passed, not the specific `UIViewController` subclass that contains the 'content'.
      
