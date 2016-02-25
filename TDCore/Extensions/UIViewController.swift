@@ -12,12 +12,14 @@ import SafariServices
 
 public extension UIViewController {
     
+    
     /**
 
      Convenience method for accessing the topmost presented view controller. This is useful when trying in initiate an action, such as a present action, from a UIView subclass that is independent of the `UIViewController` it is residing in.
      
      - returns: The `.rootViewController` of the `UIApplication`'s `keyWindow`, or the highest presented view controller. This will return `nil` if and only if there is no root view controller.
     */
+    /*
     public class func topPresentedViewController() -> UIViewController? {
         
         var context = UIApplication.sharedApplication().keyWindow?.rootViewController
@@ -27,7 +29,8 @@ public extension UIViewController {
         
         return context
     }
-    
+    */
+     
     /**
      
      Convenience method for handling nested `UIViewController`s in a `UISplitViewController` or other situation where a navigation controller may be passed, not the specific `UIViewController` subclass that contains the 'content'.
@@ -73,24 +76,33 @@ extension UIViewController: SFSafariViewControllerDelegate {
      -seealso: `presentViewController(_:fromSourceItem:inViewController:animated:completion)`.
     */
     public func openURL(url:NSURL, fromSourceItem item:UIPopoverSourceType, inViewController:UIViewController? = nil) {
-        if let chromeURL = url.googleChromeURL() where UIApplication.sharedApplication().canOpenURL(NSURL(string: "googlechrome://")!) {
+        
+        #if TD_APP_EXTENSION
             
-            let alert = UIAlertController(title: nil, message: "Open with...", preferredStyle: UIAlertControllerStyle.ActionSheet)
-            
-            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "Safari", style: .Default, handler: { (action) -> Void in
-                self.openInSafari(url)
-            }))
-            
-            alert.addAction(UIAlertAction(title: "Google Chrome", style: .Default, handler: { (action) -> Void in
-                UIApplication.sharedApplication().openURL(chromeURL)
-            }))
-            
-            self.presentViewController(alert, fromSourceItem: item)
-            
-        } else {
             openInSafari(url)
-        }
+            
+        #else
+            
+            if let chromeURL = url.googleChromeURL() where UIApplication.sharedApplication().canOpenURL(NSURL(string: "googlechrome://")!) {
+                
+                let alert = UIAlertController(title: nil, message: "Open with...", preferredStyle: UIAlertControllerStyle.ActionSheet)
+                
+                alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Safari", style: .Default, handler: { (action) -> Void in
+                    self.openInSafari(url)
+                }))
+                
+                alert.addAction(UIAlertAction(title: "Google Chrome", style: .Default, handler: { (action) -> Void in
+                    UIApplication.sharedApplication().openURL(chromeURL)
+                }))
+                
+                self.presentViewController(alert, fromSourceItem: item)
+                
+            } else {
+                openInSafari(url)
+            }
+            
+        #endif
     }
     
     /**
@@ -125,15 +137,30 @@ extension UIViewController: SFSafariViewControllerDelegate {
      - parameter url: The `NSURL` to open.
     */
     public func openInSafari(url:NSURL) {
-        if #available(iOS 9, *) {
+        
+        #if TD_APP_EXTENSION
             
-            let vc = SFSafariViewController(URL: url)
-            vc.delegate = self
-            self.presentViewController(vc, animated: true, completion: nil)
+            if #available(iOS 9, *) {
+                
+                let vc = SFSafariViewController(URL: url)
+                vc.delegate = self
+                self.presentViewController(vc, animated: true, completion: nil)
+                
+            }
             
-        } else if UIApplication.sharedApplication().canOpenURL(url) {
-            UIApplication.sharedApplication().openURL(url)
-        }
+        #else
+            
+            if #available(iOS 9, *) {
+                
+                let vc = SFSafariViewController(URL: url)
+                vc.delegate = self
+                self.presentViewController(vc, animated: true, completion: nil)
+                
+            } else if UIApplication.sharedApplication().canOpenURL(url) {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        
+        #endif
     }
     
     @available(iOS 9.0, *)
