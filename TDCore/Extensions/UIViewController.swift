@@ -10,6 +10,13 @@ import Foundation
 
 import SafariServices
 
+
+extension UIApplication {
+    func number_canOpenURL(url:NSURL) -> NSNumber {
+        return NSNumber(bool: canOpenURL(url))
+    }
+}
+
 public extension UIViewController {
     
     
@@ -76,14 +83,9 @@ extension UIViewController: SFSafariViewControllerDelegate {
      -seealso: `presentViewController(_:fromSourceItem:inViewController:animated:completion)`.
     */
     public func openURL(url:NSURL, fromSourceItem item:UIPopoverSourceType, inViewController:UIViewController? = nil) {
-        
-        #if TD_APP_EXTENSION
+
             
-            openInSafari(url)
-            
-        #else
-            
-            if let chromeURL = url.googleChromeURL() where UIApplication.sharedApplication().canOpenURL(NSURL(string: "googlechrome://")!) {
+            if let chromeURL = url.googleChromeURL() where canOpenURL(NSURL(string: "googlechrome://")!) {
                 
                 let alert = UIAlertController(title: nil, message: "Open with...", preferredStyle: UIAlertControllerStyle.ActionSheet)
                 
@@ -93,7 +95,7 @@ extension UIViewController: SFSafariViewControllerDelegate {
                 }))
                 
                 alert.addAction(UIAlertAction(title: "Google Chrome", style: .Default, handler: { (action) -> Void in
-                    UIApplication.sharedApplication().openURL(chromeURL)
+                    self.openURL(chromeURL)
                 }))
                 
                 self.presentViewController(alert, fromSourceItem: item)
@@ -101,8 +103,6 @@ extension UIViewController: SFSafariViewControllerDelegate {
             } else {
                 openInSafari(url)
             }
-            
-        #endif
     }
     
     /**
@@ -138,33 +138,82 @@ extension UIViewController: SFSafariViewControllerDelegate {
     */
     public func openInSafari(url:NSURL) {
         
+        if #available(iOS 9, *) {
+            let vc = SFSafariViewController(URL: url)
+            vc.delegate = self
+            self.presentViewController(vc, animated: true, completion: nil)
+            return
+        }
+        
         #if TD_APP_EXTENSION
-            
-            if #available(iOS 9, *) {
-                
-                let vc = SFSafariViewController(URL: url)
-                vc.delegate = self
-                self.presentViewController(vc, animated: true, completion: nil)
-                
-            }
+        
+            openURLUsingResponder(url)
             
         #else
-            
-            if #available(iOS 9, *) {
-                
-                let vc = SFSafariViewController(URL: url)
-                vc.delegate = self
-                self.presentViewController(vc, animated: true, completion: nil)
-                
-            } else if UIApplication.sharedApplication().canOpenURL(url) {
+            if UIApplication.sharedApplication().canOpenURL(url) {
                 UIApplication.sharedApplication().openURL(url)
             }
-        
         #endif
     }
     
     @available(iOS 9.0, *)
     public func safariViewControllerDidFinish(controller: SFSafariViewController) {
         controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    public func openURLUsingResponder(url:NSURL) {
+        
+        var responder = self.nextResponder()
+        while responder != nil {
+            
+            if responder is UIApplication {
+                break
+            } else {
+                responder = responder?.nextResponder()
+            }
+        }
+        
+        if let application = responder as? UIApplication {
+            application.performSelector("openURL:", withObject: url)
+            return
+        }
+    }
+    
+    public func canOpenURL(url:NSURL) -> Bool {
+        
+        #if TD_APP_EXTENSION
+            return canOpenURLUsingResponder(url) ?? false
+        #else
+            return UIApplication.sharedApplication().canOpenURL(url)
+        #endif
+    }
+    
+    public func openURL(url:NSURL) {
+        
+        #if TD_APP_EXTENSION
+            return openURLUsingResponder(url)
+        #else
+            return UIApplication.sharedApplication().openURL(url)
+        #endif
+    }
+    
+    public func canOpenURLUsingResponder(url:NSURL) -> Bool? {
+        
+        var responder = self.nextResponder()
+        while responder != nil {
+            
+            if responder is UIApplication {
+                break
+            } else {
+                responder = responder?.nextResponder()
+            }
+        }
+        
+        if let application = responder as? UIApplication {
+            let result = application.performSelector("number_canOpenURL:", withObject: url)
+            return result?.takeUnretainedValue() as? Bool
+        }
+        
+        return false
     }
 }
