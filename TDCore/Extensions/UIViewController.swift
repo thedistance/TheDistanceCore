@@ -191,9 +191,9 @@ extension UIViewController: SFSafariViewControllerDelegate {
     public func openURL(url:NSURL) {
         
         #if TD_APP_EXTENSION
-            return openURLUsingResponder(url)
+            openURLUsingResponder(url)
         #else
-            return UIApplication.sharedApplication().openURL(url)
+            UIApplication.sharedApplication().openURL(url)
         #endif
     }
     
