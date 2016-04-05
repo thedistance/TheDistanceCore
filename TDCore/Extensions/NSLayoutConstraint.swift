@@ -6,7 +6,7 @@
 //  Copyright © 2015 The Distance. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Constraints are said to be equal if both first and second items are `NSObject`s that are equal, and that the attributes, mulipliers, constants and priorities are equal
 public func ==(c1:NSLayoutConstraint, c2:NSLayoutConstraint) -> Bool {
@@ -30,6 +30,7 @@ public func ==(c1:NSLayoutConstraint, c2:NSLayoutConstraint) -> Bool {
     
 }
 
+/// - returns: the negative of `==` for `NSLayoutConstraint`s.
 public func !=(c1:NSLayoutConstraint, c2:NSLayoutConstraint) -> Bool {
     return !(c1 == c2)
 }

@@ -60,6 +60,7 @@ public final class ObjectObserver:NSObject, Observer {
         beginObserving()
     }
     
+    /// Overrides default to call `completion` if `object` and `keypath` match the parameters.
     public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         
         if let key = keyPath,

@@ -7,11 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A560782A1CB40138007F7E65 /* TDCore-Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = A56078291CB40138007F7E65 /* TDCore-Extension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A56078311CB40139007F7E65 /* TheDistanceCoreExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56078271CB40138007F7E65 /* TheDistanceCoreExtension.framework */; };
+		A56078361CB40139007F7E65 /* TDCore_ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56078351CB40139007F7E65 /* TDCore_ExtensionTests.swift */; };
+		A560783F1CB4018B007F7E65 /* UIViewController-App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A560783E1CB4018B007F7E65 /* UIViewController-App.swift */; };
+		A56078421CB4019A007F7E65 /* UIViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56078401CB40196007F7E65 /* UIViewController-Extension.swift */; };
+		A56078431CB40294007F7E65 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B35F1BE3A2CC005D52D0 /* Enums.swift */; };
+		A56078441CB40294007F7E65 /* ParallaxScrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */; };
+		A56078451CB40294007F7E65 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B36B1BE3B461005D52D0 /* NotificationObserver.swift */; };
+		A56078461CB40294007F7E65 /* ObjectObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B36C1BE3B461005D52D0 /* ObjectObserver.swift */; };
+		A56078471CB40294007F7E65 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B36D1BE3B461005D52D0 /* Observer.swift */; };
+		A56078481CB40294007F7E65 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3491BE3A2C4005D52D0 /* CGRect.swift */; };
+		A56078491CB40294007F7E65 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34A1BE3A2C4005D52D0 /* Dictionary.swift */; };
+		A560784A1CB40294007F7E65 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34B1BE3A2C4005D52D0 /* NSDate.swift */; };
+		A560784B1CB40294007F7E65 /* NSDateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34C1BE3A2C4005D52D0 /* NSDateComponents.swift */; };
+		A560784C1CB40294007F7E65 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34D1BE3A2C4005D52D0 /* NSError.swift */; };
+		A560784D1CB40294007F7E65 /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34E1BE3A2C4005D52D0 /* NSLayoutConstraint.swift */; };
+		A560784E1CB40294007F7E65 /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3671BE3B2C4005D52D0 /* NSURL.swift */; };
+		A560784F1CB40294007F7E65 /* OptionSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34F1BE3A2C4005D52D0 /* OptionSetType.swift */; };
+		A56078501CB40294007F7E65 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3501BE3A2C4005D52D0 /* String.swift */; };
+		A56078511CB40294007F7E65 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3511BE3A2C4005D52D0 /* UIDevice.swift */; };
+		A56078521CB40294007F7E65 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3521BE3A2C4005D52D0 /* UIEdgeInsets.swift */; };
+		A56078531CB40294007F7E65 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3531BE3A2C4005D52D0 /* UIViewController.swift */; };
 		A58541151BE782E700AE8A0B /* ParallaxScrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */; };
 		A58541191BE78C4F00AE8A0B /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58541181BE78C4F00AE8A0B /* DateTests.swift */; };
 		A5A7B3311BE3A2A0005D52D0 /* TDCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A5A7B3301BE3A2A0005D52D0 /* TDCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A5A7B3381BE3A2A1005D52D0 /* TDCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A7B32D1BE3A2A0005D52D0 /* TDCore.framework */; };
-		A5A7B33D1BE3A2A1005D52D0 /* TDCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B33C1BE3A2A1005D52D0 /* TDCoreTests.swift */; };
+		A5A7B3381BE3A2A1005D52D0 /* TheDistanceCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A7B32D1BE3A2A0005D52D0 /* TheDistanceCore.framework */; };
 		A5A7B3541BE3A2C4005D52D0 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3491BE3A2C4005D52D0 /* CGRect.swift */; };
 		A5A7B3551BE3A2C4005D52D0 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34A1BE3A2C4005D52D0 /* Dictionary.swift */; };
 		A5A7B3561BE3A2C4005D52D0 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34B1BE3A2C4005D52D0 /* NSDate.swift */; };
@@ -37,6 +58,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A56078321CB40139007F7E65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5A7B3241BE3A2A0005D52D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A56078261CB40138007F7E65;
+			remoteInfo = "TDCore-Extension";
+		};
 		A5A7B3391BE3A2A1005D52D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A5A7B3241BE3A2A0005D52D0 /* Project object */;
@@ -47,13 +75,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A560780D1CB400F9007F7E65 /* TDCore-Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDCore-Extension.h"; sourceTree = "<group>"; };
+		A560780F1CB400F9007F7E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A56078191CB400FA007F7E65 /* TDCore_ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDCore_ExtensionTests.swift; sourceTree = "<group>"; };
+		A560781B1CB400FA007F7E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A56078271CB40138007F7E65 /* TheDistanceCoreExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TheDistanceCoreExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A56078291CB40138007F7E65 /* TDCore-Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDCore-Extension.h"; sourceTree = "<group>"; };
+		A560782B1CB40138007F7E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A56078301CB40138007F7E65 /* TDCore-ExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TDCore-ExtensionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A56078351CB40139007F7E65 /* TDCore_ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDCore_ExtensionTests.swift; sourceTree = "<group>"; };
+		A56078371CB40139007F7E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A560783E1CB4018B007F7E65 /* UIViewController-App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-App.swift"; sourceTree = "<group>"; };
+		A56078401CB40196007F7E65 /* UIViewController-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extension.swift"; sourceTree = "<group>"; };
 		A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxScrollable.swift; sourceTree = "<group>"; };
 		A58541181BE78C4F00AE8A0B /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
-		A5A7B32D1BE3A2A0005D52D0 /* TDCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TDCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5A7B32D1BE3A2A0005D52D0 /* TheDistanceCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TheDistanceCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A7B3301BE3A2A0005D52D0 /* TDCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDCore.h; sourceTree = "<group>"; };
 		A5A7B3321BE3A2A0005D52D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5A7B3371BE3A2A1005D52D0 /* TDCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5A7B33C1BE3A2A1005D52D0 /* TDCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDCoreTests.swift; sourceTree = "<group>"; };
 		A5A7B33E1BE3A2A1005D52D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5A7B3491BE3A2C4005D52D0 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		A5A7B34A1BE3A2C4005D52D0 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
@@ -80,6 +119,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A56078231CB40138007F7E65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A560782D1CB40138007F7E65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A56078311CB40139007F7E65 /* TheDistanceCoreExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5A7B3291BE3A2A0005D52D0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,18 +145,58 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5A7B3381BE3A2A1005D52D0 /* TDCore.framework in Frameworks */,
+				A5A7B3381BE3A2A1005D52D0 /* TheDistanceCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A560780C1CB400F9007F7E65 /* TDCore-Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A560780D1CB400F9007F7E65 /* TDCore-Extension.h */,
+				A560780F1CB400F9007F7E65 /* Info.plist */,
+			);
+			path = "TDCore-Extension";
+			sourceTree = "<group>";
+		};
+		A56078181CB400FA007F7E65 /* TDCore-ExtensionTests */ = {
+			isa = PBXGroup;
+			children = (
+				A56078191CB400FA007F7E65 /* TDCore_ExtensionTests.swift */,
+				A560781B1CB400FA007F7E65 /* Info.plist */,
+			);
+			path = "TDCore-ExtensionTests";
+			sourceTree = "<group>";
+		};
+		A56078281CB40138007F7E65 /* TDCore-Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A56078291CB40138007F7E65 /* TDCore-Extension.h */,
+				A560782B1CB40138007F7E65 /* Info.plist */,
+			);
+			path = "TDCore-Extension";
+			sourceTree = "<group>";
+		};
+		A56078341CB40139007F7E65 /* TDCore-ExtensionTests */ = {
+			isa = PBXGroup;
+			children = (
+				A56078351CB40139007F7E65 /* TDCore_ExtensionTests.swift */,
+				A56078371CB40139007F7E65 /* Info.plist */,
+			);
+			path = "TDCore-ExtensionTests";
+			sourceTree = "<group>";
+		};
 		A5A7B3231BE3A2A0005D52D0 = {
 			isa = PBXGroup;
 			children = (
 				A5A7B32F1BE3A2A0005D52D0 /* TDCore */,
 				A5A7B33B1BE3A2A1005D52D0 /* TDCoreTests */,
+				A560780C1CB400F9007F7E65 /* TDCore-Extension */,
+				A56078181CB400FA007F7E65 /* TDCore-ExtensionTests */,
+				A56078281CB40138007F7E65 /* TDCore-Extension */,
+				A56078341CB40139007F7E65 /* TDCore-ExtensionTests */,
 				A5A7B32E1BE3A2A0005D52D0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,8 +204,10 @@
 		A5A7B32E1BE3A2A0005D52D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A5A7B32D1BE3A2A0005D52D0 /* TDCore.framework */,
+				A5A7B32D1BE3A2A0005D52D0 /* TheDistanceCore.framework */,
 				A5A7B3371BE3A2A1005D52D0 /* TDCoreTests.xctest */,
+				A56078271CB40138007F7E65 /* TheDistanceCoreExtension.framework */,
+				A56078301CB40138007F7E65 /* TDCore-ExtensionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,7 +226,6 @@
 		A5A7B33B1BE3A2A1005D52D0 /* TDCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				A5A7B33C1BE3A2A1005D52D0 /* TDCoreTests.swift */,
 				A5A7B3711BE3B634005D52D0 /* CoreGraphicsTests.swift */,
 				A5A7B3731BE3BDB1005D52D0 /* ConstraintsTests.swift */,
 				A5A7B3751BE3D54F005D52D0 /* StringTests.swift */,
@@ -168,6 +263,8 @@
 				A5A7B3511BE3A2C4005D52D0 /* UIDevice.swift */,
 				A5A7B3521BE3A2C4005D52D0 /* UIEdgeInsets.swift */,
 				A5A7B3531BE3A2C4005D52D0 /* UIViewController.swift */,
+				A560783E1CB4018B007F7E65 /* UIViewController-App.swift */,
+				A56078401CB40196007F7E65 /* UIViewController-Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -193,6 +290,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		A56078241CB40138007F7E65 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A560782A1CB40138007F7E65 /* TDCore-Extension.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5A7B32A1BE3A2A0005D52D0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -204,9 +309,45 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A5A7B32C1BE3A2A0005D52D0 /* TDCore */ = {
+		A56078261CB40138007F7E65 /* TheDistanceCoreExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5A7B3411BE3A2A1005D52D0 /* Build configuration list for PBXNativeTarget "TDCore" */;
+			buildConfigurationList = A56078381CB40139007F7E65 /* Build configuration list for PBXNativeTarget "TheDistanceCoreExtension" */;
+			buildPhases = (
+				A56078221CB40138007F7E65 /* Sources */,
+				A56078231CB40138007F7E65 /* Frameworks */,
+				A56078241CB40138007F7E65 /* Headers */,
+				A56078251CB40138007F7E65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TheDistanceCoreExtension;
+			productName = "TDCore-Extension";
+			productReference = A56078271CB40138007F7E65 /* TheDistanceCoreExtension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A560782F1CB40138007F7E65 /* TDCore-ExtensionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A560783B1CB40139007F7E65 /* Build configuration list for PBXNativeTarget "TDCore-ExtensionTests" */;
+			buildPhases = (
+				A560782C1CB40138007F7E65 /* Sources */,
+				A560782D1CB40138007F7E65 /* Frameworks */,
+				A560782E1CB40138007F7E65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A56078331CB40139007F7E65 /* PBXTargetDependency */,
+			);
+			name = "TDCore-ExtensionTests";
+			productName = "TDCore-ExtensionTests";
+			productReference = A56078301CB40138007F7E65 /* TDCore-ExtensionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A5A7B32C1BE3A2A0005D52D0 /* TheDistanceCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5A7B3411BE3A2A1005D52D0 /* Build configuration list for PBXNativeTarget "TheDistanceCore" */;
 			buildPhases = (
 				A5A7B3281BE3A2A0005D52D0 /* Sources */,
 				A5A7B3291BE3A2A0005D52D0 /* Frameworks */,
@@ -217,9 +358,9 @@
 			);
 			dependencies = (
 			);
-			name = TDCore;
+			name = TheDistanceCore;
 			productName = TDCore;
-			productReference = A5A7B32D1BE3A2A0005D52D0 /* TDCore.framework */;
+			productReference = A5A7B32D1BE3A2A0005D52D0 /* TheDistanceCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A5A7B3361BE3A2A1005D52D0 /* TDCoreTests */ = {
@@ -246,10 +387,16 @@
 		A5A7B3241BE3A2A0005D52D0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "The Distance";
 				TargetAttributes = {
+					A56078261CB40138007F7E65 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					A560782F1CB40138007F7E65 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					A5A7B32C1BE3A2A0005D52D0 = {
 						CreatedOnToolsVersion = 7.1;
 					};
@@ -270,13 +417,29 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A5A7B32C1BE3A2A0005D52D0 /* TDCore */,
+				A5A7B32C1BE3A2A0005D52D0 /* TheDistanceCore */,
 				A5A7B3361BE3A2A1005D52D0 /* TDCoreTests */,
+				A56078261CB40138007F7E65 /* TheDistanceCoreExtension */,
+				A560782F1CB40138007F7E65 /* TDCore-ExtensionTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A56078251CB40138007F7E65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A560782E1CB40138007F7E65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5A7B32B1BE3A2A0005D52D0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,12 +457,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A56078221CB40138007F7E65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A56078431CB40294007F7E65 /* Enums.swift in Sources */,
+				A56078441CB40294007F7E65 /* ParallaxScrollable.swift in Sources */,
+				A56078451CB40294007F7E65 /* NotificationObserver.swift in Sources */,
+				A56078461CB40294007F7E65 /* ObjectObserver.swift in Sources */,
+				A56078471CB40294007F7E65 /* Observer.swift in Sources */,
+				A56078481CB40294007F7E65 /* CGRect.swift in Sources */,
+				A56078491CB40294007F7E65 /* Dictionary.swift in Sources */,
+				A560784A1CB40294007F7E65 /* NSDate.swift in Sources */,
+				A560784B1CB40294007F7E65 /* NSDateComponents.swift in Sources */,
+				A560784C1CB40294007F7E65 /* NSError.swift in Sources */,
+				A560784D1CB40294007F7E65 /* NSLayoutConstraint.swift in Sources */,
+				A560784E1CB40294007F7E65 /* NSURL.swift in Sources */,
+				A560784F1CB40294007F7E65 /* OptionSetType.swift in Sources */,
+				A56078501CB40294007F7E65 /* String.swift in Sources */,
+				A56078511CB40294007F7E65 /* UIDevice.swift in Sources */,
+				A56078521CB40294007F7E65 /* UIEdgeInsets.swift in Sources */,
+				A56078531CB40294007F7E65 /* UIViewController.swift in Sources */,
+				A56078421CB4019A007F7E65 /* UIViewController-Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A560782C1CB40138007F7E65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A56078361CB40139007F7E65 /* TDCore_ExtensionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5A7B3281BE3A2A0005D52D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A58541151BE782E700AE8A0B /* ParallaxScrollable.swift in Sources */,
 				A5A7B3541BE3A2C4005D52D0 /* CGRect.swift in Sources */,
+				A560783F1CB4018B007F7E65 /* UIViewController-App.swift in Sources */,
 				A5A7B3701BE3B461005D52D0 /* Observer.swift in Sources */,
 				A5A7B35C1BE3A2C4005D52D0 /* UIDevice.swift in Sources */,
 				A5A7B3591BE3A2C4005D52D0 /* NSLayoutConstraint.swift in Sources */,
@@ -326,7 +523,6 @@
 				A5A7B37B1BE3DCCE005D52D0 /* URLTests.swift in Sources */,
 				A5A7B37D1BE3DDB6005D52D0 /* DictionaryTests.swift in Sources */,
 				A58541191BE78C4F00AE8A0B /* DateTests.swift in Sources */,
-				A5A7B33D1BE3A2A1005D52D0 /* TDCoreTests.swift in Sources */,
 				A5A7B3781BE3D674005D52D0 /* ObserverTests.swift in Sources */,
 				A5A7B3761BE3D54F005D52D0 /* StringTests.swift in Sources */,
 				A5A7B3721BE3B634005D52D0 /* CoreGraphicsTests.swift in Sources */,
@@ -336,14 +532,83 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A56078331CB40139007F7E65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A56078261CB40138007F7E65 /* TheDistanceCoreExtension */;
+			targetProxy = A56078321CB40139007F7E65 /* PBXContainerItemProxy */;
+		};
 		A5A7B33A1BE3A2A1005D52D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A5A7B32C1BE3A2A0005D52D0 /* TDCore */;
+			target = A5A7B32C1BE3A2A0005D52D0 /* TheDistanceCore */;
 			targetProxy = A5A7B3391BE3A2A1005D52D0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		A56078391CB40139007F7E65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CURRENT_PROJECT_VERSION = 2016.04.05;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 0.7;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TDCore-Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.thedistance.TDCore-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A560783A1CB40139007F7E65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CURRENT_PROJECT_VERSION = 2016.04.05;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 0.7;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TDCore-Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.thedistance.TDCore-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A560783C1CB40139007F7E65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "TDCore-ExtensionTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.thedistance.TDCore-ExtensionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A560783D1CB40139007F7E65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "TDCore-ExtensionTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.thedistance.TDCore-ExtensionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		A5A7B33F1BE3A2A1005D52D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -436,9 +701,10 @@
 		A5A7B3421BE3A2A1005D52D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 2016.04.05;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 0.7;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TDCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -453,9 +719,10 @@
 		A5A7B3431BE3A2A1005D52D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 2016.04.05;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 0.7;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TDCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -490,6 +757,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A56078381CB40139007F7E65 /* Build configuration list for PBXNativeTarget "TheDistanceCoreExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A56078391CB40139007F7E65 /* Debug */,
+				A560783A1CB40139007F7E65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A560783B1CB40139007F7E65 /* Build configuration list for PBXNativeTarget "TDCore-ExtensionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A560783C1CB40139007F7E65 /* Debug */,
+				A560783D1CB40139007F7E65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		A5A7B3271BE3A2A0005D52D0 /* Build configuration list for PBXProject "TDCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -499,7 +782,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A5A7B3411BE3A2A1005D52D0 /* Build configuration list for PBXNativeTarget "TDCore" */ = {
+		A5A7B3411BE3A2A1005D52D0 /* Build configuration list for PBXNativeTarget "TheDistanceCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5A7B3421BE3A2A1005D52D0 /* Debug */,

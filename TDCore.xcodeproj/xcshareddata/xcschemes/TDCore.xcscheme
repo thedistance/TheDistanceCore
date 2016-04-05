@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A5A7B32C1BE3A2A0005D52D0"
-               BuildableName = "TDCore.framework"
-               BlueprintName = "TDCore"
+               BuildableName = "TheDistanceCore.framework"
+               BlueprintName = "TheDistanceCore"
                ReferencedContainer = "container:TDCore.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A5A7B32C1BE3A2A0005D52D0"
-            BuildableName = "TDCore.framework"
-            BlueprintName = "TDCore"
+            BuildableName = "TheDistanceCore.framework"
+            BlueprintName = "TheDistanceCore"
             ReferencedContainer = "container:TDCore.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,8 +65,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A5A7B32C1BE3A2A0005D52D0"
-            BuildableName = "TDCore.framework"
-            BlueprintName = "TDCore"
+            BuildableName = "TheDistanceCore.framework"
+            BlueprintName = "TheDistanceCore"
             ReferencedContainer = "container:TDCore.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,8 +83,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A5A7B32C1BE3A2A0005D52D0"
-            BuildableName = "TDCore.framework"
-            BlueprintName = "TDCore"
+            BuildableName = "TheDistanceCore.framework"
+            BlueprintName = "TheDistanceCore"
             ReferencedContainer = "container:TDCore.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

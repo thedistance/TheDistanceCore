@@ -6,7 +6,7 @@
 //  Copyright © 2015 The Distance. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /**
  
@@ -23,7 +23,7 @@ public protocol ParallaxScrollable: UIScrollViewDelegate {
     /// The `UIScrollView` whose offset drives the parallax motion of the `headerView`.
     var parallaxScrollView: UIScrollView!  { get set }
     
-    /// The mask applied to the `parallaxHeaderView` that prevents clipping if the content of a `parallaxScrollView` is short enough for the `parallaxHeaderView` to be visible underneath the scrollable content.
+    /// The mask applied to the `parallaxHeaderView` that provides clipping of `parallaxHeaderView` if the content of a `parallaxScrollView` is short enough for the `parallaxHeaderView` to be visible underneath the scrollable content.
     var parallaxHeaderMask: CAShapeLayer { get }
     
     /// The parallax motion of the `headerView` is implemented by setting the `constant` property of this constraint.
@@ -124,6 +124,7 @@ public extension ParallaxScrollable {
         }
     }
     
+    /// Updates `parallaxHeaderMask` to clip the `parallaxHeaderView`, preventing it being seen beneath short content.
     public func updateParallaxHeaderMask() {
         // mask the header view by the scroll view
         let absOffset = -parallaxHeaderViewTopConstraint.constant

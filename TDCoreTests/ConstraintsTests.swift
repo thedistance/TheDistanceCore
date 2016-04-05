@@ -102,7 +102,7 @@ class ConstraintsTests: XCTestCase {
         
         // test relative
         let cTopRel = NSLayoutConstraint(item: view1,
-            attribute: .TopMargin,
+            attribute: .Top,
             relatedBy: .Equal,
             toItem: view2,
             attribute: .TopMargin,
@@ -110,7 +110,7 @@ class ConstraintsTests: XCTestCase {
             constant: 5)
         
         let cLeadRel = NSLayoutConstraint(item: view1,
-            attribute: .LeadingMargin,
+            attribute: .Leading,
             relatedBy: .Equal,
             toItem: view2,
             attribute: .LeadingMargin,
@@ -118,7 +118,7 @@ class ConstraintsTests: XCTestCase {
             constant: 10)
         
         let cBottomRel = NSLayoutConstraint(item: view1,
-            attribute: .BottomMargin,
+            attribute: .Bottom,
             relatedBy: .Equal,
             toItem: view2,
             attribute: .BottomMargin,
@@ -126,7 +126,7 @@ class ConstraintsTests: XCTestCase {
             constant: -15)
         
         let cTrailRel = NSLayoutConstraint(item: view1,
-            attribute: .TrailingMargin,
+            attribute: .Trailing,
             relatedBy: .Equal,
             toItem: view2,
             attribute: .TrailingMargin,

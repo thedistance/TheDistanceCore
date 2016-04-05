@@ -24,7 +24,7 @@ public extension OptionSetType where Element == Self, RawValue : UnsignedInteger
     public func elements() -> AnySequence<Self> {
         var rawValue = Self.RawValue(1)
         return AnySequence( {
-            return anyGenerator({
+            return AnyGenerator(body: {
                 while rawValue != 0 {
                     let candidate = Self(rawValue: rawValue)
                     rawValue = rawValue &* 2

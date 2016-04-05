@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'TheDistanceCore'
-  s.version = '0.5'
+  s.version = '0.7'
   s.license = { :type => 'MIT', :file => 'LICENSE.txt' }
   s.summary = 'Develop faster with convenience functions from The Distance.'
   s.homepage = 'https://bitbucket.org/thedistance/thedistancecore'
@@ -10,6 +10,19 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'TDCore/Classes/**/*.swift', 'TDCore/Extensions/**/*.swift', 'TDCore/Protocols/**/*.swift'
   s.requires_arc = true
+
+  s.default_subspec = 'App'
+
+  s.subspec 'App' do |app|
+    
+    app.source_files = 'TDCore/Classes/**/*.swift', 'TDCore/Extensions/**/*.swift', 'TDCore/Protocols/**/*.swift'
+    app.exclude_files = 'TDCore/Extensions/UIViewController-Extension.swift'
+  end
+
+  s.subspec 'Extension' do |ext|
+    
+    ext.source_files = 'TDCore/Classes/**/*.swift', 'TDCore/Extensions/**/*.swift', 'TDCore/Protocols/**/*.swift'
+    ext.exclude_files = 'TDCore/Extensions/UIViewController-Extension.swift'
+  end
 end

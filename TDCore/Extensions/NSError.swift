@@ -35,6 +35,7 @@ public extension NSError {
         return self
     }
     
+    /// - returns: A configured `NSError` object with updated `NSLocalizedDescription` and `NSLocalizedRecoverySuggestionErrorKey` if the values of `UserFacing` returned is not `nil`.
     public func userFacingErrorWithUsingFacing(uf:UserFacing) -> NSError {
         
         var newInfo = userInfo ?? [NSObject:AnyObject]()
@@ -47,18 +48,38 @@ public extension NSError {
     }
 }
 
+/**
+ 
+ Protocol defining the requirements of an object to provide a 'User Friendly' string, such as 'Your device is not connected to the internet.' not 'NSURLError -1001'.
+ 
+ Extensions are given for:
+ 
+ - `NSURLError`
+ - `CLError`
+ 
+ */
 public protocol UserFacing {
     
     /// -returns: A more friendly error than 'NSURL error -1001`.
     func userFacingDescription() -> String?
     
-    /// -returns: A more friendly error than 'NSURL error -1001`.
+    /// -returns: A friendly suggestion such as 'Please connect to the internet and try again.'.
     func userFacingRecoverySuggestion() -> String?
 }
 
+/// Public implementation of `UserFacing` for url errors.
 extension NSURLError: UserFacing {
     
-    
+    /**
+     
+     Default implemntations provides responses for:
+     
+     - `.NotConnectedToInternet`
+     - `.TimedOut`
+     - `.CannotFindHost`
+     - `.CannotConnectToHost`
+     
+    */
     public func userFacingDescription() -> String? {
         switch self {
         case .NotConnectedToInternet:
@@ -74,7 +95,16 @@ extension NSURLError: UserFacing {
         }
     }
     
-    
+    /**
+     
+     Default implemntations provides responses for:
+     
+     - `.NotConnectedToInternet`
+     - `.TimedOut`
+     - `.CannotFindHost`
+     - `.CannotConnectToHost`
+     
+     */
     public func userFacingRecoverySuggestion() -> String? {
         
         switch self {
@@ -89,8 +119,10 @@ extension NSURLError: UserFacing {
     }
 }
 
+/// Public implementation of `UserFacing` for location errors.
 extension CLError: UserFacing {
     
+    /// Default implementation returns errors for all `CLError` cases.
     public func userFacingDescription() -> String? {
         switch self {
         case .LocationUnknown:
@@ -132,6 +164,7 @@ extension CLError: UserFacing {
         }
     }
     
+    /// Default implementation returns errors for all `CLError` cases.
     public func userFacingRecoverySuggestion() -> String? {
         switch self {
         case .LocationUnknown:

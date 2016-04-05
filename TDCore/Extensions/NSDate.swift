@@ -70,8 +70,9 @@ public func ==(d1:NSDate, d2:NSDate) -> Bool {
     return d1.compare(d2) == .OrderedSame
 }
 
-extension NSDate {
+public extension NSDate {
     
+    /// Override of default implementation of `isEqual(_:)` to use `==` comparison of `NSDate`s, which checks the result of `compare(_:)` to be `.OrderedSame`. This gives `NSDate` value semantics.
     override public func isEqual(object: AnyObject?) -> Bool {
     
         guard let other = object as? NSDate else {

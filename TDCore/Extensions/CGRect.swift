@@ -6,7 +6,7 @@
 //  Copyright © 2015 The Distance. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public extension CGRect {
     

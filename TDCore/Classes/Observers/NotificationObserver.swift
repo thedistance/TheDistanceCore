@@ -61,7 +61,7 @@ public final class NotificationObserver:NSObject, Observer {
     /// Registers `self` to observe `center` for `name` restricted to `object`.
     public func beginObserving() {
         if !observing {
-            center.addObserver(self, selector: "observe:", name: name, object: object)
+            center.addObserver(self, selector: #selector(NotificationObserver.observe(_:)), name: name, object: object)
             observing = true
         }
     }

@@ -8,7 +8,17 @@
 
 import Foundation
 
-public func +<K,V>(d1:Dictionary<K,V>, d2:Dictionary<K,V>) -> Dictionary<K,V> {
+/**
+ 
+ Convenience function to create a new dictionary with the results of `assignNewValuesFrom(_:)` for two dictionaries of the same type.
+ 
+ - parameter d1: A dictionary which forms the basis for assignment.
+ - parameter d2: A dictionary which provides the new values for assignment.
+ 
+ - returns: A new dictionary based with the entries from `d2` being set on `d1`.
+ 
+ */
+public func +<Key,Value>(d1:Dictionary<Key,Value>, d2:Dictionary<Key,Value>) -> Dictionary<Key,Value> {
 
     var new = d1
     new.assignValuesFrom(d2)

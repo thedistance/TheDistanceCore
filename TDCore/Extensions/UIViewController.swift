@@ -10,9 +10,10 @@ import Foundation
 
 import SafariServices
 
-
-extension UIApplication {
-    func number_canOpenURL(url:NSURL) -> NSNumber {
+public extension UIApplication {
+    
+    /// - returns: The response of `canOpenURL(_:)` as an `NSNumber` so the result can be accessed from the result of a `performSelector(...)`.
+    public func number_canOpenURL(url:NSURL) -> NSNumber {
         return NSNumber(bool: canOpenURL(url))
     }
 }
@@ -85,7 +86,7 @@ extension UIViewController: SFSafariViewControllerDelegate {
     public func openURL(url:NSURL, fromSourceItem item:UIPopoverSourceType, inViewController:UIViewController? = nil) {
 
             
-            if let chromeURL = url.googleChromeURL() where canOpenURL(NSURL(string: "googlechrome://")!) {
+            if let chromeURL = url.googleChromeURL() where self.canOpenURL(NSURL(string: "googlechrome://")!) {
                 
                 let alert = UIAlertController(title: nil, message: "Open with...", preferredStyle: UIAlertControllerStyle.ActionSheet)
                 
@@ -145,75 +146,14 @@ extension UIViewController: SFSafariViewControllerDelegate {
             return
         }
         
-        #if TD_APP_EXTENSION
-        
-            openURLUsingResponder(url)
-            
-        #else
-            if UIApplication.sharedApplication().canOpenURL(url) {
-                UIApplication.sharedApplication().openURL(url)
-            }
-        #endif
+        if self.canOpenURL(url) {
+            self.openURL(url)
+        }
     }
     
+    /// Simple `SFSafariViewControllerDelegate` implementation that dismisses a presented `SFSafariViewController`.
     @available(iOS 9.0, *)
     public func safariViewControllerDidFinish(controller: SFSafariViewController) {
         controller.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    public func openURLUsingResponder(url:NSURL) {
-        
-        var responder = self.nextResponder()
-        while responder != nil {
-            
-            if responder is UIApplication {
-                break
-            } else {
-                responder = responder?.nextResponder()
-            }
-        }
-        
-        if let application = responder as? UIApplication {
-            application.performSelector("openURL:", withObject: url)
-            return
-        }
-    }
-    
-    public func canOpenURL(url:NSURL) -> Bool {
-        
-        #if TD_APP_EXTENSION
-            return canOpenURLUsingResponder(url) ?? false
-        #else
-            return UIApplication.sharedApplication().canOpenURL(url)
-        #endif
-    }
-    
-    public func openURL(url:NSURL) {
-        
-        #if TD_APP_EXTENSION
-            openURLUsingResponder(url)
-        #else
-            UIApplication.sharedApplication().openURL(url)
-        #endif
-    }
-    
-    public func canOpenURLUsingResponder(url:NSURL) -> Bool? {
-        
-        var responder = self.nextResponder()
-        while responder != nil {
-            
-            if responder is UIApplication {
-                break
-            } else {
-                responder = responder?.nextResponder()
-            }
-        }
-        
-        if let application = responder as? UIApplication {
-            let result = application.performSelector("number_canOpenURL:", withObject: url)
-            return result?.takeUnretainedValue() as? Bool
-        }
-        
-        return false
     }
 }

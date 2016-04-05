@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>TDCore-Extension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>TDCore.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,26 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A560780A1CB400F9007F7E65</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A56078131CB400FA007F7E65</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A56078261CB40138007F7E65</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A560782F1CB40138007F7E65</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A5A7B32C1BE3A2A0005D52D0</key>
 		<dict>
 			<key>primary</key>
