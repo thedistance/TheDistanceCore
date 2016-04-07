@@ -23,6 +23,6 @@ Pod::Spec.new do |s|
   s.subspec 'Extension' do |ext|
     
     ext.source_files = 'TDCore/Classes/**/*.swift', 'TDCore/Extensions/**/*.swift', 'TDCore/Protocols/**/*.swift'
-    ext.exclude_files = 'TDCore/Extensions/UIViewController-Extension.swift'
+    ext.exclude_files = 'TDCore/Extensions/UIViewController-App.swift'
   end
 end
