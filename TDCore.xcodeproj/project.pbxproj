@@ -41,6 +41,7 @@
 		A5C228CC1CBE800500CD65EC /* UIViewController-OpenURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C228C91CBE7FDF00CD65EC /* UIViewController-OpenURLs.swift */; };
 		A5C228CE1CBE803B00CD65EC /* UIViewController-App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C228CD1CBE803B00CD65EC /* UIViewController-App.swift */; };
 		A5C228D11CBE80E200CD65EC /* UIViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C228D01CBE80E200CD65EC /* UIViewController-Extension.swift */; };
+		A5C228D71CBE84FE00CD65EC /* ObjectTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C228D61CBE84FE00CD65EC /* ObjectTarget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		A5C228C91CBE7FDF00CD65EC /* UIViewController-OpenURLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-OpenURLs.swift"; sourceTree = "<group>"; };
 		A5C228CD1CBE803B00CD65EC /* UIViewController-App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-App.swift"; sourceTree = "<group>"; };
 		A5C228D01CBE80E200CD65EC /* UIViewController-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extension.swift"; sourceTree = "<group>"; };
+		A5C228D61CBE84FE00CD65EC /* ObjectTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectTarget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 			children = (
 				A5A7B35F1BE3A2CC005D52D0 /* Enums.swift */,
 				A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */,
+				A5C228D61CBE84FE00CD65EC /* ObjectTarget.swift */,
 				A5A7B36A1BE3B461005D52D0 /* Observers */,
 			);
 			path = Classes;
@@ -550,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A58541151BE782E700AE8A0B /* ParallaxScrollable.swift in Sources */,
+				A5C228D71CBE84FE00CD65EC /* ObjectTarget.swift in Sources */,
 				A5A7B3541BE3A2C4005D52D0 /* CGRect.swift in Sources */,
 				A5A7B3701BE3B461005D52D0 /* Observer.swift in Sources */,
 				A5A7B35C1BE3A2C4005D52D0 /* UIDevice.swift in Sources */,
@@ -920,6 +924,7 @@
 				A5C228C21CBE7F6800CD65EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
