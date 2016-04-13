@@ -10,25 +10,6 @@
 		A560782A1CB40138007F7E65 /* TDCore-Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = A56078291CB40138007F7E65 /* TDCore-Extension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A56078311CB40139007F7E65 /* TheDistanceCoreExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56078271CB40138007F7E65 /* TheDistanceCoreExtension.framework */; };
 		A56078361CB40139007F7E65 /* TDCore_ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56078351CB40139007F7E65 /* TDCore_ExtensionTests.swift */; };
-		A560783F1CB4018B007F7E65 /* UIViewController-App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A560783E1CB4018B007F7E65 /* UIViewController-App.swift */; };
-		A56078421CB4019A007F7E65 /* UIViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56078401CB40196007F7E65 /* UIViewController-Extension.swift */; };
-		A56078431CB40294007F7E65 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B35F1BE3A2CC005D52D0 /* Enums.swift */; };
-		A56078441CB40294007F7E65 /* ParallaxScrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */; };
-		A56078451CB40294007F7E65 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B36B1BE3B461005D52D0 /* NotificationObserver.swift */; };
-		A56078461CB40294007F7E65 /* ObjectObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B36C1BE3B461005D52D0 /* ObjectObserver.swift */; };
-		A56078471CB40294007F7E65 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B36D1BE3B461005D52D0 /* Observer.swift */; };
-		A56078481CB40294007F7E65 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3491BE3A2C4005D52D0 /* CGRect.swift */; };
-		A56078491CB40294007F7E65 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34A1BE3A2C4005D52D0 /* Dictionary.swift */; };
-		A560784A1CB40294007F7E65 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34B1BE3A2C4005D52D0 /* NSDate.swift */; };
-		A560784B1CB40294007F7E65 /* NSDateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34C1BE3A2C4005D52D0 /* NSDateComponents.swift */; };
-		A560784C1CB40294007F7E65 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34D1BE3A2C4005D52D0 /* NSError.swift */; };
-		A560784D1CB40294007F7E65 /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34E1BE3A2C4005D52D0 /* NSLayoutConstraint.swift */; };
-		A560784E1CB40294007F7E65 /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3671BE3B2C4005D52D0 /* NSURL.swift */; };
-		A560784F1CB40294007F7E65 /* OptionSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34F1BE3A2C4005D52D0 /* OptionSetType.swift */; };
-		A56078501CB40294007F7E65 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3501BE3A2C4005D52D0 /* String.swift */; };
-		A56078511CB40294007F7E65 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3511BE3A2C4005D52D0 /* UIDevice.swift */; };
-		A56078521CB40294007F7E65 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3521BE3A2C4005D52D0 /* UIEdgeInsets.swift */; };
-		A56078531CB40294007F7E65 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3531BE3A2C4005D52D0 /* UIViewController.swift */; };
 		A58541151BE782E700AE8A0B /* ParallaxScrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */; };
 		A58541191BE78C4F00AE8A0B /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58541181BE78C4F00AE8A0B /* DateTests.swift */; };
 		A5A7B3311BE3A2A0005D52D0 /* TDCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A5A7B3301BE3A2A0005D52D0 /* TDCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,6 +36,11 @@
 		A5A7B3781BE3D674005D52D0 /* ObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3771BE3D674005D52D0 /* ObserverTests.swift */; };
 		A5A7B37B1BE3DCCE005D52D0 /* URLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B37A1BE3DCCE005D52D0 /* URLTests.swift */; };
 		A5A7B37D1BE3DDB6005D52D0 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B37C1BE3DDB6005D52D0 /* DictionaryTests.swift */; };
+		A5C228BF1CBE7F6800CD65EC /* TheDistanceCore-App.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C228BE1CBE7F6800CD65EC /* TheDistanceCore-App.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5C228CB1CBE800400CD65EC /* UIViewController-OpenURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C228C91CBE7FDF00CD65EC /* UIViewController-OpenURLs.swift */; };
+		A5C228CC1CBE800500CD65EC /* UIViewController-OpenURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C228C91CBE7FDF00CD65EC /* UIViewController-OpenURLs.swift */; };
+		A5C228CE1CBE803B00CD65EC /* UIViewController-App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C228CD1CBE803B00CD65EC /* UIViewController-App.swift */; };
+		A5C228D11CBE80E200CD65EC /* UIViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C228D01CBE80E200CD65EC /* UIViewController-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +58,20 @@
 			remoteGlobalIDString = A5A7B32C1BE3A2A0005D52D0;
 			remoteInfo = TDCore;
 		};
+		A5C228C41CBE7F7300CD65EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5A7B3241BE3A2A0005D52D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5A7B32C1BE3A2A0005D52D0;
+			remoteInfo = TheDistanceCore;
+		};
+		A5C228C61CBE7F8500CD65EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5A7B3241BE3A2A0005D52D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5A7B32C1BE3A2A0005D52D0;
+			remoteInfo = TheDistanceCore;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -85,8 +85,6 @@
 		A56078301CB40138007F7E65 /* TDCore-ExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TDCore-ExtensionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A56078351CB40139007F7E65 /* TDCore_ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDCore_ExtensionTests.swift; sourceTree = "<group>"; };
 		A56078371CB40139007F7E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A560783E1CB4018B007F7E65 /* UIViewController-App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-App.swift"; sourceTree = "<group>"; };
-		A56078401CB40196007F7E65 /* UIViewController-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extension.swift"; sourceTree = "<group>"; };
 		A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxScrollable.swift; sourceTree = "<group>"; };
 		A58541181BE78C4F00AE8A0B /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		A5A7B32D1BE3A2A0005D52D0 /* TheDistanceCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TheDistanceCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +114,12 @@
 		A5A7B3771BE3D674005D52D0 /* ObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObserverTests.swift; path = "Classes Tests/ObserverTests.swift"; sourceTree = "<group>"; };
 		A5A7B37A1BE3DCCE005D52D0 /* URLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLTests.swift; sourceTree = "<group>"; };
 		A5A7B37C1BE3DDB6005D52D0 /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
+		A5C228BC1CBE7F6800CD65EC /* TheDistanceCoreApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TheDistanceCoreApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5C228BE1CBE7F6800CD65EC /* TheDistanceCore-App.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheDistanceCore-App.h"; sourceTree = "<group>"; };
+		A5C228C01CBE7F6800CD65EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5C228C91CBE7FDF00CD65EC /* UIViewController-OpenURLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-OpenURLs.swift"; sourceTree = "<group>"; };
+		A5C228CD1CBE803B00CD65EC /* UIViewController-App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-App.swift"; sourceTree = "<group>"; };
+		A5C228D01CBE80E200CD65EC /* UIViewController-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5C228B81CBE7F6800CD65EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -174,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				A56078291CB40138007F7E65 /* TDCore-Extension.h */,
+				A5C228D01CBE80E200CD65EC /* UIViewController-Extension.swift */,
 				A560782B1CB40138007F7E65 /* Info.plist */,
 			);
 			path = "TDCore-Extension";
@@ -197,6 +209,7 @@
 				A56078181CB400FA007F7E65 /* TDCore-ExtensionTests */,
 				A56078281CB40138007F7E65 /* TDCore-Extension */,
 				A56078341CB40139007F7E65 /* TDCore-ExtensionTests */,
+				A5C228BD1CBE7F6800CD65EC /* TheDistanceCore-App */,
 				A5A7B32E1BE3A2A0005D52D0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -208,6 +221,7 @@
 				A5A7B3371BE3A2A1005D52D0 /* TDCoreTests.xctest */,
 				A56078271CB40138007F7E65 /* TheDistanceCoreExtension.framework */,
 				A56078301CB40138007F7E65 /* TDCore-ExtensionTests.xctest */,
+				A5C228BC1CBE7F6800CD65EC /* TheDistanceCoreApp.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,6 +232,7 @@
 				A5A7B3301BE3A2A0005D52D0 /* TDCore.h */,
 				A5A7B3471BE3A2C4005D52D0 /* Classes */,
 				A5A7B3481BE3A2C4005D52D0 /* Extensions */,
+				A5C228CF1CBE806B00CD65EC /* Shared */,
 				A5A7B3321BE3A2A0005D52D0 /* Info.plist */,
 			);
 			path = TDCore;
@@ -263,8 +278,6 @@
 				A5A7B3511BE3A2C4005D52D0 /* UIDevice.swift */,
 				A5A7B3521BE3A2C4005D52D0 /* UIEdgeInsets.swift */,
 				A5A7B3531BE3A2C4005D52D0 /* UIViewController.swift */,
-				A560783E1CB4018B007F7E65 /* UIViewController-App.swift */,
-				A56078401CB40196007F7E65 /* UIViewController-Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -287,6 +300,25 @@
 			name = "Classes Tests";
 			sourceTree = "<group>";
 		};
+		A5C228BD1CBE7F6800CD65EC /* TheDistanceCore-App */ = {
+			isa = PBXGroup;
+			children = (
+				A5C228BE1CBE7F6800CD65EC /* TheDistanceCore-App.h */,
+				A5C228CD1CBE803B00CD65EC /* UIViewController-App.swift */,
+				A5C228C01CBE7F6800CD65EC /* Info.plist */,
+			);
+			path = "TheDistanceCore-App";
+			sourceTree = "<group>";
+		};
+		A5C228CF1CBE806B00CD65EC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A5C228C91CBE7FDF00CD65EC /* UIViewController-OpenURLs.swift */,
+			);
+			name = Shared;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -306,6 +338,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5C228B91CBE7F6800CD65EC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5C228BF1CBE7F6800CD65EC /* TheDistanceCore-App.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -321,6 +361,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A5C228C51CBE7F7300CD65EC /* PBXTargetDependency */,
 			);
 			name = TheDistanceCoreExtension;
 			productName = "TDCore-Extension";
@@ -381,6 +422,25 @@
 			productReference = A5A7B3371BE3A2A1005D52D0 /* TDCoreTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A5C228BB1CBE7F6800CD65EC /* TheDistanceCoreApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5C228C31CBE7F6800CD65EC /* Build configuration list for PBXNativeTarget "TheDistanceCoreApp" */;
+			buildPhases = (
+				A5C228B71CBE7F6800CD65EC /* Sources */,
+				A5C228B81CBE7F6800CD65EC /* Frameworks */,
+				A5C228B91CBE7F6800CD65EC /* Headers */,
+				A5C228BA1CBE7F6800CD65EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5C228C71CBE7F8500CD65EC /* PBXTargetDependency */,
+			);
+			name = TheDistanceCoreApp;
+			productName = "TheDistanceCore-App";
+			productReference = A5C228BC1CBE7F6800CD65EC /* TheDistanceCoreApp.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -403,6 +463,9 @@
 					A5A7B3361BE3A2A1005D52D0 = {
 						CreatedOnToolsVersion = 7.1;
 					};
+					A5C228BB1CBE7F6800CD65EC = {
+						CreatedOnToolsVersion = 7.3;
+					};
 				};
 			};
 			buildConfigurationList = A5A7B3271BE3A2A0005D52D0 /* Build configuration list for PBXProject "TDCore" */;
@@ -421,6 +484,7 @@
 				A5A7B3361BE3A2A1005D52D0 /* TDCoreTests */,
 				A56078261CB40138007F7E65 /* TheDistanceCoreExtension */,
 				A560782F1CB40138007F7E65 /* TDCore-ExtensionTests */,
+				A5C228BB1CBE7F6800CD65EC /* TheDistanceCoreApp */,
 			);
 		};
 /* End PBXProject section */
@@ -454,6 +518,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5C228BA1CBE7F6800CD65EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -461,24 +532,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A56078431CB40294007F7E65 /* Enums.swift in Sources */,
-				A56078441CB40294007F7E65 /* ParallaxScrollable.swift in Sources */,
-				A56078451CB40294007F7E65 /* NotificationObserver.swift in Sources */,
-				A56078461CB40294007F7E65 /* ObjectObserver.swift in Sources */,
-				A56078471CB40294007F7E65 /* Observer.swift in Sources */,
-				A56078481CB40294007F7E65 /* CGRect.swift in Sources */,
-				A56078491CB40294007F7E65 /* Dictionary.swift in Sources */,
-				A560784A1CB40294007F7E65 /* NSDate.swift in Sources */,
-				A560784B1CB40294007F7E65 /* NSDateComponents.swift in Sources */,
-				A560784C1CB40294007F7E65 /* NSError.swift in Sources */,
-				A560784D1CB40294007F7E65 /* NSLayoutConstraint.swift in Sources */,
-				A560784E1CB40294007F7E65 /* NSURL.swift in Sources */,
-				A560784F1CB40294007F7E65 /* OptionSetType.swift in Sources */,
-				A56078501CB40294007F7E65 /* String.swift in Sources */,
-				A56078511CB40294007F7E65 /* UIDevice.swift in Sources */,
-				A56078521CB40294007F7E65 /* UIEdgeInsets.swift in Sources */,
-				A56078531CB40294007F7E65 /* UIViewController.swift in Sources */,
-				A56078421CB4019A007F7E65 /* UIViewController-Extension.swift in Sources */,
+				A5C228D11CBE80E200CD65EC /* UIViewController-Extension.swift in Sources */,
+				A5C228CB1CBE800400CD65EC /* UIViewController-OpenURLs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,7 +551,6 @@
 			files = (
 				A58541151BE782E700AE8A0B /* ParallaxScrollable.swift in Sources */,
 				A5A7B3541BE3A2C4005D52D0 /* CGRect.swift in Sources */,
-				A560783F1CB4018B007F7E65 /* UIViewController-App.swift in Sources */,
 				A5A7B3701BE3B461005D52D0 /* Observer.swift in Sources */,
 				A5A7B35C1BE3A2C4005D52D0 /* UIDevice.swift in Sources */,
 				A5A7B3591BE3A2C4005D52D0 /* NSLayoutConstraint.swift in Sources */,
@@ -529,6 +583,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5C228B71CBE7F6800CD65EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5C228CC1CBE800500CD65EC /* UIViewController-OpenURLs.swift in Sources */,
+				A5C228CE1CBE803B00CD65EC /* UIViewController-App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -542,6 +605,16 @@
 			target = A5A7B32C1BE3A2A0005D52D0 /* TheDistanceCore */;
 			targetProxy = A5A7B3391BE3A2A1005D52D0 /* PBXContainerItemProxy */;
 		};
+		A5C228C51CBE7F7300CD65EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5A7B32C1BE3A2A0005D52D0 /* TheDistanceCore */;
+			targetProxy = A5C228C41CBE7F7300CD65EC /* PBXContainerItemProxy */;
+		};
+		A5C228C71CBE7F8500CD65EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5A7B32C1BE3A2A0005D52D0 /* TheDistanceCore */;
+			targetProxy = A5C228C61CBE7F8500CD65EC /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -550,10 +623,10 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CURRENT_PROJECT_VERSION = 2016.04.05;
+				CURRENT_PROJECT_VERSION = 2016.04.13;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 0.7;
+				DYLIB_CURRENT_VERSION = 0.7.1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "TDCore-Extension/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -570,10 +643,10 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CURRENT_PROJECT_VERSION = 2016.04.05;
+				CURRENT_PROJECT_VERSION = 2016.04.13;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 0.7;
+				DYLIB_CURRENT_VERSION = 0.7.1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "TDCore-Extension/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -701,10 +774,10 @@
 		A5A7B3421BE3A2A1005D52D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 2016.04.05;
+				CURRENT_PROJECT_VERSION = 2016.04.13;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 0.7;
+				DYLIB_CURRENT_VERSION = 0.7.1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TDCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -719,10 +792,10 @@
 		A5A7B3431BE3A2A1005D52D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 2016.04.05;
+				CURRENT_PROJECT_VERSION = 2016.04.13;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 0.7;
+				DYLIB_CURRENT_VERSION = 0.7.1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TDCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -754,6 +827,44 @@
 			};
 			name = Release;
 		};
+		A5C228C11CBE7F6800CD65EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CURRENT_PROJECT_VERSION = 2016.04.13;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 0.7.1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TheDistanceCore-App/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.thedistance.TheDistanceCore-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A5C228C21CBE7F6800CD65EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CURRENT_PROJECT_VERSION = 2016.04.13;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 0.7.1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TheDistanceCore-App/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.thedistance.TheDistanceCore-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -764,6 +875,7 @@
 				A560783A1CB40139007F7E65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A560783B1CB40139007F7E65 /* Build configuration list for PBXNativeTarget "TDCore-ExtensionTests" */ = {
 			isa = XCConfigurationList;
@@ -772,6 +884,7 @@
 				A560783D1CB40139007F7E65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5A7B3271BE3A2A0005D52D0 /* Build configuration list for PBXProject "TDCore" */ = {
 			isa = XCConfigurationList;
@@ -799,6 +912,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A5C228C31CBE7F6800CD65EC /* Build configuration list for PBXNativeTarget "TheDistanceCoreApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5C228C11CBE7F6800CD65EC /* Debug */,
+				A5C228C21CBE7F6800CD65EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

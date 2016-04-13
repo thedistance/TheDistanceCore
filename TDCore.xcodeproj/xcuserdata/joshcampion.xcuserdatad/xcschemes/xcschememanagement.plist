@@ -4,15 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>TDCore-Extension.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>TDCore.xcscheme_^#shared#^_</key>
+		<key>TheDistanceCore.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>TheDistanceCoreApp.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>TheDistanceCoreExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -43,6 +48,11 @@
 			<true/>
 		</dict>
 		<key>A5A7B3361BE3A2A1005D52D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5C228BB1CBE7F6800CD65EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

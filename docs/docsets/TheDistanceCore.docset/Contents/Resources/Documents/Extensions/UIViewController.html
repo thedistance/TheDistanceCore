@@ -83,9 +83,6 @@
                 <a href="../Extensions/String.html">String</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Extensions/UIApplication.html">UIApplication</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Extensions/UIDevice.html">UIDevice</a>
               </li>
               <li class="nav-group-task">
@@ -163,68 +160,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FE15TheDistanceCoreCSo16UIViewController10canOpenURLFCSo5NSURLSb"></a>
-                    <a name="//apple_ref/swift/Method/canOpenURL(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FE15TheDistanceCoreCSo16UIViewController10canOpenURLFCSo5NSURLSb">canOpenURL(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">canOpenURL</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span><span class="kt">NSURL</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>Whether or not the shared <code><a href="../Extensions/UIApplication.html">UIApplication</a></code> can open the given <code><a href="../Extensions/NSURL.html">NSURL</a></code>.</p>
-
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FE15TheDistanceCoreCSo16UIViewController7openURLFCSo5NSURLT_"></a>
-                    <a name="//apple_ref/swift/Method/openURL(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FE15TheDistanceCoreCSo16UIViewController7openURLFCSo5NSURLT_">openURL(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Passes the given URL to the shared <code><a href="../Extensions/UIApplication.html">UIApplication</a></code> to attempt to open.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">openURL</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span><span class="kt">NSURL</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:FE15TheDistanceCoreCSo16UIViewController28navigationRootViewControllerFT_GSqS0__"></a>
                     <a name="//apple_ref/swift/Method/navigationRootViewController()" class="dashAnchor"></a>
                     <a class="token" href="#/s:FE15TheDistanceCoreCSo16UIViewController28navigationRootViewControllerFT_GSqS0__">navigationRootViewController()</a>
@@ -286,81 +221,6 @@
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FE15TheDistanceCoreCSo16UIViewController7openURLFTCSo5NSURL14fromSourceItemOS_19UIPopoverSourceType16inViewControllerGSqS0___T_"></a>
-                    <a name="//apple_ref/swift/Method/openURL(_:fromSourceItem:inViewController:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FE15TheDistanceCoreCSo16UIViewController7openURLFTCSo5NSURL14fromSourceItemOS_19UIPopoverSourceType16inViewControllerGSqS0___T_">openURL(_:fromSourceItem:inViewController:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Convenience method for opening an <code><a href="../Extensions/NSURL.html">NSURL</a></code> in a browser, giving the user a choice of opening either Google Chrome or Safari. If Safari is chosen, this calls <code><a href="../Extensions/UIViewController.html#/s:FE15TheDistanceCoreCSo16UIViewController12openInSafariFCSo5NSURLT_">openInSafari(_:)</a></code>.</p>
-
-<div class="aside aside-note">
-    <p class="aside-title">Note</p>
-    <p>As of iOS 9, <code>googlechrome</code> and <code>googlechromes</code> should be added to the <code>LSApplicationQueriesSchemes</code> key in <code>info.plist</code> in order to open in Chrome to work.</p>
-
-</div>
-
-<p><li><p>paramter inViewController: The <code><a href="../Extensions/UIViewController.html">UIViewController</a></code> that will present the <code>UIAlertController</code>. If <code>nil</code>, <code>self</code> is used to present the <code>UIAlertController</code>. The default value is <code>nil</code>.</p></li></p>
-
-<p>-seealso: <code><a href="../Extensions/UIViewController.html#/s:FE15TheDistanceCoreCSo16UIViewController12openInSafariFCSo5NSURLT_">openInSafari(_:)</a></code>
--seealso: <code>presentViewController(_:fromSourceItem:inViewController:animated:completion)</code>.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">openURL</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span><span class="kt">NSURL</span><span class="p">,</span> <span class="n">fromSourceItem</span> <span class="nv">item</span><span class="p">:</span><span class="kt">UIPopoverSourceType</span><span class="p">,</span> <span class="nv">inViewController</span><span class="p">:</span><span class="kt">UIViewController</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>url</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The <code>NSURL</code> to open in a browser.</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>item</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Either the <code>UIView</code> or <code>UIBarButtonItem</code> that the <code>ActionSheet</code> style <code>UIAlertController</code> will be presented from on Regular-Regular size class devices.</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -380,7 +240,7 @@
 <li>paramter inViewController: The <code><a href="../Extensions/UIViewController.html">UIViewController</a></code> that will present the <code>UIAlertController</code>. If <code>nil</code>, <code>self</code> is used to present the <code>UIAlertController</code>. The default value is <code>nil</code>.</li>
 </ul>
 
-<p>-seealso: <code><a href="../Extensions/UIViewController.html#/s:FE15TheDistanceCoreCSo16UIViewController12openInSafariFCSo5NSURLT_">openInSafari(_:)</a></code></p>
+<p>-seealso: <code>openInSafari(_:)</code></p>
 
                       </div>
                       <div class="declaration">
@@ -453,86 +313,12 @@
                     </section>
                   </div>
                 </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FE15TheDistanceCoreCSo16UIViewController12openInSafariFCSo5NSURLT_"></a>
-                    <a name="//apple_ref/swift/Method/openInSafari(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FE15TheDistanceCoreCSo16UIViewController12openInSafariFCSo5NSURLT_">openInSafari(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Opens the specified <code><a href="../Extensions/NSURL.html">NSURL</a></code> in Safari, or presents an <code>SFSafariViewController</code> if called on iOS 9. The presented <code>SFSafariViewController</code> has <code>self</code> as its delegate and is dismissed on the <code>SFSafariViewControllerDelegate</code> method, <code><a href="../Extensions/UIViewController.html#/s:FE15TheDistanceCoreCSo16UIViewController29safariViewControllerDidFinishFCSo22SFSafariViewControllerT_">safariViewControllerDidFinish(_:)</a></code>.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">openInSafari</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span><span class="kt">NSURL</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>url</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The <code>NSURL</code> to open.</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FE15TheDistanceCoreCSo16UIViewController29safariViewControllerDidFinishFCSo22SFSafariViewControllerT_"></a>
-                    <a name="//apple_ref/swift/Method/safariViewControllerDidFinish(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FE15TheDistanceCoreCSo16UIViewController29safariViewControllerDidFinishFCSo22SFSafariViewControllerT_">safariViewControllerDidFinish(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Simple <code>SFSafariViewControllerDelegate</code> implementation that dismisses a presented <code>SFSafariViewController</code>.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">safariViewControllerDidFinish</span><span class="p">(</span><span class="nv">controller</span><span class="p">:</span> <span class="kt">SFSafariViewController</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="https://bitbucket.org/thedistance/thedistancecore" target="_blank" rel="external">Josh Campion @ The Distance</a>. All rights reserved. (Last updated: 2016-04-05)</p>
+          <p>&copy; 2016 <a class="link" href="https://bitbucket.org/thedistance/thedistancecore" target="_blank" rel="external">Josh Campion @ The Distance</a>. All rights reserved. (Last updated: 2016-04-13)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
