@@ -9,6 +9,14 @@
 import UIKit
 
 public extension UIImage {
+    
+    /**
+     
+     A new `UIImage` created from applying a transform to the image in a CGContext. The rotation of the image is no longer stored in image meta data which is useful for uploading images to servers which don't interpret the meta data.
+     
+     - returns: The rotated image.
+     
+    */
     public func orientationNeutralImage() -> UIImage! {
         
         // No-op if the orientation is already correct

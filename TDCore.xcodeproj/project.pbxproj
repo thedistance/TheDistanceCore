@@ -42,6 +42,7 @@
 		A5C228CE1CBE803B00CD65EC /* UIViewController-App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C228CD1CBE803B00CD65EC /* UIViewController-App.swift */; };
 		A5C228D11CBE80E200CD65EC /* UIViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C228D01CBE80E200CD65EC /* UIViewController-Extension.swift */; };
 		A5C228D71CBE84FE00CD65EC /* ObjectTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C228D61CBE84FE00CD65EC /* ObjectTarget.swift */; };
+		A5C2296D1CBFBC9C00CD65EC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C2296C1CBFBC9C00CD65EC /* UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		A5C228CD1CBE803B00CD65EC /* UIViewController-App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-App.swift"; sourceTree = "<group>"; };
 		A5C228D01CBE80E200CD65EC /* UIViewController-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extension.swift"; sourceTree = "<group>"; };
 		A5C228D61CBE84FE00CD65EC /* ObjectTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectTarget.swift; sourceTree = "<group>"; };
+		A5C2296C1CBFBC9C00CD65EC /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +282,7 @@
 				A5A7B3501BE3A2C4005D52D0 /* String.swift */,
 				A5A7B3511BE3A2C4005D52D0 /* UIDevice.swift */,
 				A5A7B3521BE3A2C4005D52D0 /* UIEdgeInsets.swift */,
+				A5C2296C1CBFBC9C00CD65EC /* UIImage.swift */,
 				A5A7B3531BE3A2C4005D52D0 /* UIViewController.swift */,
 			);
 			path = Extensions;
@@ -568,6 +571,7 @@
 				A5A7B35D1BE3A2C4005D52D0 /* UIEdgeInsets.swift in Sources */,
 				A5A7B3551BE3A2C4005D52D0 /* Dictionary.swift in Sources */,
 				A5A7B35B1BE3A2C4005D52D0 /* String.swift in Sources */,
+				A5C2296D1CBFBC9C00CD65EC /* UIImage.swift in Sources */,
 				A5A7B3601BE3A2CC005D52D0 /* Enums.swift in Sources */,
 				A5A7B3581BE3A2C4005D52D0 /* NSError.swift in Sources */,
 			);
@@ -778,6 +782,7 @@
 		A5A7B3421BE3A2A1005D52D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CURRENT_PROJECT_VERSION = 2016.04.13;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -796,6 +801,7 @@
 		A5A7B3431BE3A2A1005D52D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CURRENT_PROJECT_VERSION = 2016.04.13;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
