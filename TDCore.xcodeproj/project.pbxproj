@@ -43,6 +43,7 @@
 		A5C228D11CBE80E200CD65EC /* UIViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C228D01CBE80E200CD65EC /* UIViewController-Extension.swift */; };
 		A5C228D71CBE84FE00CD65EC /* ObjectTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C228D61CBE84FE00CD65EC /* ObjectTarget.swift */; };
 		A5C2296D1CBFBC9C00CD65EC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C2296C1CBFBC9C00CD65EC /* UIImage.swift */; };
+		A5DE78FE1CC11D90004F4456 /* UIViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DE78FD1CC11D90004F4456 /* UIViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		A5C228D01CBE80E200CD65EC /* UIViewController-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extension.swift"; sourceTree = "<group>"; };
 		A5C228D61CBE84FE00CD65EC /* ObjectTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectTarget.swift; sourceTree = "<group>"; };
 		A5C2296C1CBFBC9C00CD65EC /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		A5DE78FD1CC11D90004F4456 /* UIViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 				A5A7B37A1BE3DCCE005D52D0 /* URLTests.swift */,
 				A5A7B37C1BE3DDB6005D52D0 /* DictionaryTests.swift */,
 				A58541181BE78C4F00AE8A0B /* DateTests.swift */,
+				A5DE78FD1CC11D90004F4456 /* UIViewControllerTests.swift */,
 				A5A7B3791BE3D678005D52D0 /* Classes Tests */,
 				A5A7B33E1BE3A2A1005D52D0 /* Info.plist */,
 			);
@@ -587,6 +590,7 @@
 				A58541191BE78C4F00AE8A0B /* DateTests.swift in Sources */,
 				A5A7B3781BE3D674005D52D0 /* ObserverTests.swift in Sources */,
 				A5A7B3761BE3D54F005D52D0 /* StringTests.swift in Sources */,
+				A5DE78FE1CC11D90004F4456 /* UIViewControllerTests.swift in Sources */,
 				A5A7B3721BE3B634005D52D0 /* CoreGraphicsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -38,6 +38,8 @@ public extension UIViewController {
     public func navigationRootViewController() -> UIViewController? {
         if let nav = self as? UINavigationController {
             return nav.viewControllers.first
+        } else if let split = self as? UISplitViewController {
+            return split.viewControllers.first?.navigationRootViewController()
         } else {
             return self
         }
@@ -52,6 +54,8 @@ public extension UIViewController {
     public func navigationTopViewController() -> UIViewController? {
         if let nav = self as? UINavigationController {
             return nav.viewControllers.last
+        } else if let split = self as? UISplitViewController {
+            return split.viewControllers.last?.navigationTopViewController()
         } else {
             return self
         }

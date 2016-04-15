@@ -49,11 +49,15 @@ class CoreGraphicsTests: XCTestCase {
         XCTAssertEqual(rect3N, rect.rectWithInsets(inset3, capsToZero: false))
     }
 
-    func testUIEdgeInsets() {
+    func testUIEdgeInsetsInsets() {
         
         let baseInsets = UIEdgeInsetsMake(5, 10, 15, 20)
         
         XCTAssertEqual(baseInsets.totalXInset, 30)
         XCTAssertEqual(baseInsets.totalYInset, 20)
+    }
+    
+    func testUIEdgeInsetsEqual() {
+        XCTAssertEqual(UIEdgeInsetsMakeEqual(15), UIEdgeInsetsMake(15, 15, 15, 15))
     }
 }
