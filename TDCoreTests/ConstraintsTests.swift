@@ -7,7 +7,8 @@
 //
 
 import XCTest
-import TDCore
+
+import TheDistanceCore
 
 class ConstraintsTests: XCTestCase {
 

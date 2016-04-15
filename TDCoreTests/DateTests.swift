@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import TDCore
+import TheDistanceCore
 
 class DateTests: XCTestCase {
 

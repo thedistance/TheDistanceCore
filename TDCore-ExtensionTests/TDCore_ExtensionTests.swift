@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import TDCore_Extension
+@testable import TheDistanceCoreExtension
 
 class TDCore_ExtensionTests: XCTestCase {
     

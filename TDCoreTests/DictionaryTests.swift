@@ -8,6 +8,8 @@
 
 import XCTest
 
+import TheDistanceCore
+
 class DictionaryTests: XCTestCase {
 
     override func setUp() {

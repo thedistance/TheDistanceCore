@@ -8,7 +8,7 @@
 
 import XCTest
 
-import TDCore
+import TheDistanceCore
 
 class CoreGraphicsTests: XCTestCase {
 
