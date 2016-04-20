@@ -64,7 +64,7 @@ Reducing boilerplate code is helps use to develop features faster and ensure the
 Functionality includes:
 
 - **Parallax Scroll**: Standard Protocol for implementing a 'parallax scroll' where one view moves based on a `UIScrollView`'s content offset.
-- **Pure Swift Key-Value-Observing**: `NSObject`s implement a method called `methodSignatureForSelector:` which converts from strings to methods. Pure Swift classes do not have this method so cannot inherently perform KVO or observe `NSNotificationCenter` posts. **`Observer`**, **ObjectObserver**, and **`NotificationObserver`** resolve this.
+- **Pure Swift Key-Value-Observing**: `NSObject`s implement a method called `methodSignatureForSelector:` which converts from strings to methods. Pure Swift classes do not have this method so cannot inherently perform KVO or observe `NSNotificationCenter` posts. `Observer`,  `ObjectObserver`, and `NotificationObserver` resolve this.
 - **NSLayoutConstraints**: The default `NSLayoutConstraint` initialisers are clear but can be cumbersome when creating standard constraints. `constraintsToSize(...)` and `constraintsToAlign(...)` neaten the programmatic constraint creation process. Other convenience initialisers are provided.
 - **Request Cache Control**: Not all APIs respond with 304 unmodified states when making requests with the `if-modified-since` header. It can be useful to impose a fixed time limit between the same network requests. The `RequestCache` protocol simplifies checking time intervals since successful requests.
 - **Extension Framework**: Framework version with API restricted to that suitable for an extension.

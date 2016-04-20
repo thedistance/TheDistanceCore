@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CLError Extension Reference</title>
+    <title>UIImage Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Extension/CLError" class="dashAnchor"></a>
-    <a title="CLError Extension Reference"></a>
+    <a name="//apple_ref/swift/Extension/UIImage" class="dashAnchor"></a>
+    <a title="UIImage Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">TheDistanceCore Docs</a> (98% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">TheDistanceCore Reference</a>
         <img id="carat" src="../img/carat.png" />
-        CLError Extension Reference
+        UIImage Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -156,9 +156,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>CLError</h1>
-            <p>Undocumented</p>
+            <h1>UIImage</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">UIImage</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSSecureCoding</span></code></pre>
 
+                </div>
+              </div>
+            
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -166,9 +171,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FE15TheDistanceCoreOSC7CLError21userFacingDescriptionFT_GSqSS_"></a>
-                    <a name="//apple_ref/swift/Method/userFacingDescription()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FE15TheDistanceCoreOSC7CLError21userFacingDescriptionFT_GSqSS_">userFacingDescription()</a>
+                    <a name="/s:FE15TheDistanceCoreCSo7UIImage23orientationNeutralImageFT_GSQS0__"></a>
+                    <a name="//apple_ref/swift/Method/orientationNeutralImage()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE15TheDistanceCoreCSo7UIImage23orientationNeutralImageFT_GSQS0__">orientationNeutralImage()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -176,43 +181,21 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Default implementation returns errors for all <code><a href="../Extensions/CLError.html">CLError</a></code> cases.</p>
+                        <p>A new <code><a href="../Extensions/UIImage.html">UIImage</a></code> created from applying a transform to the image in a CGContext. The rotation of the image is no longer stored in image meta data which is useful for uploading images to servers which don&rsquo;t interpret the meta data.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userFacingDescription</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">orientationNeutralImage</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FE15TheDistanceCoreOSC7CLError28userFacingRecoverySuggestionFT_GSqSS_"></a>
-                    <a name="//apple_ref/swift/Method/userFacingRecoverySuggestion()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FE15TheDistanceCoreOSC7CLError28userFacingRecoverySuggestionFT_GSqSS_">userFacingRecoverySuggestion()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Default implementation returns errors for all <code><a href="../Extensions/CLError.html">CLError</a></code> cases.</p>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The rotated image.</p>
 
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">userFacingRecoverySuggestion</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
                       </div>
                     </section>
                   </div>
