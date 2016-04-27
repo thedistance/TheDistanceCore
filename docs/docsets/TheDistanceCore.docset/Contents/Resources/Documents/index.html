@@ -13,7 +13,7 @@
     <a title="TheDistanceCore  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">TheDistanceCore Docs</a> (98% documented)</p>
+        <p><a href="index.html">TheDistanceCore Docs</a> (99% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -146,6 +146,9 @@
                 <a href="Protocols/ParallaxScrollable.html">ParallaxScrollable</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/StoryboardLoader.html">StoryboardLoader</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/UserFacing.html">UserFacing</a>
               </li>
             </ul>
@@ -162,63 +165,25 @@
 <img src="https://img.shields.io/badge/license-MIT-lightgrey.svg" alt="MIT license"></p>
 
 <p>Develop faster with convenience functions from The Distance.</p>
-<a href='#requirements' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='requirements'>Requirements</h3>
+<a href='#requirements' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='requirements'>Requirements</h2>
 
 <ul>
 <li>iOS 8.0+</li>
 <li>Xcode 7.3</li>
 <li>Swift 2.2</li>
 </ul>
-<a href='#communication' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='communication'>Communication</h3>
+<a href='#features' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='features'>Features</h2>
 
-<ul>
-<li>If you have <strong>found a bug</strong>, open an issue.</li>
-<li>If you have <strong>a feature request</strong>, open an issue.</li>
-<li>If you <strong>want to contribute</strong>, submit a pull request.</li>
-<li>If you&rsquo;d like to <strong>ask a general question</strong>, email <a href="mailto:dev+thedistancecore@thedistance.co.uk">dev+thedistancecore@thedistance.co.uk</a>.</li>
-</ul>
-<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='installation'>Installation</h3>
-<a href='#carthage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='carthage'>Carthage</h5>
+<p>Reducing boilerplate code helps us to develop features faster and ensure they remain bug free, with platform updates and so we don&rsquo;t forget tricky edge cases. </p>
 
-<p><a href="https://github.com/Carthage/Carthage">Carthage</a> is the preferred dependency manager as it reduces build times during app development. TheDistanceCore has been built for Carthage.</p>
-<a href='#cocoapods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='cocoapods'>CocoaPods</h5>
-
-<p>CocoaPods is a dependency manager for Cocoa projects. You can install it with the following command:</p>
-<pre class="highlight plaintext"><code>$ gem install cocoapods
-</code></pre>
-
-<p>CocoaPods 0.39.0+ is required to build TheDistanceCore as it is a Swift CocoaTouch Framework.</p>
-
-<p>To integrate TheDistanceCore into your Xcode project using CocoaPods, specify it in your Podfile:</p>
-<pre class="highlight plaintext"><code>platform :ios, '8.0'
-use_frameworks!
-
-pod 'TheDistanceCore'
-</code></pre>
-
-<p>Then, run the following command:</p>
-<pre class="highlight plaintext"><code>$ pod install
-</code></pre>
-<a href='#internal_development' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h6 id='internal_development'>Internal Development</h6>
-
-<p>This code is used in multiple live iOS projects. New features will be added during development and will go live only after discussions here. If you have access to our internal repos (i.e. you work here&hellip;) add the master repo to your project&rsquo;s Podfile</p>
-<pre class="highlight plaintext"><code># Master Pods Repo
-source 'https://github.com/CocoaPods/Specs.git'
-
-# Private Pods Repo
-source 'git@bitbucket.org:thedistance/thedistancekit-cocoapods.git'
-</code></pre>
-<a href='#features' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='features'>Features</h3>
-
-<p>Reducing boilerplate code is helps use to develop features faster and ensure they remain bug free, with platform updates and so we don&rsquo;t forget tricky edge cases. </p>
-
-<p><strong>TheDistanceCore</strong> contains simple extensions and reusable classes that are in multiple projects. The purpose of this project is to contain small pieces of functionality that are very general. More specific code, or code that has dependencies on other frameworks, should not be included here.</p>
+<p><strong>TheDistanceCore</strong> contains simple extensions and reusable classes that are references in multiple projects. The purpose of this project is to contain small pieces of functionality that are very general. More specific code, or code that has dependencies on other frameworks, should not be included here.</p>
 
 <p>Functionality includes:</p>
 
 <ul>
 <li><strong>Parallax Scroll</strong>: Standard Protocol for implementing a &lsquo;parallax scroll&rsquo; where one view moves based on a <code>UIScrollView</code>&rsquo;s content offset.</li>
-<li><strong>Pure Swift Key-Value-Observing</strong>: <code>NSObject</code>s implement a method called <code>methodSignatureForSelector:</code> which converts from strings to methods. Pure Swift classes do not have this method so cannot inherently perform KVO or observe <code>NSNotificationCenter</code> posts. <strong><code>Observer</code></strong>, <strong>ObjectObserver</strong>, and <strong><code>NotificationObserver</code></strong> resolve this.</li>
+<li><strong>Storyboard Loader</strong>: Storyboards can easily become bloated and slow to load. Typically storyboards can be separated into related parts but managing which View Controller is where can be messy if done throughout the app. The <code>StoryboardLoader</code> protocol simplifies this by allowing you to define enums for your Storyboards and ViewControllers and instantiate them using <code>StoryboardLoader.instantiateViewControllerWithIdentifier(_:)</code>.</li>
+<li><strong>Pure Swift Key-Value-Observing</strong>: <code>NSObject</code>s implement a method called <code>methodSignatureForSelector:</code> which converts from strings to methods. Pure Swift classes do not have this method so cannot inherently perform KVO or observe <code>NSNotificationCenter</code> posts. <code>Observer</code>,  <code>ObjectObserver</code>, and <code>NotificationObserver</code> resolve this.</li>
 <li><strong>NSLayoutConstraints</strong>: The default <code>NSLayoutConstraint</code> initialisers are clear but can be cumbersome when creating standard constraints. <code>constraintsToSize(...)</code> and <code>constraintsToAlign(...)</code> neaten the programmatic constraint creation process. Other convenience initialisers are provided.</li>
 <li><strong>Request Cache Control</strong>: Not all APIs respond with 304 unmodified states when making requests with the <code>if-modified-since</code> header. It can be useful to impose a fixed time limit between the same network requests. The <code>RequestCache</code> protocol simplifies checking time intervals since successful requests.</li>
 <li><strong>Extension Framework</strong>: Framework version with API restricted to that suitable for an extension.</li>
@@ -235,14 +200,30 @@ source 'git@bitbucket.org:thedistance/thedistancekit-cocoapods.git'
 <li>Standard device dependent rotations (iPhone +s and iPads rotate <code>.AllButUpsideDown</code>, iPhones locked to portrait)</li>
 <li><code>CGRect</code>, <code>UIEdgeInsets</code> common calculations.</li>
 </ul>
-<a href='#coding_conventions' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='coding_conventions'>Coding Conventions</h3>
+<a href='#communication' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='communication'>Communication</h2>
 
-<p>All code should be written in the latest version of Swift and be fully documented using correct mark up syntax. Where possible, unit tests should be written to confirm validity of the functionality. If this is not possible, demo apps should be created demonstrating the functionality allowing bugs to be isolated easily.</p>
+<ul>
+<li>If you have <strong>found a bug</strong>, open an issue.</li>
+<li>If you have <strong>a feature request</strong>, open an issue.</li>
+<li>If you <strong>want to contribute</strong>, submit a pull request.</li>
+<li>If you&rsquo;d like to <strong>ask a general question</strong>, email <a href="mailto:dev+thedistancecore@thedistance.co.uk">dev+thedistancecore@thedistance.co.uk</a>.</li>
+</ul>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+
+<p><a href="https://github.com/Carthage/Carthage">Carthage</a> is the preferred dependency manager as it reduces build times during app development. TheDistanceCore has been built for Carthage. Add </p>
+<pre class="highlight plaintext"><code>github "TheDistance/TheDistanceCore"
+</code></pre>
+
+<p>to your cartfile and run</p>
+<pre class="highlight plaintext"><code>carthage update TheDistanceCore
+</code></pre>
+
+<p>to build the framework. Add to it your project according to the Carthage instructions.</p>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="https://bitbucket.org/thedistance/thedistancecore" target="_blank" rel="external">Josh Campion @ The Distance</a>. All rights reserved. (Last updated: 2016-04-15)</p>
+          <p>&copy; 2016 <a class="link" href="https://bitbucket.org/thedistance/thedistancecore" target="_blank" rel="external">Josh Campion @ The Distance</a>. All rights reserved. (Last updated: 2016-04-27)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

@@ -12,6 +12,7 @@
 		A56078361CB40139007F7E65 /* TDCore_ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56078351CB40139007F7E65 /* TDCore_ExtensionTests.swift */; };
 		A58541151BE782E700AE8A0B /* ParallaxScrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */; };
 		A58541191BE78C4F00AE8A0B /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58541181BE78C4F00AE8A0B /* DateTests.swift */; };
+		A592A0691CD0F79200128D4D /* StoryboardLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A592A0681CD0F79200128D4D /* StoryboardLoader.swift */; };
 		A5A7B3311BE3A2A0005D52D0 /* TDCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A5A7B3301BE3A2A0005D52D0 /* TDCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5A7B3381BE3A2A1005D52D0 /* TheDistanceCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A7B32D1BE3A2A0005D52D0 /* TheDistanceCore.framework */; };
 		A5A7B3541BE3A2C4005D52D0 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3491BE3A2C4005D52D0 /* CGRect.swift */; };
@@ -90,6 +91,7 @@
 		A56078371CB40139007F7E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxScrollable.swift; sourceTree = "<group>"; };
 		A58541181BE78C4F00AE8A0B /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
+		A592A0681CD0F79200128D4D /* StoryboardLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardLoader.swift; sourceTree = "<group>"; };
 		A5A7B32D1BE3A2A0005D52D0 /* TheDistanceCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TheDistanceCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A7B3301BE3A2A0005D52D0 /* TDCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDCore.h; sourceTree = "<group>"; };
 		A5A7B3321BE3A2A0005D52D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				A5A7B35F1BE3A2CC005D52D0 /* Enums.swift */,
 				A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */,
 				A5C228D61CBE84FE00CD65EC /* ObjectTarget.swift */,
+				A592A0681CD0F79200128D4D /* StoryboardLoader.swift */,
 				A5A7B36A1BE3B461005D52D0 /* Observers */,
 			);
 			path = Classes;
@@ -563,6 +566,7 @@
 				A5A7B3541BE3A2C4005D52D0 /* CGRect.swift in Sources */,
 				A5A7B3701BE3B461005D52D0 /* Observer.swift in Sources */,
 				A5A7B35C1BE3A2C4005D52D0 /* UIDevice.swift in Sources */,
+				A592A0691CD0F79200128D4D /* StoryboardLoader.swift in Sources */,
 				A5A7B3591BE3A2C4005D52D0 /* NSLayoutConstraint.swift in Sources */,
 				A5A7B35E1BE3A2C4005D52D0 /* UIViewController.swift in Sources */,
 				A5A7B35A1BE3A2C4005D52D0 /* OptionSetType.swift in Sources */,

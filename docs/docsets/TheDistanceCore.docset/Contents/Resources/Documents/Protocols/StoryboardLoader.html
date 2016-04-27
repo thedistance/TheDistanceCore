@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>NotificationObserver Class Reference</title>
+    <title>StoryboardLoader Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/NotificationObserver" class="dashAnchor"></a>
-    <a title="NotificationObserver Class Reference"></a>
+    <a name="//apple_ref/swift/Protocol/StoryboardLoader" class="dashAnchor"></a>
+    <a title="StoryboardLoader Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">TheDistanceCore Docs</a> (99% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">TheDistanceCore Reference</a>
         <img id="carat" src="../img/carat.png" />
-        NotificationObserver Class Reference
+        StoryboardLoader Protocol Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -159,16 +159,37 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>NotificationObserver</h1>
+            <h1>StoryboardLoader</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">NotificationObserver</span><span class="p">:</span><span class="kt">NSObject</span><span class="p">,</span> <span class="kt">Observer</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">StoryboardLoader</span></code></pre>
 
                 </div>
               </div>
-            <p>Implementation of <code><a href="../Protocols/Observer.html">Observer</a></code> for observing an <code>NSNotificationCenter</code>. Observation begins on <code>init</code> and ends on <code>deinit()</code> unless called otherwise.</p>
+            <p>Protocol to be adopted by a class that gives easy loading of <code><a href="../Extensions/UIViewController.html">UIViewController</a></code>s from multiple <code>UIStoryboard</code>s.</p>
 
-<p>For efficiency the class is marked as final. If necessary, convenience initialisers can be created using extensions.</p>
+<p>Two enum types are specified that should be used to identify each <code><a href="../Extensions/UIViewController.html">UIViewController</a></code> and the Storyboard from which it can be loaded. The app specific adopter should then implement:</p>
+
+<ul>
+<li><code>storyboardIdentifierForViewControllerIdentifier(_:)</code></li>
+</ul>
+
+<p>typically using a <code>switch</code> statement, to ensure exhaustive coverage of all <code>UIViewControllers</code> declared at compile time. There is a defualt implementation for</p>
+
+<ul>
+<li><code>instantiateViewControllerForIdentifier(_:bundle:)</code>.</li>
+</ul>
+
+<p>that should not need to be overriden.</p>
+
+<p>There are defualt implementations for</p>
+
+<ul>
+<li><code>storyboardNameForIdentifier(_:)</code></li>
+<li><code>viewControllerNameForIdentifier(_:)</code></li>
+</ul>
+
+<p>where the enum types are backed by strings. These return the enum <code>rawValue</code>s in those implementations.</p>
 
           </section>
           <section class="section task-group-section">
@@ -177,24 +198,32 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC15TheDistanceCore20NotificationObserver4nameSS"></a>
-                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC15TheDistanceCore20NotificationObserver4nameSS">name</a>
+                    <a name="/s:ZFP15TheDistanceCore16StoryboardLoader27storyboardNameForIdentifierFwx24StoryboardIdentifierTypeSS"></a>
+                    <a name="//apple_ref/swift/Method/storyboardNameForIdentifier(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFP15TheDistanceCore16StoryboardLoader27storyboardNameForIdentifierFwx24StoryboardIdentifierTypeSS">storyboardNameForIdentifier(_:)</a>
                     </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The name being observed on the <code><a href="../Classes/NotificationObserver.html#/s:vC15TheDistanceCore20NotificationObserver6centerCSo20NSNotificationCenter">center</a></code>.</p>
+                        <p>Should return the filename for the given identifier to be used in <code>UIStoryboard(name:bundle:)</code>. Default implementation when <code>StoryboardIdentifierType.RawValue == String</code> returns <code>storyboardID.rawValue</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Returns the String rawValue of the identifier enum.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">name</span><span class="p">:</span><span class="kt">String</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">storyboardNameForIdentifier</span><span class="p">(</span><span class="nv">storyboardID</span><span class="p">:</span><span class="kt">StoryboardIdentifierType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -204,24 +233,32 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC15TheDistanceCore20NotificationObserver6centerCSo20NSNotificationCenter"></a>
-                    <a name="//apple_ref/swift/Property/center" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC15TheDistanceCore20NotificationObserver6centerCSo20NSNotificationCenter">center</a>
+                    <a name="/s:ZFP15TheDistanceCore16StoryboardLoader31viewControllerNameForIdentifierFwx28ViewControllerIdentifierTypeSS"></a>
+                    <a name="//apple_ref/swift/Method/viewControllerNameForIdentifier(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFP15TheDistanceCore16StoryboardLoader31viewControllerNameForIdentifierFwx28ViewControllerIdentifierTypeSS">viewControllerNameForIdentifier(_:)</a>
                     </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The <code>NSNotificationCenter</code> to listen for notifications on.</p>
+                        <p>Should return the <code><a href="../Extensions/UIViewController.html">UIViewController</a></code> storyboard identifier for the given identifier to be used in <code>UIStoryboard.instantiateViewControllerWithIdentifier(_:)</code>. Default implementation when <code>ViewControllerIdentifierType.RawValue == String</code> returns <code>viewControllerID.rawValue</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Returns the String rawValue of the identifier enum.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">center</span><span class="p">:</span><span class="kt">NSNotificationCenter</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">viewControllerNameForIdentifier</span><span class="p">(</span><span class="nv">viewControllerID</span><span class="p">:</span><span class="kt">ViewControllerIdentifierType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -231,9 +268,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC15TheDistanceCore20NotificationObserver6objectGSqPs9AnyObject__"></a>
-                    <a name="//apple_ref/swift/Property/object" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC15TheDistanceCore20NotificationObserver6objectGSqPs9AnyObject__">object</a>
+                    <a name="/s:ZFP15TheDistanceCore16StoryboardLoader47storyboardIdentifierForViewControllerIdentifierFwx28ViewControllerIdentifierTypewx24StoryboardIdentifierType"></a>
+                    <a name="//apple_ref/swift/Method/storyboardIdentifierForViewControllerIdentifier(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFP15TheDistanceCore16StoryboardLoader47storyboardIdentifierForViewControllerIdentifierFwx28ViewControllerIdentifierTypewx24StoryboardIdentifierType">storyboardIdentifierForViewControllerIdentifier(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -241,14 +278,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The object to restrict observed notifications to.</p>
+                        <p>Should return the <code>StoryboardIdentifierType</code> that identifies the storyboard containing the <code><a href="../Extensions/UIViewController.html">UIViewController</a></code> with the given identifier.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">object</span><span class="p">:</span><span class="kt">AnyObject</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">storyboardIdentifierForViewControllerIdentifier</span><span class="p">(</span><span class="nv">viewControllerID</span><span class="p">:</span><span class="kt">ViewControllerIdentifierType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">StoryboardIdentifierType</span></code></pre>
 
                         </div>
                       </div>
@@ -258,51 +295,32 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC15TheDistanceCore20NotificationObserver9observingSb"></a>
-                    <a name="//apple_ref/swift/Property/observing" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC15TheDistanceCore20NotificationObserver9observingSb">observing</a>
+                    <a name="/s:ZFP15TheDistanceCore16StoryboardLoader38instantiateViewControllerForIdentifierFTwx28ViewControllerIdentifierType6bundleGSqCSo8NSBundle__CSo16UIViewController"></a>
+                    <a name="//apple_ref/swift/Method/instantiateViewControllerForIdentifier(_:bundle:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFP15TheDistanceCore16StoryboardLoader38instantiateViewControllerForIdentifierFTwx28ViewControllerIdentifierType6bundleGSqCSo8NSBundle__CSo16UIViewController">instantiateViewControllerForIdentifier(_:bundle:)</a>
                     </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Flag for whether this <code><a href="../Protocols/Observer.html">Observer</a></code> is currently registered as an observer on <code><a href="../Classes/NotificationObserver.html#/s:vC15TheDistanceCore20NotificationObserver6centerCSo20NSNotificationCenter">center</a></code>.</p>
+                        <p>Should create a new view controller from its containing Storyboard. A default implementation is provided.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Default implementation provided to instantiate a <code>UIViewController</code> an enum, without needing knowledge of the <code>UIStoryboard</code> containing this <code>UIViewController</code> at the point of the loading code.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">observing</span><span class="p">:</span><span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FC15TheDistanceCore20NotificationObservercFT4nameSS6objectGSqPs9AnyObject__6centerCSo20NSNotificationCenter10completionFT4noteCSo14NSNotification_T__S0_"></a>
-                    <a name="//apple_ref/swift/Method/init(name:object:center:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15TheDistanceCore20NotificationObservercFT4nameSS6objectGSqPs9AnyObject__6centerCSo20NSNotificationCenter10completionFT4noteCSo14NSNotification_T__S0_">init(name:object:center:completion:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Default initialiser.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span><span class="kt">AnyObject</span><span class="p">?,</span> <span class="nv">center</span><span class="p">:</span><span class="kt">NSNotificationCenter</span> <span class="o">=</span> <span class="kt">NSNotificationCenter</span><span class="o">.</span><span class="nf">defaultCenter</span><span class="p">(),</span> <span class="nv">completion</span><span class="p">:(</span><span class="nv">note</span><span class="p">:</span><span class="kt">NSNotification</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">instantiateViewControllerForIdentifier</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span><span class="kt">ViewControllerIdentifierType</span><span class="p">,</span> <span class="nv">bundle</span><span class="p">:</span><span class="kt">NSBundle</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span></code></pre>
 
                         </div>
                       </div>
@@ -313,12 +331,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>name</em>
+                                <em>identifier</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The notification name to listen for.</p>
+                                  <p>Should uniquely identify a <code>UIStoryboard</code> to load.</p>
 
                                 </div>
                               </td>
@@ -326,38 +344,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>object</em>
+                                <em>bundle</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The object to restrict observed notifications from.</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>center</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The <code>NSNotificationCenter</code> to observe. The default value is <code>NSNotificationCenter.defaultCenter()</code>.</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>completion</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The block to perform when <code>name</code> by <code>object</code> is observed on <code>center</code>.</p>
+                                  <p>Optional bundle that contains the <code>UIStoryboard</code>. In the defualt implementation, this is optional and the default value is nil.</p>
 
                                 </div>
                               </td>
@@ -365,59 +357,10 @@
                           </tbody>
                         </table>
                       </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FC15TheDistanceCore20NotificationObserver14beginObservingFT_T_"></a>
-                    <a name="//apple_ref/swift/Method/beginObserving()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15TheDistanceCore20NotificationObserver14beginObservingFT_T_">beginObserving()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Registers <code>self</code> to observe <code><a href="../Classes/NotificationObserver.html#/s:vC15TheDistanceCore20NotificationObserver6centerCSo20NSNotificationCenter">center</a></code> for <code><a href="../Classes/NotificationObserver.html#/s:vC15TheDistanceCore20NotificationObserver4nameSS">name</a></code> restricted to <code><a href="../Classes/NotificationObserver.html#/s:vC15TheDistanceCore20NotificationObserver6objectGSqPs9AnyObject__">object</a></code>.</p>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A newly instantiated <code><a href="../Extensions/UIViewController.html">UIViewController</a></code>. This crashes if there is no <code><a href="../Extensions/UIViewController.html">UIViewController</a></code> with the given identifier in the <code>UIStoryboard</code> identified by <code><a href="../Protocols/StoryboardLoader.html#/s:ZFP15TheDistanceCore16StoryboardLoader47storyboardIdentifierForViewControllerIdentifierFwx28ViewControllerIdentifierTypewx24StoryboardIdentifierType">storyboardIdentifierForViewControllerIdentifier(_:)</a></code>.</p>
 
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">beginObserving</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FC15TheDistanceCore20NotificationObserver12endObservingFT_T_"></a>
-                    <a name="//apple_ref/swift/Method/endObserving()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15TheDistanceCore20NotificationObserver12endObservingFT_T_">endObserving()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Unregisters <code>self</code> to stop observing <code><a href="../Classes/NotificationObserver.html#/s:vC15TheDistanceCore20NotificationObserver6centerCSo20NSNotificationCenter">center</a></code> for <code><a href="../Classes/NotificationObserver.html#/s:vC15TheDistanceCore20NotificationObserver4nameSS">name</a></code> restricted to <code><a href="../Classes/NotificationObserver.html#/s:vC15TheDistanceCore20NotificationObserver6objectGSqPs9AnyObject__">object</a></code>.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">endObserving</span><span class="p">()</span></code></pre>
-
-                        </div>
                       </div>
                     </section>
                   </div>

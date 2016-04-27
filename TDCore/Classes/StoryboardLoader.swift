@@ -6,17 +6,17 @@
 //
 //
 
-import Foundation
+import UIKit
 
 /**
  
  Protocol to be adopted by a class that gives easy loading of `UIViewController`s from multiple `UIStoryboard`s.
 
- Two enum types are specified that should be used to identify each `UIViewController` and that can be loaded from each `UIStoryboard`. The app specific adopter should then implement:
+ Two enum types are specified that should be used to identify each `UIViewController` and the Storyboard from which it can be loaded. The app specific adopter should then implement:
  
  - `storyboardIdentifierForViewControllerIdentifier(_:)`
  
- typically using a `switch` statement, to ensure exhaustive coverage of all view controllers declared at compile time. There is a defualt implementation for
+ typically using a `switch` statement, to ensure exhaustive coverage of all `UIViewControllers` declared at compile time. There is a defualt implementation for
  
  - `instantiateViewControllerForIdentifier(_:bundle:)`.
  
@@ -33,10 +33,10 @@ import Foundation
 public protocol StoryboardLoader {
     
     /// The enum type used to identify multiplie `UIStoryboard`s.
-    typealias StoryboardIdentifierType: RawRepresentable
+    associatedtype StoryboardIdentifierType: RawRepresentable
     
     // The enum type used to identify `UIViewController`s in `UIStoryboard`s
-    typealias ViewControllerIdentifierType: RawRepresentable
+    associatedtype ViewControllerIdentifierType: RawRepresentable
     
     /// Should return the filename for the given identifier to be used in `UIStoryboard(name:bundle:)`. Default implementation when `StoryboardIdentifierType.RawValue == String` returns `storyboardID.rawValue`.
     static func storyboardNameForIdentifier(storyboardID:StoryboardIdentifierType) -> String
@@ -48,12 +48,12 @@ public protocol StoryboardLoader {
     static func storyboardIdentifierForViewControllerIdentifier(viewControllerID:ViewControllerIdentifierType) -> StoryboardIdentifierType
     
     /**
-
-      Default implementation provided to instantiates a `UIViewController` an enum, without needing knowledge of the `UIStoryboard` containing this `UIViewController` and point of writing the loading code. 
      
-     - parameter identifier: Shuold uniquely identify a `UIStoryboard` to load.
+     Should create a new view controller from its containing Storyboard. A default implementation is provided.
+     
+     - parameter identifier: Should uniquely identify a `UIStoryboard` to load.
      - parameter bundle: Optional bundle that contains the `UIStoryboard`. In the defualt implementation, this is optional and the default value is nil.
-     - returns: A newly instantiated `UIViewController`. This crashes is there is no `UIViewController` with the given identifier in the `UIStoryboard` identified by `storyboardIdentifierForViewControllerIdentifier`.
+     - returns: A newly instantiated `UIViewController`. This crashes if there is no `UIViewController` with the given identifier in the `UIStoryboard` identified by `storyboardIdentifierForViewControllerIdentifier(_:)`.
 
     */
     static func instantiateViewControllerForIdentifier(identifier:ViewControllerIdentifierType, bundle:NSBundle?) -> UIViewController
@@ -61,6 +61,7 @@ public protocol StoryboardLoader {
 
 public extension StoryboardLoader {
     
+    /// Default implementation provided to instantiate a `UIViewController` an enum, without needing knowledge of the `UIStoryboard` containing this `UIViewController` at the point of the loading code.
     static public func instantiateViewControllerForIdentifier(viewControllerID:ViewControllerIdentifierType, bundle:NSBundle? = nil) -> UIViewController {
         
         let storyboardID = storyboardIdentifierForViewControllerIdentifier(viewControllerID)
@@ -74,6 +75,7 @@ public extension StoryboardLoader {
 
 public extension StoryboardLoader where Self.StoryboardIdentifierType.RawValue == String {
     
+    /// Returns the String rawValue of the identifier enum.
     static public func storyboardNameForIdentifier(storyboardID:StoryboardIdentifierType) -> String {
         return storyboardID.rawValue
     }
@@ -82,6 +84,7 @@ public extension StoryboardLoader where Self.StoryboardIdentifierType.RawValue =
 
 public extension StoryboardLoader where Self.ViewControllerIdentifierType.RawValue == String {
     
+    /// Returns the String rawValue of the identifier enum.
     static public func viewControllerNameForIdentifier(viewControllerID:ViewControllerIdentifierType) -> String {
         return viewControllerID.rawValue
     }
