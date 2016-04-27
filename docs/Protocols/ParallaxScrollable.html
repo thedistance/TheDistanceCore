@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ParallaxScrollable Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/ParallaxScrollable" class="dashAnchor"></a>
+    <a title="ParallaxScrollable Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TheDistanceCore Docs</a> (99% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TheDistanceCore Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ParallaxScrollable Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/NotificationObserver.html">NotificationObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ObjectObserver.html">ObjectObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ObjectTarget.html">ObjectTarget</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/UIPopoverSourceType.html">UIPopoverSourceType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/CGRect.html">CGRect</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CLError.html">CLError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Dictionary.html">Dictionary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSDate.html">NSDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSDateComponents.html">NSDateComponents</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSError.html">NSError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSLayoutConstraint.html">NSLayoutConstraint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSURL.html">NSURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSURLError.html">NSURLError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/OptionSetType.html">OptionSetType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIDevice.html">UIDevice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIEdgeInsets.html">UIEdgeInsets</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImage.html">UIImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi2neFTGSaCSo18NSLayoutConstraint_GSaS0___Sb">!=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi2neFTCSo18NSLayoutConstraintS0__Sb">!=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions/+(_:_:).html">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi1lFTCSo6NSDateS0__Sb">&lt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi2leFTCSo6NSDateS0__Sb">&lt;=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi2eeFTGSaCSo18NSLayoutConstraint_GSaS0___Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi2eeFTCSo6NSDateS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi2eeFTCSo18NSLayoutConstraintS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi1gFTCSo6NSDateS0__Sb">&gt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi2geFTCSo6NSDateS0__Sb">&gt;=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F15TheDistanceCore21UIEdgeInsetsMakeEqualFV12CoreGraphics7CGFloatVSC12UIEdgeInsets">UIEdgeInsetsMakeEqual(_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Observer.html">Observer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ParallaxScrollable.html">ParallaxScrollable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StoryboardLoader.html">StoryboardLoader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UserFacing.html">UserFacing</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ParallaxScrollable</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ParallaxScrollable</span><span class="p">:</span> <span class="kt">UIScrollViewDelegate</span></code></pre>
+
+                </div>
+              </div>
+            <p>Protocol extending <code>UIScrollViewDelegate</code> to adjust the scrolling of a given view to mimic a parallax motion between the two views.</p>
+
+<p>Default implementations are given for <code>parallaxScrollViewDidScroll(_:)</code> on all adopters, and for <code>configureParallaxScrollInset(_:)</code> for <code><a href="../Extensions/UIViewController.html">UIViewController</a></code>s.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP15TheDistanceCore18ParallaxScrollable18parallaxHeaderViewGSQCSo6UIView_"></a>
+                    <a name="//apple_ref/swift/Property/parallaxHeaderView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP15TheDistanceCore18ParallaxScrollable18parallaxHeaderViewGSQCSo6UIView_">parallaxHeaderView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The reference view that the <code>UIScrollView</code> will scroll over, whose position is adjusted on scrolling the <code>UIScrollView</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">parallaxHeaderView</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span>  <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP15TheDistanceCore18ParallaxScrollable18parallaxScrollViewGSQCSo12UIScrollView_"></a>
+                    <a name="//apple_ref/swift/Property/parallaxScrollView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP15TheDistanceCore18ParallaxScrollable18parallaxScrollViewGSQCSo12UIScrollView_">parallaxScrollView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The <code>UIScrollView</code> whose offset drives the parallax motion of the <code>headerView</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">parallaxScrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="o">!</span>  <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP15TheDistanceCore18ParallaxScrollable18parallaxHeaderMaskCSo12CAShapeLayer"></a>
+                    <a name="//apple_ref/swift/Property/parallaxHeaderMask" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP15TheDistanceCore18ParallaxScrollable18parallaxHeaderMaskCSo12CAShapeLayer">parallaxHeaderMask</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The mask applied to the <code><a href="../Protocols/ParallaxScrollable.html#/s:vP15TheDistanceCore18ParallaxScrollable18parallaxHeaderViewGSQCSo6UIView_">parallaxHeaderView</a></code> that provides clipping of <code><a href="../Protocols/ParallaxScrollable.html#/s:vP15TheDistanceCore18ParallaxScrollable18parallaxHeaderViewGSQCSo6UIView_">parallaxHeaderView</a></code> if the content of a <code><a href="../Protocols/ParallaxScrollable.html#/s:vP15TheDistanceCore18ParallaxScrollable18parallaxScrollViewGSQCSo12UIScrollView_">parallaxScrollView</a></code> is short enough for the <code><a href="../Protocols/ParallaxScrollable.html#/s:vP15TheDistanceCore18ParallaxScrollable18parallaxHeaderViewGSQCSo6UIView_">parallaxHeaderView</a></code> to be visible underneath the scrollable content.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">parallaxHeaderMask</span><span class="p">:</span> <span class="kt">CAShapeLayer</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP15TheDistanceCore18ParallaxScrollable31parallaxHeaderViewTopConstraintGSQCSo18NSLayoutConstraint_"></a>
+                    <a name="//apple_ref/swift/Property/parallaxHeaderViewTopConstraint" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP15TheDistanceCore18ParallaxScrollable31parallaxHeaderViewTopConstraintGSQCSo18NSLayoutConstraint_">parallaxHeaderViewTopConstraint</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The parallax motion of the <code>headerView</code> is implemented by setting the <code>constant</code> property of this constraint.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">parallaxHeaderViewTopConstraint</span> <span class="p">:</span> <span class="kt">NSLayoutConstraint</span><span class="o">!</span>  <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP15TheDistanceCore18ParallaxScrollable28configureParallaxScrollInsetFV12CoreGraphics7CGFloatT_"></a>
+                    <a name="//apple_ref/swift/Method/configureParallaxScrollInset(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP15TheDistanceCore18ParallaxScrollable28configureParallaxScrollInsetFV12CoreGraphics7CGFloatT_">configureParallaxScrollInset(_:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Should set the <code>contentInset</code> of the <code><a href="../Protocols/ParallaxScrollable.html#/s:vP15TheDistanceCore18ParallaxScrollable18parallaxScrollViewGSQCSo12UIScrollView_">parallaxScrollView</a></code> to allow the <code>headerView</code> to be seen above the content of <code><a href="../Protocols/ParallaxScrollable.html#/s:vP15TheDistanceCore18ParallaxScrollable18parallaxScrollViewGSQCSo12UIScrollView_">parallaxScrollView</a></code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Default implementation of <code>configureParallaxScrollInset(_:)</code> for <code>UIViewController</code>s.</p>
+
+<p>Sets the content inset of <code>parallaxScrollView</code> to allow the <code>headerView</code> to be fully visible above the content of the <code>parallaxScrollView</code>. The bottom inset of the <code>parallaxScrollView</code> is adjusted to allow the content to be visible above the <code>bottomLayoutGuide</code>. This will typically by called from <code>viewDidLayoutSubviews()</code>, to reset the <code>contentInset</code> as the size of other content changes.</p>
+
+<p><code>headerOverlap()</code> and <code>bottomOverlap()</code> are used to calculate the necessary values.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">configureParallaxScrollInset</span><span class="p">(</span><span class="nv">minimumHeight</span><span class="p">:</span><span class="kt">CGFloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP15TheDistanceCore18ParallaxScrollable27parallaxScrollViewDidScrollFTCSo12UIScrollView10scrollRateV12CoreGraphics7CGFloat13bouncesHeaderSb13maskingHeaderSb_T_"></a>
+                    <a name="//apple_ref/swift/Method/parallaxScrollViewDidScroll(_:scrollRate:bouncesHeader:maskingHeader:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP15TheDistanceCore18ParallaxScrollable27parallaxScrollViewDidScrollFTCSo12UIScrollView10scrollRateV12CoreGraphics7CGFloat13bouncesHeaderSb13maskingHeaderSb_T_">parallaxScrollViewDidScroll(_:scrollRate:bouncesHeader:maskingHeader:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Should update <code>headerViewTopConstraint.constant</code> to mimic a parallax motion. With the given parameter. A default implementation is given.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Default implementation for parallax scrolling a header view. Typically this will be called from <code>scrollViewDidScroll:</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">parallaxScrollViewDidScroll</span><span class="p">(</span><span class="nv">scrollView</span><span class="p">:</span><span class="kt">UIScrollView</span><span class="p">,</span> <span class="nv">scrollRate</span><span class="p">:</span><span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">bouncesHeader</span><span class="p">:</span><span class="kt">Bool</span><span class="p">,</span> <span class="nv">maskingHeader</span><span class="p">:</span><span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Fe15TheDistanceCoreRxCSo16UIViewControllerxS_18ParallaxScrollablerS1_21parallaxHeaderOverlapFT_VSC6CGRect"></a>
+                    <a name="//apple_ref/swift/Method/parallaxHeaderOverlap()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Fe15TheDistanceCoreRxCSo16UIViewControllerxS_18ParallaxScrollablerS1_21parallaxHeaderOverlapFT_VSC6CGRect">parallaxHeaderOverlap()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">parallaxHeaderOverlap</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CGRect</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The intersection of <code>headerView</code> and <code><a href="../Protocols/ParallaxScrollable.html#/s:vP15TheDistanceCore18ParallaxScrollable18parallaxScrollViewGSQCSo12UIScrollView_">parallaxScrollView</a></code> in the frame of <code>parallaxScrollView.superview</code>.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Fe15TheDistanceCoreRxCSo16UIViewControllerxS_18ParallaxScrollablerS1_21parallaxBottomOverlapFT_VSC6CGRect"></a>
+                    <a name="//apple_ref/swift/Method/parallaxBottomOverlap()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Fe15TheDistanceCoreRxCSo16UIViewControllerxS_18ParallaxScrollablerS1_21parallaxBottomOverlapFT_VSC6CGRect">parallaxBottomOverlap()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">parallaxBottomOverlap</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CGRect</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The intersection of <code>the bottomLayoutGuide</code> and <code><a href="../Protocols/ParallaxScrollable.html#/s:vP15TheDistanceCore18ParallaxScrollable18parallaxScrollViewGSQCSo12UIScrollView_">parallaxScrollView</a></code> in the frame of <code>parallaxScrollView.superview</code>.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FE15TheDistanceCorePS_18ParallaxScrollable24updateParallaxHeaderMaskFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/updateParallaxHeaderMask()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE15TheDistanceCorePS_18ParallaxScrollable24updateParallaxHeaderMaskFT_T_">updateParallaxHeaderMask()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates <code><a href="../Protocols/ParallaxScrollable.html#/s:vP15TheDistanceCore18ParallaxScrollable18parallaxHeaderMaskCSo12CAShapeLayer">parallaxHeaderMask</a></code> to clip the <code><a href="../Protocols/ParallaxScrollable.html#/s:vP15TheDistanceCore18ParallaxScrollable18parallaxHeaderViewGSQCSo6UIView_">parallaxHeaderView</a></code>, preventing it being seen beneath short content.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateParallaxHeaderMask</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://bitbucket.org/thedistance/thedistancecore" target="_blank" rel="external">Josh Campion @ The Distance</a>. All rights reserved. (Last updated: 2016-04-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

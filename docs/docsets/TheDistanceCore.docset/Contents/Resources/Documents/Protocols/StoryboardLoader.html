@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>StoryboardLoader Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/StoryboardLoader" class="dashAnchor"></a>
+    <a title="StoryboardLoader Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TheDistanceCore Docs</a> (99% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TheDistanceCore Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        StoryboardLoader Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/NotificationObserver.html">NotificationObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ObjectObserver.html">ObjectObserver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ObjectTarget.html">ObjectTarget</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/UIPopoverSourceType.html">UIPopoverSourceType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/CGRect.html">CGRect</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CLError.html">CLError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Dictionary.html">Dictionary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSDate.html">NSDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSDateComponents.html">NSDateComponents</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSError.html">NSError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSLayoutConstraint.html">NSLayoutConstraint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSURL.html">NSURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSURLError.html">NSURLError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/OptionSetType.html">OptionSetType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIDevice.html">UIDevice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIEdgeInsets.html">UIEdgeInsets</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImage.html">UIImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi2neFTGSaCSo18NSLayoutConstraint_GSaS0___Sb">!=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi2neFTCSo18NSLayoutConstraintS0__Sb">!=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions/+(_:_:).html">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi1lFTCSo6NSDateS0__Sb">&lt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi2leFTCSo6NSDateS0__Sb">&lt;=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi2eeFTGSaCSo18NSLayoutConstraint_GSaS0___Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi2eeFTCSo6NSDateS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi2eeFTCSo18NSLayoutConstraintS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi1gFTCSo6NSDateS0__Sb">&gt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF15TheDistanceCoreoi2geFTCSo6NSDateS0__Sb">&gt;=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F15TheDistanceCore21UIEdgeInsetsMakeEqualFV12CoreGraphics7CGFloatVSC12UIEdgeInsets">UIEdgeInsetsMakeEqual(_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Observer.html">Observer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ParallaxScrollable.html">ParallaxScrollable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StoryboardLoader.html">StoryboardLoader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UserFacing.html">UserFacing</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>StoryboardLoader</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">StoryboardLoader</span></code></pre>
+
+                </div>
+              </div>
+            <p>Protocol to be adopted by a class that gives easy loading of <code><a href="../Extensions/UIViewController.html">UIViewController</a></code>s from multiple <code>UIStoryboard</code>s.</p>
+
+<p>Two enum types are specified that should be used to identify each <code><a href="../Extensions/UIViewController.html">UIViewController</a></code> and the Storyboard from which it can be loaded. The app specific adopter should then implement:</p>
+
+<ul>
+<li><code>storyboardIdentifierForViewControllerIdentifier(_:)</code></li>
+</ul>
+
+<p>typically using a <code>switch</code> statement, to ensure exhaustive coverage of all <code>UIViewControllers</code> declared at compile time. There is a defualt implementation for</p>
+
+<ul>
+<li><code>instantiateViewControllerForIdentifier(_:bundle:)</code>.</li>
+</ul>
+
+<p>that should not need to be overriden.</p>
+
+<p>There are defualt implementations for</p>
+
+<ul>
+<li><code>storyboardNameForIdentifier(_:)</code></li>
+<li><code>viewControllerNameForIdentifier(_:)</code></li>
+</ul>
+
+<p>where the enum types are backed by strings. These return the enum <code>rawValue</code>s in those implementations.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFP15TheDistanceCore16StoryboardLoader27storyboardNameForIdentifierFwx24StoryboardIdentifierTypeSS"></a>
+                    <a name="//apple_ref/swift/Method/storyboardNameForIdentifier(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFP15TheDistanceCore16StoryboardLoader27storyboardNameForIdentifierFwx24StoryboardIdentifierTypeSS">storyboardNameForIdentifier(_:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Should return the filename for the given identifier to be used in <code>UIStoryboard(name:bundle:)</code>. Default implementation when <code>StoryboardIdentifierType.RawValue == String</code> returns <code>storyboardID.rawValue</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Returns the String rawValue of the identifier enum.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">storyboardNameForIdentifier</span><span class="p">(</span><span class="nv">storyboardID</span><span class="p">:</span><span class="kt">StoryboardIdentifierType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFP15TheDistanceCore16StoryboardLoader31viewControllerNameForIdentifierFwx28ViewControllerIdentifierTypeSS"></a>
+                    <a name="//apple_ref/swift/Method/viewControllerNameForIdentifier(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFP15TheDistanceCore16StoryboardLoader31viewControllerNameForIdentifierFwx28ViewControllerIdentifierTypeSS">viewControllerNameForIdentifier(_:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Should return the <code><a href="../Extensions/UIViewController.html">UIViewController</a></code> storyboard identifier for the given identifier to be used in <code>UIStoryboard.instantiateViewControllerWithIdentifier(_:)</code>. Default implementation when <code>ViewControllerIdentifierType.RawValue == String</code> returns <code>viewControllerID.rawValue</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Returns the String rawValue of the identifier enum.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">viewControllerNameForIdentifier</span><span class="p">(</span><span class="nv">viewControllerID</span><span class="p">:</span><span class="kt">ViewControllerIdentifierType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFP15TheDistanceCore16StoryboardLoader47storyboardIdentifierForViewControllerIdentifierFwx28ViewControllerIdentifierTypewx24StoryboardIdentifierType"></a>
+                    <a name="//apple_ref/swift/Method/storyboardIdentifierForViewControllerIdentifier(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFP15TheDistanceCore16StoryboardLoader47storyboardIdentifierForViewControllerIdentifierFwx28ViewControllerIdentifierTypewx24StoryboardIdentifierType">storyboardIdentifierForViewControllerIdentifier(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Should return the <code>StoryboardIdentifierType</code> that identifies the storyboard containing the <code><a href="../Extensions/UIViewController.html">UIViewController</a></code> with the given identifier.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">storyboardIdentifierForViewControllerIdentifier</span><span class="p">(</span><span class="nv">viewControllerID</span><span class="p">:</span><span class="kt">ViewControllerIdentifierType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">StoryboardIdentifierType</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFP15TheDistanceCore16StoryboardLoader38instantiateViewControllerForIdentifierFTwx28ViewControllerIdentifierType6bundleGSqCSo8NSBundle__CSo16UIViewController"></a>
+                    <a name="//apple_ref/swift/Method/instantiateViewControllerForIdentifier(_:bundle:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFP15TheDistanceCore16StoryboardLoader38instantiateViewControllerForIdentifierFTwx28ViewControllerIdentifierType6bundleGSqCSo8NSBundle__CSo16UIViewController">instantiateViewControllerForIdentifier(_:bundle:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Should create a new view controller from its containing Storyboard. A default implementation is provided.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Default implementation provided to instantiate a <code>UIViewController</code> an enum, without needing knowledge of the <code>UIStoryboard</code> containing this <code>UIViewController</code> at the point of the loading code.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">instantiateViewControllerForIdentifier</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span><span class="kt">ViewControllerIdentifierType</span><span class="p">,</span> <span class="nv">bundle</span><span class="p">:</span><span class="kt">NSBundle</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>identifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Should uniquely identify a <code>UIStoryboard</code> to load.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bundle</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional bundle that contains the <code>UIStoryboard</code>. In the defualt implementation, this is optional and the default value is nil.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A newly instantiated <code><a href="../Extensions/UIViewController.html">UIViewController</a></code>. This crashes if there is no <code><a href="../Extensions/UIViewController.html">UIViewController</a></code> with the given identifier in the <code>UIStoryboard</code> identified by <code><a href="../Protocols/StoryboardLoader.html#/s:ZFP15TheDistanceCore16StoryboardLoader47storyboardIdentifierForViewControllerIdentifierFwx28ViewControllerIdentifierTypewx24StoryboardIdentifierType">storyboardIdentifierForViewControllerIdentifier(_:)</a></code>.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://bitbucket.org/thedistance/thedistancecore" target="_blank" rel="external">Josh Campion @ The Distance</a>. All rights reserved. (Last updated: 2016-04-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
