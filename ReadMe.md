@@ -11,6 +11,18 @@ Develop faster with convenience functions from The Distance.
 - Xcode 7.3
 - Swift 2.2
 
+## Installation
+
+[Carthage](https://github.com/Carthage/Carthage) is the preferred dependency manager as it reduces build times during app development. TheDistanceCore has been built for Carthage. Add 
+	
+	github "TheDistance/TheDistanceCore"
+	
+to your cartfile and run
+	
+	carthage update TheDistanceCore
+	
+to build the framework. Add to it your project according to the Carthage instructions.
+
 ## Features
 
 Reducing boilerplate code helps us to develop features faster and ensure they remain bug free with platform updates and so we don't forget tricky edge cases. 
@@ -45,16 +57,3 @@ Other features include:
 - If you have **a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
 - If you'd like to **ask a general question**, email us on <hello+thedistancecore@thedistance.co.uk>.
-
-## Installation
-
-[Carthage](https://github.com/Carthage/Carthage) is the preferred dependency manager as it reduces build times during app development. TheDistanceCore has been built for Carthage. Add 
-	
-	github "TheDistance/TheDistanceCore"
-	
-to your cartfile and run
-	
-	carthage update TheDistanceCore
-	
-to build the framework. Add to it your project according to the Carthage instructions.
-
