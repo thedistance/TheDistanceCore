@@ -1,2 +1,0 @@
-Dictionary.swift
-	public func +<Key,Value>(d1:Dictionary<Key,Value>, d2:Dictionary<Key,Value>) -> Dictionary<Key,Value>
