@@ -280,7 +280,6 @@
 				A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */,
 				A5C228D61CBE84FE00CD65EC /* ObjectTarget.swift */,
 				A592A0681CD0F79200128D4D /* StoryboardLoader.swift */,
-				A5A7B36A1BE3B461005D52D0 /* Observers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -289,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				A5A7B3491BE3A2C4005D52D0 /* CGRect.swift */,
+				A5A7B36A1BE3B461005D52D0 /* Observers */,
 				A5A7B34A1BE3A2C4005D52D0 /* Dictionary.swift */,
 				A5A7B34B1BE3A2C4005D52D0 /* NSDate.swift */,
 				A5A7B34C1BE3A2C4005D52D0 /* NSDateComponents.swift */,
@@ -312,7 +312,8 @@
 				A5A7B36C1BE3B461005D52D0 /* ObjectObserver.swift */,
 				A5A7B36D1BE3B461005D52D0 /* Observer.swift */,
 			);
-			path = Observers;
+			name = Observers;
+			path = ../Classes/Observers;
 			sourceTree = "<group>";
 		};
 		A5A7B3791BE3D678005D52D0 /* Classes Tests */ = {
