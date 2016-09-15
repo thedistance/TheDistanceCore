@@ -16,13 +16,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'App' do |app|
     
-    app.source_files = 'TDCore/Classes/**/*.swift', 'TDCore/Extensions/**/*.swift', 'TDCore/Protocols/**/*.swift'
-    app.exclude_files = 'TDCore/Extensions/UIViewController-Extension.swift'
+    app.source_files = 'TDCore/Classes/**/*.swift', 'TDCore/Extensions/**/*.swift', 'TDCore/Protocols/**/*.swift', 'TheDistanceCore-App/*.swift'
   end
 
   s.subspec 'Extension' do |ext|
     
-    ext.source_files = 'TDCore/Classes/**/*.swift', 'TDCore/Extensions/**/*.swift', 'TDCore/Protocols/**/*.swift'
-    ext.exclude_files = 'TDCore/Extensions/UIViewController-App.swift'
+    ext.source_files = 'TDCore/Classes/**/*.swift', 'TDCore/Extensions/**/*.swift', 'TDCore/Protocols/**/*.swift', 'TDCore-Extension/*.swift'
   end
 end

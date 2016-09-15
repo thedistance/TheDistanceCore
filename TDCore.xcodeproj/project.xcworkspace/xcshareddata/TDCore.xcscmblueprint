@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0A416A89222000977E3236F80C477D618054091C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0A416A89222000977E3236F80C477D618054091C" : 0,
+    "235615AA714AC62F05F7C15044171474B96815B3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E9B06E91-0B32-4B0E-AC0A-54A992C10AB1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0A416A89222000977E3236F80C477D618054091C" : "TheDistanceCore\/",
+    "235615AA714AC62F05F7C15044171474B96815B3" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TDCore",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TDCore.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:thedistance\/thedistancecore.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0A416A89222000977E3236F80C477D618054091C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:thedistance\/camden-market-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "235615AA714AC62F05F7C15044171474B96815B3"
+    }
+  ]
+}
