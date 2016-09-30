@@ -62,12 +62,12 @@ public extension UIImage {
         
         let cgImg = self.CGImage
         let ctx = CGBitmapContextCreate(nil, Int(scaledSize.width), Int(scaledSize.height),
-                                        CGImageGetBitsPerComponent(cgImg), 0,
-                                        CGImageGetColorSpace(cgImg),
-                                        CGImageGetBitmapInfo(cgImg).rawValue)
+                                        CGImageGetBitsPerComponent(cgImg!), 0,
+                                        CGImageGetColorSpace(cgImg!)!,
+                                        CGImageGetBitmapInfo(cgImg!).rawValue)
         
-        CGContextDrawImage(ctx, CGRectMake(0,0,scaledSize.width, scaledSize.height), cgImg)
-        let newImage = UIImage(CGImage:CGBitmapContextCreateImage(ctx)!)
+        CGContextDrawImage(ctx!, CGRectMake(0,0,scaledSize.width, scaledSize.height), cgImg!)
+        let newImage = UIImage(CGImage:CGBitmapContextCreateImage(ctx!)!)
         
         return newImage
     }
@@ -123,22 +123,22 @@ public extension UIImage {
         // Now we draw the underlying CGImage into a new context, applying the transform
         // calculated above.
         let ctx = CGBitmapContextCreate(nil, Int(self.size.width), Int(self.size.height),
-            CGImageGetBitsPerComponent(self.CGImage), 0,
-            CGImageGetColorSpace(self.CGImage),
-            CGImageGetBitmapInfo(self.CGImage).rawValue)
+            CGImageGetBitsPerComponent(self.CGImage!), 0,
+            CGImageGetColorSpace(self.CGImage!)!,
+            CGImageGetBitmapInfo(self.CGImage!).rawValue)
         
-        CGContextConcatCTM(ctx, transform)
+        CGContextConcatCTM(ctx!, transform)
         
         switch (self.imageOrientation) {
         case .Left, .LeftMirrored, .Right, .RightMirrored:
             // Grr...
-            CGContextDrawImage(ctx, CGRectMake(0,0,self.size.height,self.size.width), self.CGImage)
+            CGContextDrawImage(ctx!, CGRectMake(0,0,self.size.height,self.size.width), self.CGImage!)
         default:
-            CGContextDrawImage(ctx, CGRectMake(0,0,self.size.width,self.size.height), self.CGImage)
+            CGContextDrawImage(ctx!, CGRectMake(0,0,self.size.width,self.size.height), self.CGImage!)
         }
         
         // And now we just create a new UIImage from the drawing context
-        let cgimg = CGBitmapContextCreateImage(ctx)
+        let cgimg = CGBitmapContextCreateImage(ctx!)
         let img = UIImage(CGImage:cgimg!)
         
         return img
