@@ -73,17 +73,17 @@ public extension UIViewController {
      
      -seealso: `openInSafari(_:)`
      */
-    public func presentViewController(vc:UIViewController, fromSourceItem item: UIPopoverSourceType, inViewController:UIViewController? = nil, animated:Bool = true, completion: (() -> ())? = nil) {
+    public func presentViewController(_ vc:UIViewController, fromSourceItem item: UIPopoverSourceType, inViewController:UIViewController? = nil, animated:Bool = true, completion: (() -> ())? = nil) {
         
         switch item {
-        case .View(let view):
+        case .view(let view):
             vc.popoverPresentationController?.sourceView = view
             vc.popoverPresentationController?.sourceRect = view.bounds
-        case .BarButton(let item):
+        case .barButton(let item):
             vc.popoverPresentationController?.barButtonItem = item
         }
         
-        (inViewController ?? self).presentViewController(vc, animated: animated, completion: completion)
+        (inViewController ?? self).present(vc, animated: animated, completion: completion)
     }
 }
 

@@ -9,13 +9,13 @@
 import UIKit
 
 /// A class for handling `UIControl.addTarget(_:action:forControlEvents:)` in a pure swift class.
-public class ObjectTarget<T:UIControl>:NSObject {
+open class ObjectTarget<T:UIControl>:NSObject {
     
     /// The control which will trigger the completion on the given control events.
-    public let control:UIControl
+    open let control:UIControl
     
     /// The completion box that will run for the given control events.
-    public let completion:(sender:T) -> ()
+    open let completion:(_ sender:T) -> ()
     
     /**
      
@@ -26,20 +26,20 @@ public class ObjectTarget<T:UIControl>:NSObject {
      - parameter completion: The code that will run when `control` sends `forControlEvents`.
      
     */
-    public init(control:T, forControlEvents:UIControlEvents, completion:(sender:T) -> ()) {
+    public init(control:T, forControlEvents:UIControlEvents, completion:@escaping (_ sender:T) -> ()) {
         self.control = control
         self.completion = completion
         
         super.init()
         
-        control.addTarget(self, action: #selector(ObjectTarget.targetted(_:)), forControlEvents: forControlEvents)
+        control.addTarget(self, action: #selector(ObjectTarget.targetted(_:)), for: forControlEvents)
     }
     
     /// The function that is called from `UIControl.addTarget(_:action:forControlEvents:)`.
-    public func targetted(sender:AnyObject?) {
+    open func targetted(_ sender:AnyObject?) {
         
         if let typedSender = sender as? T {
-            completion(sender: typedSender)
+            completion(typedSender)
         }
     }
 }

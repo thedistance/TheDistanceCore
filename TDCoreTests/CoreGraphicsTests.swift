@@ -24,15 +24,15 @@ class CoreGraphicsTests: XCTestCase {
 
     func testRectInset() {
         
-        let rect = CGRectMake(50, 75, 50, 100)
+        let rect = CGRect(x: 50, y: 75, width: 50, height: 100)
         
-        let rect1 = CGRectMake(57, 87, 2, 65)
+        let rect1 = CGRect(x: 57, y: 87, width: 2, height: 65)
         
-        let rect2 = CGRectMake(43, 63, 98, 0)
-        let rect2N = CGRectMake(43, 63, 98, -11)
+        let rect2 = CGRect(x: 43, y: 63, width: 98, height: 0)
+        let rect2N = CGRect(x: 43, y: 63, width: 98, height: -11)
 
-        let rect3 = CGRectMake(43, 63, 0, 0)
-        let rect3N = CGRectMake(43, 63, -3, -11)
+        let rect3 = CGRect(x: 43, y: 63, width: 0, height: 0)
+        let rect3N = CGRect(x: 43, y: 63, width: -3, height: -11)
         
         // test basic inset
         let inset1 = UIEdgeInsetsMake(12, 7, 23, 41)

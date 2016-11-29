@@ -17,14 +17,14 @@ public extension NSError {
         switch domain {
         case NSURLErrorDomain:
             
-            if let urlError = NSURLError(rawValue: code) {
-                return userFacingErrorWithUsingFacing(urlError)
+            if let urlError = URLError.Code(rawValue: code) {
+                return userFacingErrorWithUsingFacing(uf: urlError as UserFacing)
             }
             
         case kCLErrorDomain:
             
-            if let clError = CLError(rawValue: code) {
-                return userFacingErrorWithUsingFacing(clError)
+            if let clError = CLError.Code(rawValue: code) {
+                return userFacingErrorWithUsingFacing(uf: clError)
             }
             
         default:
@@ -38,7 +38,7 @@ public extension NSError {
     /// - returns: A configured `NSError` object with updated `NSLocalizedDescription` and `NSLocalizedRecoverySuggestionErrorKey` if the values of `UserFacing` returned is not `nil`.
     public func userFacingErrorWithUsingFacing(uf:UserFacing) -> NSError {
         
-        var newInfo = userInfo ?? [NSObject:AnyObject]()
+        var newInfo = userInfo 
         newInfo[NSLocalizedDescriptionKey] = uf.userFacingDescription() ?? localizedDescription
         newInfo[NSLocalizedRecoverySuggestionErrorKey] = uf.userFacingRecoverySuggestion() ?? userInfo[NSLocalizedRecoverySuggestionErrorKey]
         
@@ -68,7 +68,7 @@ public protocol UserFacing {
 }
 
 /// Public implementation of `UserFacing` for url errors.
-extension NSURLError: UserFacing {
+extension URLError.Code: UserFacing {
     
     /**
      
@@ -82,13 +82,13 @@ extension NSURLError: UserFacing {
     */
     public func userFacingDescription() -> String? {
         switch self {
-        case .NotConnectedToInternet:
+        case .notConnectedToInternet:
             return "Your device is not connected to the internet."
-        case .TimedOut:
+        case .timedOut:
             return "The request timed out."
-        case .CannotFindHost:
+        case .cannotFindHost:
             return "Unable to find server."
-        case .CannotConnectToHost:
+        case .cannotConnectToHost:
             return "Unable to connect to server."
         default:
             return nil
@@ -108,9 +108,9 @@ extension NSURLError: UserFacing {
     public func userFacingRecoverySuggestion() -> String? {
         
         switch self {
-        case .NotConnectedToInternet:
+        case .notConnectedToInternet:
             return "Please connect to the internet and try again."
-        case .TimedOut, .CannotFindHost, .CannotConnectToHost:
+        case .timedOut, .cannotFindHost, .cannotConnectToHost:
             return "Please check your internet connection and try again."
         default:
             return nil
@@ -120,46 +120,46 @@ extension NSURLError: UserFacing {
 }
 
 /// Public implementation of `UserFacing` for location errors.
-extension CLError: UserFacing {
+extension CLError.Code: UserFacing {
     
     /// Default implementation returns errors for all `CLError` cases.
     public func userFacingDescription() -> String? {
         switch self {
-        case .LocationUnknown:
+        case .locationUnknown:
             return "Device location unknown."
-        case .Denied:
+        case .denied:
             return "Location usage permission denied."
-        case .Network:
+        case .network:
             return "Unable to connect to network."
-            case .HeadingFailure:
+            case .headingFailure:
             return "Device heading unknown."
-            case .RegionMonitoringDenied:
+            case .regionMonitoringDenied:
             return "Region monitoring usage permission denied."
-            case .RegionMonitoringFailure:
+            case .regionMonitoringFailure:
                 return "Unable to monitor region."
-            case .RegionMonitoringSetupDelayed:
+            case .regionMonitoringSetupDelayed:
                 return "Could not monitor region immediately."
-            case .RegionMonitoringResponseDelayed:
+            case .regionMonitoringResponseDelayed:
             return "Unable to monitor region."
-            case .GeocodeFoundNoResult:
+            case .geocodeFoundNoResult:
             return "No results found."
-            case .GeocodeFoundPartialResult:
+            case .geocodeFoundPartialResult:
             return "Only partial results found."
-            case .GeocodeCanceled:
+            case .geocodeCanceled:
             return "Geocoding cancelled."
-            case .DeferredFailed:
+            case .deferredFailed:
             return "Location fetch failed."
-            case .DeferredNotUpdatingLocation:
+            case .deferredNotUpdatingLocation:
             return "Location fetch failed."
-            case .DeferredAccuracyTooLow:
+            case .deferredAccuracyTooLow:
             return "Location fetch failed."
-            case .DeferredDistanceFiltered:
+            case .deferredDistanceFiltered:
             return "Location fetch failed."
-            case .DeferredCanceled:
+            case .deferredCanceled:
             return "Location fetch cancelled."
-            case .RangingUnavailable:
+            case .rangingUnavailable:
             return "Ranging is disabled."
-            case .RangingFailure:
+            case .rangingFailure:
             return "Ranging failed."
         }
     }
@@ -167,41 +167,41 @@ extension CLError: UserFacing {
     /// Default implementation returns errors for all `CLError` cases.
     public func userFacingRecoverySuggestion() -> String? {
         switch self {
-        case .LocationUnknown:
+        case .locationUnknown:
             return "Please try again shortly."
-        case .Denied:
+        case .denied:
             return "Please enable location usage in your device's Settings."
-        case .Network:
+        case .network:
             return "Please check your network connection and try again."
-        case .HeadingFailure:
+        case .headingFailure:
             return "Please try again shortly."
-        case .RegionMonitoringDenied:
+        case .regionMonitoringDenied:
             return "Please enable location usage and region monitoring in your device's Settings."
-        case .RegionMonitoringFailure:
+        case .regionMonitoringFailure:
             return "Please contact support if the problem persists."
-        case .RegionMonitoringSetupDelayed:
+        case .regionMonitoringSetupDelayed:
             return "Please try again shortly."
-        case .RegionMonitoringResponseDelayed:
+        case .regionMonitoringResponseDelayed:
             return "Please try again shortly."
-        case .GeocodeFoundNoResult:
+        case .geocodeFoundNoResult:
             return "Please search for a different term."
-        case .GeocodeFoundPartialResult:
+        case .geocodeFoundPartialResult:
             return "Please search for a different term."
-        case .GeocodeCanceled:
+        case .geocodeCanceled:
             return nil
-        case .DeferredFailed:
+        case .deferredFailed:
             return "Please try again shortly."
-        case .DeferredNotUpdatingLocation:
+        case .deferredNotUpdatingLocation:
             return "Please contact support if the problem persists."
-        case .DeferredAccuracyTooLow:
+        case .deferredAccuracyTooLow:
             return "Please contact support if the problem persists."
-        case .DeferredDistanceFiltered:
+        case .deferredDistanceFiltered:
             return "Please contact support if the problem persists."
-        case .DeferredCanceled:
+        case .deferredCanceled:
             return nil
-        case .RangingUnavailable:
+        case .rangingUnavailable:
             return "Please check your network connection, enable location usage and try again."
-        case .RangingFailure:
+        case .rangingFailure:
             return "Please try again shortly."
         }
     }

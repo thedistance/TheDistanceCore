@@ -40,7 +40,7 @@ public func ==(c1:[NSLayoutConstraint], c2:[NSLayoutConstraint]) -> Bool {
     
     guard c1.count == c2.count else { return false }
     
-    for (n, c) in c1.enumerate() {
+    for (n, c) in c1.enumerated() {
         let other = c2[n]
         
         if other != c {
@@ -71,13 +71,13 @@ public extension NSLayoutConstraint {
      - returns: An array of `NSLayoutConstraint`s ordered width, height.
      
      */
-    public static func constraintToSizeView(view:UIView, toRatio ratio:CGFloat) -> NSLayoutConstraint {
+    public static func constraintToSizeView(_ view:UIView, toRatio ratio:CGFloat) -> NSLayoutConstraint {
         
         return NSLayoutConstraint(item: view,
-            attribute: .Height,
-            relatedBy: .Equal,
+            attribute: .height,
+            relatedBy: .equal,
             toItem: view,
-            attribute: .Width,
+            attribute: .width,
             multiplier: ratio,
             constant: 0.0)
 
@@ -94,16 +94,16 @@ public extension NSLayoutConstraint {
      - returns: An array of `NSLayoutConstraint`s ordered width, height.
      
     */
-    public static func constraintsToSize(view:UIView, toWidth width:CGFloat?, andHeight height:CGFloat?) -> [NSLayoutConstraint] {
+    public static func constraintsToSize(_ view:UIView, toWidth width:CGFloat?, andHeight height:CGFloat?) -> [NSLayoutConstraint] {
         
         var constraints = [NSLayoutConstraint]()
         
         if let w = width {
             let constr = NSLayoutConstraint(item: view,
-                attribute: .Width,
-                relatedBy: .Equal,
+                attribute: .width,
+                relatedBy: .equal,
                 toItem: nil,
-                attribute: .NotAnAttribute,
+                attribute: .notAnAttribute,
                 multiplier: 0.0,
                 constant: w)
             constraints.append(constr)
@@ -111,10 +111,10 @@ public extension NSLayoutConstraint {
         
         if let h = height {
             let constr = NSLayoutConstraint(item: view,
-                attribute: .Height,
-                relatedBy: .Equal,
+                attribute: .height,
+                relatedBy: .equal,
                 toItem: nil,
-                attribute: .NotAnAttribute,
+                attribute: .notAnAttribute,
                 multiplier: 0.0,
                 constant: h)
             constraints.append(constr)
@@ -135,42 +135,42 @@ public extension NSLayoutConstraint {
      - returns: An array of `NSLayoutConstraint`s, ordered: top, left, bottom, right.
      
     */
-    public static func constraintsToAlign(view view1:UIView, to view2:UIView, withInsets insets:UIEdgeInsets = UIEdgeInsetsZero, relativeToMargin:(top:Bool, left:Bool, bottom:Bool, right:Bool) = (false, false, false, false)) -> [NSLayoutConstraint] {
+    public static func constraintsToAlign(view view1:UIView, to view2:UIView, withInsets insets:UIEdgeInsets = UIEdgeInsets.zero, relativeToMargin:(top:Bool, left:Bool, bottom:Bool, right:Bool) = (false, false, false, false)) -> [NSLayoutConstraint] {
         
         var constraints = [NSLayoutConstraint]()
         
-        let topAttribute:NSLayoutAttribute = relativeToMargin.top ? .TopMargin : .Top
-        let leadingAttribute:NSLayoutAttribute = relativeToMargin.left ? .LeadingMargin : .Leading
-        let bottomAttribute:NSLayoutAttribute = relativeToMargin.bottom ? .BottomMargin : .Bottom
-        let trailingAttribute:NSLayoutAttribute = relativeToMargin.right ? .TrailingMargin : .Trailing
+        let topAttribute:NSLayoutAttribute = relativeToMargin.top ? .topMargin : .top
+        let leadingAttribute:NSLayoutAttribute = relativeToMargin.left ? .leadingMargin : .leading
+        let bottomAttribute:NSLayoutAttribute = relativeToMargin.bottom ? .bottomMargin : .bottom
+        let trailingAttribute:NSLayoutAttribute = relativeToMargin.right ? .trailingMargin : .trailing
         
         constraints.append(NSLayoutConstraint(item:view1,
-            attribute:.Top,
-            relatedBy:.Equal,
+            attribute:.top,
+            relatedBy:.equal,
             toItem:view2,
             attribute:topAttribute,
             multiplier:1.0,
             constant:insets.top))
         
         constraints.append(NSLayoutConstraint(item:view1,
-            attribute:.Leading,
-            relatedBy:.Equal,
+            attribute:.leading,
+            relatedBy:.equal,
             toItem:view2,
             attribute:leadingAttribute,
             multiplier:1.0,
             constant:insets.left))
         
         constraints.append(NSLayoutConstraint(item:view1,
-            attribute:.Bottom,
-            relatedBy:.Equal,
+            attribute:.bottom,
+            relatedBy:.equal,
             toItem:view2,
             attribute:bottomAttribute,
             multiplier:1.0,
             constant:-insets.bottom))
         
         constraints.append(NSLayoutConstraint(item:view1,
-            attribute:.Trailing,
-            relatedBy:.Equal,
+            attribute:.trailing,
+            relatedBy:.equal,
             toItem:view2,
             attribute:trailingAttribute,
             multiplier:1.0,

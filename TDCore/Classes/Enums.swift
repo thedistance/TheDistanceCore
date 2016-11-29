@@ -18,7 +18,7 @@ import UIKit
  */
 public enum UIPopoverSourceType {
     /// Specifies to popover from the associated `UIBarButtonItem`.
-    case BarButton(UIBarButtonItem)
+    case barButton(UIBarButtonItem)
     /// Specifies to popover from the associated `UIView`.
-    case View(UIView)
+    case view(UIView)
 }

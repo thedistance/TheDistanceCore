@@ -21,7 +21,7 @@ public final class ObjectObserver:NSObject, Observer {
     public let keypath:String
     
     /// The block to run when the oberservation occurs.
-    private let completion:(keypath:String, object:NSObject, change:[String:AnyObject]?) -> ()
+    fileprivate let completion:(_ keypath:String, _ object:NSObject, _ change:[NSKeyValueChangeKey : Any]?) -> ()
     
     /// The object to to observe `keypath` on.
     public let object:NSObject
@@ -30,10 +30,10 @@ public final class ObjectObserver:NSObject, Observer {
     public let options:NSKeyValueObservingOptions
     
     /// The context to observe in.
-    public let context:UnsafeMutablePointer<Void>
+    public let context:UnsafeMutableRawPointer
     
     /// Flag for whether this `Observer` is currently registered as an observer on `center`.
-    public private(set) var observing:Bool = false
+    public fileprivate(set) var observing:Bool = false
     
     /**
      
@@ -46,27 +46,36 @@ public final class ObjectObserver:NSObject, Observer {
      - parameter completion: The block to perform when `keypath` is set on `object`.
      
      */
-    public init(keypath:String, object:NSObject, options: NSKeyValueObservingOptions = [.Old, .New], context:UnsafeMutablePointer<Void> = nil, completion:(keypath:String, object:NSObject, change:[String:AnyObject]?) -> ()) {
+    public init(keypath:String, object:NSObject, options: NSKeyValueObservingOptions = [.old, .new], context:UnsafeMutableRawPointer? = nil, completion:@escaping (_ keypath:String, _ object:NSObject, _ change:[NSKeyValueChangeKey : Any]?) -> ()) {
         
         
         self.keypath = keypath
         self.object = object
         self.completion = completion
         self.options = options
-        self.context = context
+        self.context = context!
         
         super.init()
         
         beginObserving()
     }
     
+//    
+//    public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+//        
+//        if let key = keyPath,
+//            let obj = object as? NSObject
+//            where obj == self.object && key == self.keypath {
+//            completion(keypath: self.keypath, object: self.object, change: change)
+//        }
+//    }
+    
     /// Overrides default to call `completion` if `object` and `keypath` match the parameters.
-    public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
         if let key = keyPath,
-        let obj = object as? NSObject
-            where obj == self.object && key == self.keypath {
-            completion(keypath: self.keypath, object: self.object, change: change)
+        let obj = object as? NSObject, obj == self.object && key == self.keypath {
+            completion(self.keypath, self.object, change)
         }
     }
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension NSURL {
+public extension URL {
     
     /**
 
@@ -18,11 +18,11 @@ public extension NSURL {
      
      - returns: An `NSURL` suitable for opening an `NSURL` in Google Chrome if the scheme of `self` is `http` or `https`. `nil` otherwise.
     */
-    public func googleChromeURL() -> NSURL? {
+    public func googleChromeURL() -> URL? {
         
         guard scheme == "http" || scheme == "https" else { return nil }
         
-        let urlComps = NSURLComponents(URL: self, resolvingAgainstBaseURL: false)
+        var urlComps = URLComponents(url: self, resolvingAgainstBaseURL: false)
         
         if scheme == "http" {
             urlComps?.scheme = "googlechrome"
@@ -32,7 +32,7 @@ public extension NSURL {
             urlComps?.scheme = "googlechromes"
         }
         
-        return urlComps?.URL
+        return urlComps?.url
     }
     
 }

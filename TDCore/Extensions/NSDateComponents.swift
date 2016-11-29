@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension NSDateComponents {
+public extension DateComponents {
     
     /**
 
@@ -17,33 +17,22 @@ public extension NSDateComponents {
      - parameter components: The components to copy to the new object.
      - parameter fromComponents: The object to copy the `units` from.
      
-    */
-    public convenience init(units: NSCalendarUnit, fromComponents:NSDateComponents) {
+
+    public init(units: Calendar.Unit, fromComponents: DateComponents) {
         
         self.init()
         
         for comp in units.elements() {
-            
-            if comp == .TimeZone {
-                timeZone = fromComponents.timeZone
-            } else if comp == .Calendar {
-                calendar = fromComponents.calendar
-            } else {
-                setValue(fromComponents.valueForComponent(comp), forComponent: comp)
-            }
-            
-            /*
-            // doesn't compile...
             switch comp {
-            case .TimeZone:
+            case .timeZone:
                 timeZone = fromComponents.timeZone
-                case .Calendar:
+            case .calendar:
                 calendar = fromComponents.calendar
             default:
                 setValue(fromComponents.valueForComponent(comp), forComponent: comp)
             }
-            */
         }
     }
+    */
     
 }

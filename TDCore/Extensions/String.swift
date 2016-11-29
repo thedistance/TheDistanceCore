@@ -17,6 +17,6 @@ public extension String {
     
     /// Convenience method to create a new string from `self`, trimmed from whitespace and newline characters.
     public func whitespaceTrimmedString() -> String {
-        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
 }

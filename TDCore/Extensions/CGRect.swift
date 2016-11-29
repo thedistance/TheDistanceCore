@@ -18,7 +18,7 @@ public extension CGRect {
      - parameter capsToZero: Whether or not the width and height of the new rect should be non-negative. The default value is `true`.
 
      */
-    public func rectWithInsets(insets:UIEdgeInsets, capsToZero:Bool = true) -> CGRect {
+    public func rectWithInsets(_ insets:UIEdgeInsets, capsToZero:Bool = true) -> CGRect {
         
         var newRect = self
         newRect.origin.x += insets.left
@@ -36,6 +36,6 @@ public extension CGRect {
     
     /// The center of this rect as defined by `CGRectGetMidX(_:)` and `CGRectGetMidY(_:)`
     public var center:CGPoint {
-        return CGPointMake(CGRectGetMidX(self), CGRectGetMidY(self))
+        return CGPoint(x: self.midX, y: self.midY)
     }
 }

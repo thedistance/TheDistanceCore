@@ -30,10 +30,10 @@ public protocol ParallaxScrollable: UIScrollViewDelegate {
     var parallaxHeaderViewTopConstraint : NSLayoutConstraint!  { get set }
     
     /// Should set the `contentInset` of the `parallaxScrollView` to allow the `headerView` to be seen above the content of `parallaxScrollView`.
-    func configureParallaxScrollInset(minimumHeight:CGFloat)
+    func configureParallaxScrollInset(_ minimumHeight:CGFloat)
     
     /// Should update `headerViewTopConstraint.constant` to mimic a parallax motion. With the given parameter. A default implementation is given.
-    func parallaxScrollViewDidScroll(scrollView:UIScrollView, scrollRate:CGFloat, bouncesHeader:Bool, maskingHeader:Bool)
+    func parallaxScrollViewDidScroll(_ scrollView:UIScrollView, scrollRate:CGFloat, bouncesHeader:Bool, maskingHeader:Bool)
 }
 
 
@@ -42,14 +42,14 @@ public extension ParallaxScrollable where Self:UIViewController {
     /// - returns: The intersection of `the bottomLayoutGuide` and `parallaxScrollView` in the frame of `parallaxScrollView.superview`.
     public func parallaxBottomOverlap() -> CGRect {
         
-        guard let superview = parallaxScrollView.superview else { return CGRectZero }
+        guard let superview = parallaxScrollView.superview else { return CGRect.zero }
         
-        let bottomInView = CGRectMake(0, view.frame.size.height - bottomLayoutGuide.length, view.frame.size.width, bottomLayoutGuide.length)
-        let bottomInSuper = superview.convertRect(bottomInView, fromView: view)
+        let bottomInView = CGRect(x: 0, y: view.frame.size.height - bottomLayoutGuide.length, width: view.frame.size.width, height: bottomLayoutGuide.length)
+        let bottomInSuper = superview.convert(bottomInView, from: view)
         
-        let intersection = CGRectIntersection(parallaxScrollView.frame, bottomInSuper)
+        let intersection = parallaxScrollView.frame.intersection(bottomInSuper)
         
-        return CGRectIntegral(intersection)
+        return intersection.integral
     }
     
     /**
@@ -62,7 +62,7 @@ public extension ParallaxScrollable where Self:UIViewController {
 
      - parameter miniumHeight: The maximum of this and the value necessary for `headerView` to be fully visible above the content of the `parallaxScrollView` is the value assigned to `contentInset.top` on the `parallaxScrollView`.
     */
-    public func configureParallaxScrollInset(minimumHeight:CGFloat = 0) {
+    public func configureParallaxScrollInset(_ minimumHeight:CGFloat = 0) {
         
         let intersect = parallaxHeaderView.frame // parallaxHeaderOverlap()
         let topInset = max(intersect.size.height, minimumHeight)
@@ -90,12 +90,12 @@ public extension ParallaxScrollable {
     /// - returns: The intersection of `headerView` and `parallaxScrollView` in the frame of `parallaxScrollView.superview`.
     public func parallaxHeaderOverlap() -> CGRect {
         
-        guard let superview = parallaxScrollView.superview else { return CGRectZero }
+        guard let superview = parallaxScrollView.superview else { return CGRect.zero }
         
-        let headerInSuper = superview.convertRect(parallaxHeaderView.frame, fromView: parallaxHeaderView.superview)
-        let intersection = CGRectIntersection(parallaxScrollView.frame, headerInSuper)
+        let headerInSuper = superview.convert(parallaxHeaderView.frame, from: parallaxHeaderView.superview)
+        let intersection = parallaxScrollView.frame.intersection(headerInSuper)
         
-        return CGRectIntegral(intersection)
+        return intersection.integral
     }
     
     /**
@@ -107,7 +107,7 @@ public extension ParallaxScrollable {
      - parameter bouncesHeader: Flag to determine whether `headerView` should 'bounce' when `parallaxScrollView` bounces. This is achieved by setting negative values for `headerViewTopConstraint.constant`. The default value is `false`.
      - parameter maskingHeader: Flag to determine whether `headerView` should be masked by `parallaxScrollView`'s `contentOffset`. The default value is `true`.
     */
-    public func parallaxScrollViewDidScroll(scrollView:UIScrollView, scrollRate:CGFloat = 0.5, bouncesHeader:Bool = false, maskingHeader:Bool = true) {
+    public func parallaxScrollViewDidScroll(_ scrollView:UIScrollView, scrollRate:CGFloat = 0.5, bouncesHeader:Bool = false, maskingHeader:Bool = true) {
         
         if scrollView == parallaxScrollView {
             
@@ -129,12 +129,12 @@ public extension ParallaxScrollable {
         // mask the header view by the scroll view
         let absOffset = -parallaxHeaderViewTopConstraint.constant
         let headerSize = parallaxHeaderView.frame.size
-        let visibleRect = CGRectMake(0, absOffset, headerSize.width, headerSize.height - 2.0 * absOffset)
+        let visibleRect = CGRect(x: 0, y: absOffset, width: headerSize.width, height: headerSize.height - 2.0 * absOffset)
         
         parallaxHeaderMask.frame = parallaxHeaderView.bounds
-        parallaxHeaderMask.path = UIBezierPath(rect: visibleRect).CGPath
+        parallaxHeaderMask.path = UIBezierPath(rect: visibleRect).cgPath
         
-        parallaxHeaderMask.fillColor = UIColor.blackColor().CGColor
+        parallaxHeaderMask.fillColor = UIColor.black.cgColor
         if parallaxHeaderView.layer.mask == nil {
             parallaxHeaderView.layer.mask = parallaxHeaderMask
         }

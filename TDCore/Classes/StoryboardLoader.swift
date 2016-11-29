@@ -39,13 +39,13 @@ public protocol StoryboardLoader {
     associatedtype ViewControllerIdentifierType: RawRepresentable
     
     /// Should return the filename for the given identifier to be used in `UIStoryboard(name:bundle:)`. Default implementation when `StoryboardIdentifierType.RawValue == String` returns `storyboardID.rawValue`.
-    static func storyboardNameForIdentifier(storyboardID:StoryboardIdentifierType) -> String
+    static func storyboardNameForIdentifier(_ storyboardID:StoryboardIdentifierType) -> String
 
     /// Should return the `UIViewController` storyboard identifier for the given identifier to be used in `UIStoryboard.instantiateViewControllerWithIdentifier(_:)`. Default implementation when `ViewControllerIdentifierType.RawValue == String` returns `viewControllerID.rawValue`.
-    static func viewControllerNameForIdentifier(viewControllerID:ViewControllerIdentifierType) -> String
+    static func viewControllerNameForIdentifier(_ viewControllerID:ViewControllerIdentifierType) -> String
     
     /// Should return the `StoryboardIdentifierType` that identifies the storyboard containing the `UIViewController` with the given identifier.
-    static func storyboardIdentifierForViewControllerIdentifier(viewControllerID:ViewControllerIdentifierType) -> StoryboardIdentifierType
+    static func storyboardIdentifierForViewControllerIdentifier(_ viewControllerID:ViewControllerIdentifierType) -> StoryboardIdentifierType
     
     /**
      
@@ -56,19 +56,19 @@ public protocol StoryboardLoader {
      - returns: A newly instantiated `UIViewController`. This crashes if there is no `UIViewController` with the given identifier in the `UIStoryboard` identified by `storyboardIdentifierForViewControllerIdentifier(_:)`.
 
     */
-    static func instantiateViewControllerForIdentifier(identifier:ViewControllerIdentifierType, bundle:NSBundle?) -> UIViewController
+    static func instantiateViewControllerForIdentifier(_ identifier:ViewControllerIdentifierType, bundle:Bundle?) -> UIViewController
 }
 
 public extension StoryboardLoader {
     
     /// Default implementation provided to instantiate a `UIViewController` an enum, without needing knowledge of the `UIStoryboard` containing this `UIViewController` at the point of the loading code.
-    static public func instantiateViewControllerForIdentifier(viewControllerID:ViewControllerIdentifierType, bundle:NSBundle? = nil) -> UIViewController {
+    static public func instantiateViewControllerForIdentifier(_ viewControllerID:ViewControllerIdentifierType, bundle:Bundle? = nil) -> UIViewController {
         
         let storyboardID = storyboardIdentifierForViewControllerIdentifier(viewControllerID)
         let storyboardName = storyboardNameForIdentifier(storyboardID)
         let viewControllerName = viewControllerNameForIdentifier(viewControllerID)
         
-        return UIStoryboard(name: storyboardName, bundle: bundle).instantiateViewControllerWithIdentifier(viewControllerName)
+        return UIStoryboard(name: storyboardName, bundle: bundle).instantiateViewController(withIdentifier: viewControllerName)
     }
     
 }
@@ -76,7 +76,7 @@ public extension StoryboardLoader {
 public extension StoryboardLoader where Self.StoryboardIdentifierType.RawValue == String {
     
     /// Returns the String rawValue of the identifier enum.
-    static public func storyboardNameForIdentifier(storyboardID:StoryboardIdentifierType) -> String {
+    static public func storyboardNameForIdentifier(_ storyboardID:StoryboardIdentifierType) -> String {
         return storyboardID.rawValue
     }
     
@@ -85,7 +85,7 @@ public extension StoryboardLoader where Self.StoryboardIdentifierType.RawValue =
 public extension StoryboardLoader where Self.ViewControllerIdentifierType.RawValue == String {
     
     /// Returns the String rawValue of the identifier enum.
-    static public func viewControllerNameForIdentifier(viewControllerID:ViewControllerIdentifierType) -> String {
+    static public func viewControllerNameForIdentifier(_ viewControllerID:ViewControllerIdentifierType) -> String {
         return viewControllerID.rawValue
     }
     

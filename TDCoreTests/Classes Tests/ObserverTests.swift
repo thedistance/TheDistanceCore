@@ -29,8 +29,8 @@ class ObserverTests: XCTestCase {
         
         let poster = NSObject()
         
-        let notePoster = NSNotification(name: "Test", object: poster)
-        let note = NSNotification(name: "Test", object: nil)
+        let notePoster = Notification(name: Notification.Name(rawValue: "Test"), object: poster)
+        let note = Notification(name: Notification.Name(rawValue: "Test"), object: nil)
         
         let posterObserver = NotificationObserver(name: "Test", object: poster) { (note) -> () in
             observed.append("poster " + note.name)
@@ -40,8 +40,8 @@ class ObserverTests: XCTestCase {
             observed.append(note.name)
         }
         
-        NSNotificationCenter.defaultCenter().postNotification(note)
-        NSNotificationCenter.defaultCenter().postNotification(notePoster)
+        NotificationCenter.default.post(note)
+        NotificationCenter.default.post(notePoster)
         
         let expected = ["Test", "poster Test", "Test"]
         
@@ -52,14 +52,14 @@ class ObserverTests: XCTestCase {
         posterObserver.endObserving()
         observer.endObserving()
         
-        NSNotificationCenter.defaultCenter().postNotification(note)
-        NSNotificationCenter.defaultCenter().postNotification(notePoster)
+        NotificationCenter.default.post(note)
+        NotificationCenter.default.post(notePoster)
         
         posterObserver.beginObserving()
         observer.beginObserving()
         
-        NSNotificationCenter.defaultCenter().postNotification(note)
-        NSNotificationCenter.defaultCenter().postNotification(notePoster)
+        NotificationCenter.default.post(note)
+        NotificationCenter.default.post(notePoster)
         
         let expected2 = ["Test", "poster Test", "Test", "Test", "poster Test", "Test"]
         
@@ -72,15 +72,15 @@ class ObserverTests: XCTestCase {
         
         var observed = [String]()
 
-        let startFrame = CGRectMake(0, 0, 25, 50)
-        let endFrame = CGRectMake(25, 50, 75, 100)
+        let startFrame = CGRect(x: 0, y: 0, width: 25, height: 50)
+        let endFrame = CGRect(x: 25, y: 50, width: 75, height: 100)
         
         let modifier = UIView(frame: startFrame)
         
         let observer = ObjectObserver(keypath: "frame", object: modifier) { (keypath, object, change) -> () in
             
-            guard let f1 = (change?[NSKeyValueChangeOldKey] as? NSValue)?.CGRectValue(),
-                let f2 = (change?[NSKeyValueChangeNewKey] as? NSValue)?.CGRectValue() else { return }
+            guard let f1 = (change?[NSKeyValueChangeKey.oldKey] as? NSValue)?.CGRectValue,
+                let f2 = (change?[NSKeyValueChangeKey.newKey] as? NSValue)?.CGRectValue else { return }
             
             observed.append("\(keypath): \(f1) -> \(f2)")
         }

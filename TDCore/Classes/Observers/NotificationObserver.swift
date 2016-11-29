@@ -21,16 +21,16 @@ public final class NotificationObserver:NSObject, Observer {
     public let name:String
     
     /// The `NSNotificationCenter` to listen for notifications on.
-    public let center:NSNotificationCenter
+    public let center:NotificationCenter
     
     /// The block to run when the notification is oberserved.
-    private let completion:(note:NSNotification) -> ()
+    fileprivate let completion:(_ note:Notification) -> ()
     
     /// The object to restrict observed notifications to.
     public let object:AnyObject?
     
     /// Flag for whether this `Observer` is currently registered as an observer on `center`.
-    public private(set) var observing:Bool = false
+    public fileprivate(set) var observing:Bool = false
     
     /**
      
@@ -41,7 +41,7 @@ public final class NotificationObserver:NSObject, Observer {
      - parameter center: The `NSNotificationCenter` to observe. The default value is `NSNotificationCenter.defaultCenter()`.
      - parameter completion: The block to perform when `name` by `object` is observed on `center`.
      */
-    public init(name:String, object:AnyObject?, center:NSNotificationCenter = NSNotificationCenter.defaultCenter(), completion:(note:NSNotification) -> ()) {
+    public init(name:String, object:AnyObject?, center:NotificationCenter = NotificationCenter.default, completion:@escaping (_ note:Notification) -> ()) {
         
         self.name = name
         self.completion = completion
@@ -54,14 +54,14 @@ public final class NotificationObserver:NSObject, Observer {
     }
     
     /// Called when the registered notification is observed.
-    func observe(note:NSNotification) {
-        completion(note: note)
+    func observe(_ note:Notification) {
+        completion(note)
     }
     
     /// Registers `self` to observe `center` for `name` restricted to `object`.
     public func beginObserving() {
         if !observing {
-            center.addObserver(self, selector: #selector(NotificationObserver.observe(_:)), name: name, object: object)
+            center.addObserver(self, selector: #selector(NotificationObserver.observe(_:)), name: NSNotification.Name(rawValue: name), object: object)
             observing = true
         }
     }
@@ -69,7 +69,7 @@ public final class NotificationObserver:NSObject, Observer {
     /// Unregisters `self` to stop observing `center` for `name` restricted to `object`.
     public func endObserving() {
         if observing {
-            center.removeObserver(self, name: name, object: object)
+            center.removeObserver(self, name: NSNotification.Name(rawValue: name), object: object)
             observing = false
         }
     }

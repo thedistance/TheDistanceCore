@@ -19,10 +19,10 @@ public extension UIDevice {
      */
     public func getDeviceSupportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         
-        if UIDevice.currentDevice().userInterfaceIdiom == .Pad || UIScreen.mainScreen().scale > 2.1 {
-            return .AllButUpsideDown
+        if UIDevice.current.userInterfaceIdiom == .pad || UIScreen.main.scale > 2.1 {
+            return .allButUpsideDown
         } else {
-            return .Portrait
+            return .portrait
         }
     }
 }

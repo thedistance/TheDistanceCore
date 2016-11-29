@@ -11,71 +11,71 @@ import TheDistanceCore
 
 class DateTests: XCTestCase {
 
-    var now = NSDate()
-    var now2:NSDate!
-    var then:NSDate!
-    var soon:NSDate!
+    var now = Date()
+    var now2:Date!
+    var then:Date!
+    var soon:Date!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        now2 = now.dateByAddingTimeInterval(0)
-        then = now.dateByAddingTimeInterval(-60)
-        soon = now.dateByAddingTimeInterval(60)
+        now2 = now.addingTimeInterval(0)
+        then = now.addingTimeInterval(-60)
+        soon = now.addingTimeInterval(60)
     }
 
     func testComponets() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 
-        let comps = NSCalendar.currentCalendar().componentsInTimeZone(NSTimeZone(name: "Europe/London")!, fromDate: now)
+        let comps = Calendar.current.dateComponents(in: TimeZone(identifier: "Europe/London")!, from: now)
         
-        let dateUnits:NSCalendarUnit = [.Year, .Month, .Day]
-        let timeUnits:NSCalendarUnit = [.Hour, .Minute, .Second]
-        let specialUnits:NSCalendarUnit = [.TimeZone, .Calendar]
+        let dateUnits:NSCalendar.Unit = [.year, .month, .day]
+        let timeUnits:NSCalendar.Unit = [.hour, .minute, .second]
+        let specialUnits:NSCalendar.Unit = [.timeZone, .calendar]
         
-        let dateComps = NSDateComponents(units: dateUnits, fromComponents: comps)
-        let timeComps = NSDateComponents(units: timeUnits, fromComponents: comps)
-        let specialComps = NSDateComponents(units: specialUnits, fromComponents: comps)
+        let dateComps = DateComponents(calendar: dateUnits, timeZone: comps)
+        let timeComps = DateComponents(calendar: timeUnits, timeZone: comps)
+        let specialComps = DateComponents(calendar: specialUnits, timeZone: comps)
         
-        var dateElements:[NSCalendarUnit] = [.Year, .Month, .Day]
+        var dateElements:[NSCalendar.Unit] = [.year, .month, .day]
         for unit in dateUnits.elements() {
             // test date has been copied and time hasn't
-            XCTAssertEqual(comps.valueForComponent(unit), dateComps.valueForComponent(unit))
-            XCTAssertEqual(NSNotFound, timeComps.valueForComponent(unit))
-            XCTAssertEqual(NSNotFound, specialComps.valueForComponent(unit))
+            XCTAssertEqual(comps.value(forComponent: unit), dateComps.value(forComponent: unit))
+            XCTAssertEqual(NSNotFound, timeComps.value(forComponent: unit))
+            XCTAssertEqual(NSNotFound, specialComps.value(forComponent: unit))
             
-            if let index = dateElements.indexOf(unit) {
-                dateElements.removeAtIndex(index)
+            if let index = dateElements.index(of: unit) {
+                dateElements.remove(at: index)
             } else {
                 XCTFail("Unable to find calendar unit \(unit) in \(dateElements)")
             }
         }
         XCTAssertEqual(0, dateElements.count, "Date elements not correctly enumerated")
         
-        var timeElements:[NSCalendarUnit] = [.Hour, .Minute, .Second]
+        var timeElements:[NSCalendar.Unit] = [.hour, .minute, .second]
         for unit in timeUnits.elements() {
             // test time has been copied and date hasn't
-            XCTAssertEqual(comps.valueForComponent(unit), timeComps.valueForComponent(unit))
-            XCTAssertEqual(NSNotFound, dateComps.valueForComponent(unit))
-            XCTAssertEqual(NSNotFound, specialComps.valueForComponent(unit))
+            XCTAssertEqual(comps.value(forComponent: unit), timeComps.value(forComponent: unit))
+            XCTAssertEqual(NSNotFound, dateComps.value(forComponent: unit))
+            XCTAssertEqual(NSNotFound, specialComps.value(forComponent: unit))
             
-            if let index = timeElements.indexOf(unit) {
-                timeElements.removeAtIndex(index)
+            if let index = timeElements.index(of: unit) {
+                timeElements.remove(at: index)
             } else {
                 XCTFail("Unable to find calendar unit \(unit) in \(timeElements)")
             }
         }
         XCTAssertEqual(0, timeElements.count, "Time elements not correctly enumerated")
         
-        XCTAssertEqual(comps.timeZone, specialComps.timeZone)
-        XCTAssertNil(dateComps.timeZone)
-        XCTAssertNil(timeComps.timeZone)
+        XCTAssertEqual((comps as NSDateComponents).timeZone, (specialComps as NSDateComponents).timeZone)
+        XCTAssertNil((dateComps as NSDateComponents).timeZone)
+        XCTAssertNil((timeComps as NSDateComponents).timeZone)
         
-        XCTAssertEqual(comps.calendar, specialComps.calendar)
-        XCTAssertNil(dateComps.calendar)
-        XCTAssertNil(timeComps.calendar)
+        XCTAssertEqual((comps as NSDateComponents).calendar, (specialComps as NSDateComponents).calendar)
+        XCTAssertNil((dateComps as NSDateComponents).calendar)
+        XCTAssertNil((timeComps as NSDateComponents).calendar)
     }
 
     func testDateGreatherThan() {

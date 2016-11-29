@@ -15,7 +15,7 @@ import UIKit
  - parameter inset: The amount for each side of the inset.
  - returns: A `UIEdgeInsets` with `top`, `left`, `bottom` and `right` all set to `inset`.
 */
-public func UIEdgeInsetsMakeEqual(inset:CGFloat) -> UIEdgeInsets {
+public func UIEdgeInsetsMakeEqual(_ inset:CGFloat) -> UIEdgeInsets {
     
     return UIEdgeInsetsMake(inset, inset, inset, inset)
 }

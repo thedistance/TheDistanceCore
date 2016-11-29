@@ -18,10 +18,13 @@ import Foundation
  - returns: A new dictionary based with the entries from `d2` being set on `d1`.
  
  */
+
 public func +<Key,Value>(d1:Dictionary<Key,Value>, d2:Dictionary<Key,Value>) -> Dictionary<Key,Value> {
 
     var new = d1
-    new.assignValuesFrom(d2)
+    for (k,v) in d2 {
+        new[k] = v
+    }
     
     return new
 }
@@ -29,14 +32,14 @@ public func +<Key,Value>(d1:Dictionary<Key,Value>, d2:Dictionary<Key,Value>) -> 
 public extension Dictionary {
     
     /// Convenience method to assign all values in `source` to self.
-    public mutating func assignValuesFrom<S: SequenceType where S.Generator.Element == (Key,Value)>(source: S) {
+    public mutating func assignValuesFrom<S>(_ source: S) where S: Sequence, S.Iterator.Element == (Key,Value)  {
         for (k,v) in source {
             self[k] = v
         }
     }
     
     /// Convenience creator to create a dictionary from an array of key-value tuples. This is useful for creating a dictionary from the result of performing `map(_:)` on a dictionary.
-    public init<S: SequenceType where S.Generator.Element == (Key,Value)>(_ sequence: S) {
+    public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == (Key,Value)  {
         self = [:]
         self.assignValuesFrom(sequence)
     }
@@ -48,7 +51,7 @@ public extension Dictionary {
      - parameter: The closure to be applied to the values, as would be passed to `map(_:)` on an array.
      
      */
-    public func mapValues<NewValue>(transform: Value -> NewValue) -> [Key:NewValue] {
+    public func mapValues<NewValue>(_ transform: (Value) -> NewValue) -> [Key:NewValue] {
         
         let elements = self.map({ ($0, transform($1)) })
         

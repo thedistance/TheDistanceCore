@@ -9,7 +9,7 @@
 import Foundation
 
 
-public extension OptionSetType where Element == Self, RawValue : UnsignedIntegerType {
+public extension OptionSet where RawValue : Integer {
     
     /**
      
@@ -21,20 +21,20 @@ public extension OptionSetType where Element == Self, RawValue : UnsignedInteger
      
      - returns: Any array of options.
      */
-    public func elements() -> AnySequence<Self> {
-        var rawValue = Self.RawValue(1)
-        return AnySequence( {
-            return AnyGenerator(body: {
-                while rawValue != 0 {
-                    let candidate = Self(rawValue: rawValue)
-                    rawValue = rawValue &* 2
-                    if self.contains(candidate) {
-                        return candidate
+    func elements() -> AnySequence<Self> {
+        var remainingBits = rawValue
+        var bitMask: RawValue = 1
+        return AnySequence {
+            return AnyIterator {
+                while remainingBits != 0 {
+                    defer { bitMask = bitMask &* 2 }
+                    if remainingBits & bitMask != 0 {
+                        remainingBits = remainingBits & ~bitMask
+                        return Self(rawValue: bitMask)
                     }
                 }
-                
                 return nil
-            })
-        })
+            }
+        }
     }
 }
