@@ -39,17 +39,6 @@ public protocol ParallaxScrollable: UIScrollViewDelegate {
 
 public extension ParallaxScrollable where Self:UIViewController {
     
-    /// - returns: The intersection of `headerView` and `parallaxScrollView` in the frame of `parallaxScrollView.superview`.
-    public func parallaxHeaderOverlap() -> CGRect {
-        
-        guard let superview = parallaxScrollView.superview else { return CGRectZero }
-        
-        let headerInSuper = superview.convertRect(parallaxHeaderView.frame, fromView: parallaxHeaderView.superview)
-        let intersection = CGRectIntersection(parallaxScrollView.frame, headerInSuper)
-        
-        return CGRectIntegral(intersection)
-    }
-    
     /// - returns: The intersection of `the bottomLayoutGuide` and `parallaxScrollView` in the frame of `parallaxScrollView.superview`.
     public func parallaxBottomOverlap() -> CGRect {
         
@@ -98,6 +87,17 @@ public extension ParallaxScrollable where Self:UIViewController {
 
 public extension ParallaxScrollable {
 
+    /// - returns: The intersection of `headerView` and `parallaxScrollView` in the frame of `parallaxScrollView.superview`.
+    public func parallaxHeaderOverlap() -> CGRect {
+        
+        guard let superview = parallaxScrollView.superview else { return CGRectZero }
+        
+        let headerInSuper = superview.convertRect(parallaxHeaderView.frame, fromView: parallaxHeaderView.superview)
+        let intersection = CGRectIntersection(parallaxScrollView.frame, headerInSuper)
+        
+        return CGRectIntegral(intersection)
+    }
+    
     /**
      
      Default implementation for parallax scrolling a header view. Typically this will be called from `scrollViewDidScroll:`.

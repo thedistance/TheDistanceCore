@@ -44,7 +44,7 @@ public extension UIViewController {
         }
         
         if let application = responder as? UIApplication {
-            application.performSelector(Selector("openURL:"), withObject: url)
+            application.performSelector(#selector(UIViewController.openURL(_:)), withObject: url)
             return
         }
     }

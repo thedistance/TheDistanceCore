@@ -71,6 +71,7 @@ public class FittingGridFlowLayout: UICollectionViewFlowLayout {
         return itemSize;
     }
     
+    /// Calculates the column count for the size of the current `collectionView`, setting the `itemSize` based on `itemSizeForWidth(_:)`.
     override public func prepareLayout() {
 
         super.prepareLayout()
@@ -81,6 +82,7 @@ public class FittingGridFlowLayout: UICollectionViewFlowLayout {
         self.itemSize = itemSizeForWidth(contentWidth)
     }
     
+    /// Invalidates the layout based on whether or not the width of `newBounds` differs from that of the current `collectionView`.
     override public func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
         
         guard let cv = self.collectionView else { return false }
