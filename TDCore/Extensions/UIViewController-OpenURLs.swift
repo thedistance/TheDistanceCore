@@ -14,8 +14,8 @@ import SafariServices
 public extension UIApplication {
     
     /// - returns: The response of `canOpenURL(_:)` as an `NSNumber` so the result can be accessed from the result of a `performSelector(...)`.
-    public func number_canOpenURL(url:NSURL) -> NSNumber {
-        return NSNumber(bool: canOpenURL(url))
+    public func number_canOpenURL(url:URL) -> NSNumber {
+        return NSNumber(value: canOpenURL(url))
     }
 }
 
@@ -34,26 +34,26 @@ extension UIViewController: SFSafariViewControllerDelegate {
      -seealso: `openInSafari(_:)`
      -seealso: `presentViewController(_:fromSourceItem:inViewController:animated:completion)`.
      */
-    public func openURL(url:NSURL, fromSourceItem item:UIPopoverSourceType, inViewController:UIViewController? = nil) {
+    public func openURL(url:URL, fromSourceItem item:UIPopoverSourceType, inViewController:UIViewController? = nil) {
         
         
-        if let chromeURL = url.googleChromeURL() where self.canOpenURL(NSURL(string: "googlechrome://")!) {
+        if let chromeURL = url.googleChromeURL(), self.canOpenURL(url: URL(string: "googlechrome://")! as NSURL) {
             
-            let alert = UIAlertController(title: nil, message: "Open with...", preferredStyle: UIAlertControllerStyle.ActionSheet)
+            let alert = UIAlertController(title: nil, message: "Open with...", preferredStyle: UIAlertControllerStyle.actionSheet)
             
-            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "Safari", style: .Default, handler: { (action) -> Void in
-                self.openInSafari(url)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Safari", style: .default, handler: { (action) -> Void in
+                self.openInSafari(url:url)
             }))
             
-            alert.addAction(UIAlertAction(title: "Google Chrome", style: .Default, handler: { (action) -> Void in
-                self.openURL(chromeURL)
+            alert.addAction(UIAlertAction(title: "Google Chrome", style: .default, handler: { (action) -> Void in
+                self.openURL(url: chromeURL as NSURL)
             }))
             
             self.presentViewController(alert, fromSourceItem: item)
             
         } else {
-            openInSafari(url)
+            openInSafari(url:url)
         }
     }
     
@@ -63,23 +63,23 @@ extension UIViewController: SFSafariViewControllerDelegate {
      
      - parameter url: The `NSURL` to open.
      */
-    public func openInSafari(url:NSURL) {
+    public func openInSafari(url:URL) {
         
         if #available(iOS 9, *) {
-            let vc = SFSafariViewController(URL: url)
+            let vc = SFSafariViewController(url: url)
             vc.delegate = self
-            self.presentViewController(vc, animated: true, completion: nil)
+            self.present(vc, animated: true, completion: nil)
             return
         }
         
-        if self.canOpenURL(url) {
-            self.openURL(url)
+        if self.canOpenURL(url:url as NSURL) {
+            self.openURL(url:url as NSURL)
         }
     }
     
     /// Simple `SFSafariViewControllerDelegate` implementation that dismisses a presented `SFSafariViewController`.
     @available(iOS 9.0, *)
     public func safariViewControllerDidFinish(controller: SFSafariViewController) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+        controller.dismiss(animated:true, completion: nil)
     }
 }

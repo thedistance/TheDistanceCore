@@ -12,12 +12,12 @@ public extension UIViewController {
 
     /// - returns: Whether or not the shared `UIApplication` can open the given `NSURL`.
     public func canOpenURL(url:NSURL) -> Bool {
-        return UIApplication.sharedApplication().canOpenURL(url)
+        return UIApplication.shared.canOpenURL(url as URL)
     }
 
     /// Passes the given URL to the shared `UIApplication` to attempt to open.
     public func openURL(url:NSURL) {
-        UIApplication.sharedApplication().openURL(url)
+        UIApplication.shared.openURL(url as URL)
     }
     
 }

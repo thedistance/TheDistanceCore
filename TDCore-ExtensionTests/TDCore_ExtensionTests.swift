@@ -9,7 +9,7 @@
 import XCTest
 @testable import TheDistanceCoreExtension
 
-class TDCore_ExtensionTests: XCTestCase {
+class TDCoreExtensionTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -28,7 +28,7 @@ class TDCore_ExtensionTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }
