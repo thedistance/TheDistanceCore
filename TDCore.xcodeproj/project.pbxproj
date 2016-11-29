@@ -80,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5AFA7B911DEDD1B700C85E3B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A51F9FC11CE0D30400D56F28 /* FittingGridFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FittingGridFlowLayout.swift; sourceTree = "<group>"; };
 		A560780D1CB400F9007F7E65 /* TDCore-Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDCore-Extension.h"; sourceTree = "<group>"; };
 		A560780F1CB400F9007F7E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -221,6 +222,7 @@
 		A5A7B3231BE3A2A0005D52D0 = {
 			isa = PBXGroup;
 			children = (
+				5AFA7B911DEDD1B700C85E3B /* .swiftlint.yml */,
 				A5A7B32F1BE3A2A0005D52D0 /* TDCore */,
 				A5A7B33B1BE3A2A1005D52D0 /* TDCoreTests */,
 				A560780C1CB400F9007F7E65 /* TDCore-Extension */,
@@ -418,6 +420,7 @@
 				A5A7B3291BE3A2A0005D52D0 /* Frameworks */,
 				A5A7B32A1BE3A2A0005D52D0 /* Headers */,
 				A5A7B32B1BE3A2A0005D52D0 /* Resources */,
+				5AFA7B8F1DEDCF7600C85E3B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -555,6 +558,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5AFA7B8F1DEDCF7600C85E3B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint lint --config .swiftlint.yml\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A56078221CB40138007F7E65 /* Sources */ = {
