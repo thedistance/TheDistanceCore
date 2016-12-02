@@ -24,7 +24,7 @@ public extension NSError {
         case kCLErrorDomain:
             
             if let clError = CLError.Code(rawValue: code) {
-                return userFacingErrorWithUsingFacing(uf: clError)
+                return userFacingErrorWithUsingFacing(uf: clError as UserFacing)
             }
             
         default:

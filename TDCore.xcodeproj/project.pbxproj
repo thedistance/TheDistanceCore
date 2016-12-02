@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A363B891DF18D5200759801 /* FittingGridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9FC11CE0D30400D56F28 /* FittingGridFlowLayout.swift */; };
+		5A363B8A1DF18D5200759801 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B35F1BE3A2CC005D52D0 /* Enums.swift */; };
+		5A363B8B1DF18D5200759801 /* ParallaxScrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58541141BE782E700AE8A0B /* ParallaxScrollable.swift */; };
+		5A363B8C1DF18D5200759801 /* ObjectTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C228D61CBE84FE00CD65EC /* ObjectTarget.swift */; };
+		5A363B8D1DF18D5200759801 /* StoryboardLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A592A0681CD0F79200128D4D /* StoryboardLoader.swift */; };
+		5A363B8E1DF18D5200759801 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3491BE3A2C4005D52D0 /* CGRect.swift */; };
+		5A363B8F1DF18D5200759801 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B36B1BE3B461005D52D0 /* NotificationObserver.swift */; };
+		5A363B901DF18D5200759801 /* ObjectObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B36C1BE3B461005D52D0 /* ObjectObserver.swift */; };
+		5A363B911DF18D5200759801 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B36D1BE3B461005D52D0 /* Observer.swift */; };
+		5A363B921DF18D5200759801 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34A1BE3A2C4005D52D0 /* Dictionary.swift */; };
+		5A363B931DF18D5200759801 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34B1BE3A2C4005D52D0 /* NSDate.swift */; };
+		5A363B941DF18D5200759801 /* NSDateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34C1BE3A2C4005D52D0 /* NSDateComponents.swift */; };
+		5A363B951DF18D5200759801 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34D1BE3A2C4005D52D0 /* NSError.swift */; };
+		5A363B961DF18D5200759801 /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34E1BE3A2C4005D52D0 /* NSLayoutConstraint.swift */; };
+		5A363B971DF18D5200759801 /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3671BE3B2C4005D52D0 /* NSURL.swift */; };
+		5A363B981DF18D5200759801 /* OptionSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B34F1BE3A2C4005D52D0 /* OptionSetType.swift */; };
+		5A363B991DF18D5200759801 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3501BE3A2C4005D52D0 /* String.swift */; };
+		5A363B9A1DF18D5200759801 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3511BE3A2C4005D52D0 /* UIDevice.swift */; };
+		5A363B9B1DF18D5200759801 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3521BE3A2C4005D52D0 /* UIEdgeInsets.swift */; };
+		5A363B9C1DF18D5200759801 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C2296C1CBFBC9C00CD65EC /* UIImage.swift */; };
+		5A363B9D1DF18D5200759801 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B3531BE3A2C4005D52D0 /* UIViewController.swift */; };
 		A51F9FC21CE0D30400D56F28 /* FittingGridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9FC11CE0D30400D56F28 /* FittingGridFlowLayout.swift */; };
 		A560782A1CB40138007F7E65 /* TDCore-Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = A56078291CB40138007F7E65 /* TDCore-Extension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A56078311CB40139007F7E65 /* TheDistanceCoreExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56078271CB40138007F7E65 /* TheDistanceCoreExtension.framework */; };
@@ -82,10 +103,6 @@
 /* Begin PBXFileReference section */
 		5AFA7B911DEDD1B700C85E3B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A51F9FC11CE0D30400D56F28 /* FittingGridFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FittingGridFlowLayout.swift; sourceTree = "<group>"; };
-		A560780D1CB400F9007F7E65 /* TDCore-Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDCore-Extension.h"; sourceTree = "<group>"; };
-		A560780F1CB400F9007F7E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A56078191CB400FA007F7E65 /* TDCore_ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDCore_ExtensionTests.swift; sourceTree = "<group>"; };
-		A560781B1CB400FA007F7E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A56078271CB40138007F7E65 /* TheDistanceCoreExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TheDistanceCoreExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A56078291CB40138007F7E65 /* TDCore-Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDCore-Extension.h"; sourceTree = "<group>"; };
 		A560782B1CB40138007F7E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -182,24 +199,6 @@
 			path = "Collection View Layouts";
 			sourceTree = "<group>";
 		};
-		A560780C1CB400F9007F7E65 /* TDCore-Extension */ = {
-			isa = PBXGroup;
-			children = (
-				A560780D1CB400F9007F7E65 /* TDCore-Extension.h */,
-				A560780F1CB400F9007F7E65 /* Info.plist */,
-			);
-			path = "TDCore-Extension";
-			sourceTree = "<group>";
-		};
-		A56078181CB400FA007F7E65 /* TDCore-ExtensionTests */ = {
-			isa = PBXGroup;
-			children = (
-				A56078191CB400FA007F7E65 /* TDCore_ExtensionTests.swift */,
-				A560781B1CB400FA007F7E65 /* Info.plist */,
-			);
-			path = "TDCore-ExtensionTests";
-			sourceTree = "<group>";
-		};
 		A56078281CB40138007F7E65 /* TDCore-Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,8 +224,6 @@
 				5AFA7B911DEDD1B700C85E3B /* .swiftlint.yml */,
 				A5A7B32F1BE3A2A0005D52D0 /* TDCore */,
 				A5A7B33B1BE3A2A1005D52D0 /* TDCoreTests */,
-				A560780C1CB400F9007F7E65 /* TDCore-Extension */,
-				A56078181CB400FA007F7E65 /* TDCore-ExtensionTests */,
 				A56078281CB40138007F7E65 /* TDCore-Extension */,
 				A56078341CB40139007F7E65 /* TDCore-ExtensionTests */,
 				A5C228BD1CBE7F6800CD65EC /* TheDistanceCore-App */,
@@ -580,8 +577,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5C228D11CBE80E200CD65EC /* UIViewController-Extension.swift in Sources */,
 				A5C228CB1CBE800400CD65EC /* UIViewController-OpenURLs.swift in Sources */,
+				A5C228D11CBE80E200CD65EC /* UIViewController-Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +637,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A363B891DF18D5200759801 /* FittingGridFlowLayout.swift in Sources */,
+				5A363B8A1DF18D5200759801 /* Enums.swift in Sources */,
+				5A363B8B1DF18D5200759801 /* ParallaxScrollable.swift in Sources */,
+				5A363B8C1DF18D5200759801 /* ObjectTarget.swift in Sources */,
+				5A363B8D1DF18D5200759801 /* StoryboardLoader.swift in Sources */,
+				5A363B8E1DF18D5200759801 /* CGRect.swift in Sources */,
+				5A363B8F1DF18D5200759801 /* NotificationObserver.swift in Sources */,
+				5A363B901DF18D5200759801 /* ObjectObserver.swift in Sources */,
+				5A363B911DF18D5200759801 /* Observer.swift in Sources */,
+				5A363B921DF18D5200759801 /* Dictionary.swift in Sources */,
+				5A363B931DF18D5200759801 /* NSDate.swift in Sources */,
+				5A363B941DF18D5200759801 /* NSDateComponents.swift in Sources */,
+				5A363B951DF18D5200759801 /* NSError.swift in Sources */,
+				5A363B961DF18D5200759801 /* NSLayoutConstraint.swift in Sources */,
+				5A363B971DF18D5200759801 /* NSURL.swift in Sources */,
+				5A363B981DF18D5200759801 /* OptionSetType.swift in Sources */,
+				5A363B991DF18D5200759801 /* String.swift in Sources */,
+				5A363B9A1DF18D5200759801 /* UIDevice.swift in Sources */,
+				5A363B9B1DF18D5200759801 /* UIEdgeInsets.swift in Sources */,
+				5A363B9C1DF18D5200759801 /* UIImage.swift in Sources */,
+				5A363B9D1DF18D5200759801 /* UIViewController.swift in Sources */,
 				A5C228CC1CBE800500CD65EC /* UIViewController-OpenURLs.swift in Sources */,
 				A5C228CE1CBE803B00CD65EC /* UIViewController-App.swift in Sources */,
 			);
@@ -841,12 +859,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 2016.05.09;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1.0.1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
 				INFOPLIST_FILE = TDCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -862,12 +887,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 2016.05.09;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1.0.1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
 				INFOPLIST_FILE = TDCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

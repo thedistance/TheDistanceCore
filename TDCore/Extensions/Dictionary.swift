@@ -31,32 +31,23 @@ public func +<Key,Value>(d1:Dictionary<Key,Value>, d2:Dictionary<Key,Value>) -> 
 
 public extension Dictionary {
     
-    /// Convenience method to assign all values in `source` to self.
-    public mutating func assignValuesFrom<S>(_ source: S) where S: Sequence, S.Iterator.Element == (Key,Value)  {
-        for (k,v) in source {
+    /// Convenience creator to create a dictionary from an array of key-value tuples. This is useful for creating a dictionary from the result of performing `map(_:)` on a dictionary.
+    public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == (Key,Value)  {
+        self = [:]
+        for (k,v) in sequence {
             self[k] = v
         }
     }
     
-    /// Convenience creator to create a dictionary from an array of key-value tuples. This is useful for creating a dictionary from the result of performing `map(_:)` on a dictionary.
-    public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == (Key,Value)  {
-        self = [:]
-        self.assignValuesFrom(sequence)
+    /// Creates a new dictionary by transforming only the values in `self`
+
+    public mutating func mapValues(transform: (_ key:Key, _ value:Value) -> (Value)) {
+        for key in self.keys {
+            let newValue = transform(key, self[key]!)
+            self.updateValue(newValue, forKey: key)
+        }
     }
     
-    /**
-     
-     Creates a new dictionary by transforming only the values in `self`.
-     
-     - parameter: The closure to be applied to the values, as would be passed to `map(_:)` on an array.
-     
-     */
-    public func mapValues<NewValue>(_ transform: (Value) -> NewValue) -> [Key:NewValue] {
-        
-        let elements = self.map({ ($0, transform($1)) })
-        
-        return Dictionary<Key, NewValue>(elements)
-    }
     
     /// - returns: An array of only the values in `self`.
     public func valuesArray() -> [Value] {

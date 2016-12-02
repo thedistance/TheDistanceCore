@@ -19,7 +19,7 @@ public extension UIApplication {
     }
 }
 
-extension UIViewController: SFSafariViewControllerDelegate {
+extension UIViewController {
     
     /**
      
@@ -65,12 +65,12 @@ extension UIViewController: SFSafariViewControllerDelegate {
      */
     public func openInSafari(url:URL) {
         
-        if #available(iOS 9, *) {
-            let vc = SFSafariViewController(url: url)
-            vc.delegate = self
-            self.present(vc, animated: true, completion: nil)
-            return
-        }
+//        if #available(iOS 9, *) {
+//            let vc = SFSafariViewController(url: url)
+//            vc.delegate = self
+//            self.present(vc, animated: true, completion: nil)
+//            return
+//        }
         
         if self.canOpenURL(url:url as NSURL) {
             self.openURL(url:url as NSURL)
@@ -78,8 +78,8 @@ extension UIViewController: SFSafariViewControllerDelegate {
     }
     
     /// Simple `SFSafariViewControllerDelegate` implementation that dismisses a presented `SFSafariViewController`.
-    @available(iOS 9.0, *)
-    public func safariViewControllerDidFinish(controller: SFSafariViewController) {
-        controller.dismiss(animated:true, completion: nil)
-    }
+//    @available(iOS 9.0, *)
+//    public func safariViewControllerDidFinish(controller: SFSafariViewController) {
+//        controller.dismiss(animated:true, completion: nil)
+//    }
 }
