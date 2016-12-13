@@ -53,7 +53,7 @@ public final class ObjectObserver:NSObject, Observer {
         self.object = object
         self.completion = completion
         self.options = options
-        self.context = context!
+        self.context = context ?? UnsafeMutableRawPointer(bitPattern: 1)!
         
         super.init()
         
