@@ -17,9 +17,8 @@ public extension NSError {
         switch domain {
         case NSURLErrorDomain:
             
-            if let urlError = URLError.Code(rawValue: code) {
-                return userFacingErrorWithUsingFacing(uf: urlError as UserFacing)
-            }
+            let urlError = URLError.Code(rawValue: code)
+            return userFacingErrorWithUsingFacing(uf: urlError as UserFacing)
             
         case kCLErrorDomain:
             

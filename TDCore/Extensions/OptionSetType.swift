@@ -9,7 +9,7 @@
 import Foundation
 
 
-public extension OptionSet where RawValue : Integer {
+public extension OptionSet where RawValue : FixedWidthInteger {
     
     /**
      

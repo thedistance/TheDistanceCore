@@ -101,6 +101,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A07499D1F6FC47D0097543B /* TheDistanceCore.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = TheDistanceCore.podspec; sourceTree = "<group>"; };
 		5AFA7B911DEDD1B700C85E3B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A51F9FC11CE0D30400D56F28 /* FittingGridFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FittingGridFlowLayout.swift; sourceTree = "<group>"; };
 		A56078271CB40138007F7E65 /* TheDistanceCoreExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TheDistanceCoreExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +222,7 @@
 		A5A7B3231BE3A2A0005D52D0 = {
 			isa = PBXGroup;
 			children = (
+				5A07499D1F6FC47D0097543B /* TheDistanceCore.podspec */,
 				5AFA7B911DEDD1B700C85E3B /* .swiftlint.yml */,
 				A5A7B32F1BE3A2A0005D52D0 /* TDCore */,
 				A5A7B33B1BE3A2A1005D52D0 /* TDCoreTests */,

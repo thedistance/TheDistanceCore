@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TheDistanceCore"
-  s.version      = "1.3.3"
+  s.version      = "1.3.4"
   s.summary      = "Develop faster with convenience functions from The Distance."
   s.homepage     = "https://github.com/thedistance"
   s.license      = "MIT"
