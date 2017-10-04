@@ -36,7 +36,7 @@ open class ObjectTarget<T:UIControl>:NSObject {
     }
     
     /// The function that is called from `UIControl.addTarget(_:action:forControlEvents:)`.
-    open func targetted(_ sender:AnyObject?) {
+    @objc open func targetted(_ sender:AnyObject?) {
         
         if let typedSender = sender as? T {
             completion(typedSender)

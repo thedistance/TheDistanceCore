@@ -29,22 +29,25 @@ class DateTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "Europe/London")!
+
         let comps = Calendar.current.dateComponents(in: TimeZone(identifier: "Europe/London")!, from: now)
         
-        let dateUnits:NSCalendar.Unit = [.year, .month, .day]
-        let timeUnits:NSCalendar.Unit = [.hour, .minute, .second]
-        let specialUnits:NSCalendar.Unit = [.timeZone, .calendar]
+        let dateUnits = Set<Calendar.Component>([.year, .month, .day])
+        let timeUnits = Set<Calendar.Component>([.hour, .minute, .second])
+        let specialUnits = Set<Calendar.Component>([.timeZone, .calendar])
+
+        let dateComps = calendar.dateComponents(dateUnits, from: now)
+        let timeComps = calendar.dateComponents(timeUnits, from: now)
+        let specialComps = calendar.dateComponents(specialUnits, from: now)
         
-        let dateComps = DateComponents(calendar: dateUnits, timeZone: comps)
-        let timeComps = DateComponents(calendar: timeUnits, timeZone: comps)
-        let specialComps = DateComponents(calendar: specialUnits, timeZone: comps)
-        
-        var dateElements:[NSCalendar.Unit] = [.year, .month, .day]
-        for unit in dateUnits.elements() {
+        var dateElements = Set<Calendar.Component>([.year, .month, .day])
+        for unit in dateUnits {
             // test date has been copied and time hasn't
-            XCTAssertEqual(comps.value(forComponent: unit), dateComps.value(forComponent: unit))
-            XCTAssertEqual(NSNotFound, timeComps.value(forComponent: unit))
-            XCTAssertEqual(NSNotFound, specialComps.value(forComponent: unit))
+            XCTAssertEqual(comps.value(for: unit), dateComps.value(for: unit))
+            XCTAssertEqual(NSNotFound, timeComps.value(for: unit))
+            XCTAssertEqual(NSNotFound, specialComps.value(for: unit))
             
             if let index = dateElements.index(of: unit) {
                 dateElements.remove(at: index)
@@ -54,12 +57,12 @@ class DateTests: XCTestCase {
         }
         XCTAssertEqual(0, dateElements.count, "Date elements not correctly enumerated")
         
-        var timeElements:[NSCalendar.Unit] = [.hour, .minute, .second]
-        for unit in timeUnits.elements() {
+        var timeElements = Set<Calendar.Component>([.hour, .minute, .second])
+        for unit in timeUnits {
             // test time has been copied and date hasn't
-            XCTAssertEqual(comps.value(forComponent: unit), timeComps.value(forComponent: unit))
-            XCTAssertEqual(NSNotFound, dateComps.value(forComponent: unit))
-            XCTAssertEqual(NSNotFound, specialComps.value(forComponent: unit))
+            XCTAssertEqual(comps.value(for: unit), timeComps.value(for: unit))
+            XCTAssertEqual(NSNotFound, dateComps.value(for: unit))
+            XCTAssertEqual(NSNotFound, specialComps.value(for: unit))
             
             if let index = timeElements.index(of: unit) {
                 timeElements.remove(at: index)
@@ -82,24 +85,24 @@ class DateTests: XCTestCase {
         
         
         // test >
-        XCTAssert(soon > now)
-        XCTAssert(soon > then)
-        XCTAssert(now > then)
+        XCTAssert(soon.timeIntervalSinceReferenceDate > now.timeIntervalSinceReferenceDate)
+        XCTAssert(soon.timeIntervalSinceReferenceDate > then.timeIntervalSinceReferenceDate)
+        XCTAssert(now.timeIntervalSinceReferenceDate > then.timeIntervalSinceReferenceDate)
         
-        XCTAssertFalse(then > now)
-        XCTAssertFalse(then > soon)
-        XCTAssertFalse(now > soon)
+        XCTAssertFalse(then.timeIntervalSinceReferenceDate > now.timeIntervalSinceReferenceDate)
+        XCTAssertFalse(then.timeIntervalSinceReferenceDate > soon.timeIntervalSinceReferenceDate)
+        XCTAssertFalse(now.timeIntervalSinceReferenceDate > soon.timeIntervalSinceReferenceDate)
     }
     
     func testDateLessThan() {
         // test <
-        XCTAssert(then < now)
-        XCTAssert(then < soon)
-        XCTAssert(now < soon)
+        XCTAssert(then.timeIntervalSinceReferenceDate < now.timeIntervalSinceReferenceDate)
+        XCTAssert(then.timeIntervalSinceReferenceDate < soon.timeIntervalSinceReferenceDate)
+        XCTAssert(now.timeIntervalSinceReferenceDate < soon.timeIntervalSinceReferenceDate)
         
-        XCTAssertFalse(soon < now)
-        XCTAssertFalse(soon < then)
-        XCTAssertFalse(now < then)
+        XCTAssertFalse(soon.timeIntervalSinceReferenceDate < now.timeIntervalSinceReferenceDate)
+        XCTAssertFalse(soon.timeIntervalSinceReferenceDate < then.timeIntervalSinceReferenceDate)
+        XCTAssertFalse(now.timeIntervalSinceReferenceDate < then.timeIntervalSinceReferenceDate)
     }
     
     func testDateGreatherThanOrEqual() {

@@ -38,7 +38,8 @@ class DictionaryTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 
         var toOverwrite = nums
-        toOverwrite.assignValuesFrom(cubes)
+
+        cubes.forEach { (arg) in let (k, v) = arg; toOverwrite[k] = v }
         
         XCTAssertEqual(toOverwrite, [1: 1, 2: 8, 3: 27, 4: 64, 5: 125, 10:10])
     }

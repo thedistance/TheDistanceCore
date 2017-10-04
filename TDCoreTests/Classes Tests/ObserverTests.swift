@@ -33,11 +33,11 @@ class ObserverTests: XCTestCase {
         let note = Notification(name: Notification.Name(rawValue: "Test"), object: nil)
         
         let posterObserver = NotificationObserver(name: "Test", object: poster) { (note) -> () in
-            observed.append("poster " + note.name)
+            observed.append("poster " + note.name.rawValue)
         }
         
         let observer = NotificationObserver(name: "Test", object: nil) { (note) -> () in
-            observed.append(note.name)
+            observed.append(note.name.rawValue)
         }
         
         NotificationCenter.default.post(note)
@@ -79,8 +79,8 @@ class ObserverTests: XCTestCase {
         
         let observer = ObjectObserver(keypath: "frame", object: modifier) { (keypath, object, change) -> () in
             
-            guard let f1 = (change?[NSKeyValueChangeKey.oldKey] as? NSValue)?.CGRectValue,
-                let f2 = (change?[NSKeyValueChangeKey.newKey] as? NSValue)?.CGRectValue else { return }
+            guard let f1 = (change?[NSKeyValueChangeKey.oldKey] as? NSValue)?.cgRectValue,
+                let f2 = (change?[NSKeyValueChangeKey.newKey] as? NSValue)?.cgRectValue else { return }
             
             observed.append("\(keypath): \(f1) -> \(f2)")
         }
