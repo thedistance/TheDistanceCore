@@ -26,7 +26,7 @@ open class ObjectTarget<T:UIControl>:NSObject {
      - parameter completion: The code that will run when `control` sends `forControlEvents`.
      
     */
-    public init(control:T, forControlEvents:UIControlEvents, completion:@escaping (_ sender:T) -> ()) {
+    public init(control:T, forControlEvents:UIControl.Event, completion:@escaping (_ sender:T) -> ()) {
         self.control = control
         self.completion = completion
         

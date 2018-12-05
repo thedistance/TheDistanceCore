@@ -139,10 +139,10 @@ public extension NSLayoutConstraint {
         
         var constraints = [NSLayoutConstraint]()
         
-        let topAttribute:NSLayoutAttribute = relativeToMargin.top ? .topMargin : .top
-        let leadingAttribute:NSLayoutAttribute = relativeToMargin.left ? .leadingMargin : .leading
-        let bottomAttribute:NSLayoutAttribute = relativeToMargin.bottom ? .bottomMargin : .bottom
-        let trailingAttribute:NSLayoutAttribute = relativeToMargin.right ? .trailingMargin : .trailing
+        let topAttribute:NSLayoutConstraint.Attribute = relativeToMargin.top ? .topMargin : .top
+        let leadingAttribute:NSLayoutConstraint.Attribute = relativeToMargin.left ? .leadingMargin : .leading
+        let bottomAttribute:NSLayoutConstraint.Attribute = relativeToMargin.bottom ? .bottomMargin : .bottom
+        let trailingAttribute:NSLayoutConstraint.Attribute = relativeToMargin.right ? .trailingMargin : .trailing
         
         constraints.append(NSLayoutConstraint(item:view1,
             attribute:.top,

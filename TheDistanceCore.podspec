@@ -1,13 +1,14 @@
 Pod::Spec.new do |s|
 
   s.name         = "TheDistanceCore"
-  s.version      = "1.3.6"
+  s.version      = "1.3.7"
   s.summary      = "Develop faster with convenience functions from The Distance."
   s.homepage     = "https://github.com/thedistance"
   s.license      = "MIT"
   s.author       = { "The Distance" => "dev@thedistance.co.uk" }
   s.platform     = :ios
   s.source       = { :git => "https://github.com/thedistance/TheDistanceCore.git", :tag => "#{s.version}" }
+  s.swift_version = '4.2'
 
   s.ios.deployment_target = "8.0"
 

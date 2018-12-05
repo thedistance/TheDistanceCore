@@ -17,7 +17,7 @@ import UIKit
 */
 public func UIEdgeInsetsMakeEqual(_ inset:CGFloat) -> UIEdgeInsets {
     
-    return UIEdgeInsetsMake(inset, inset, inset, inset)
+    return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
 }
 
 public extension UIEdgeInsets {

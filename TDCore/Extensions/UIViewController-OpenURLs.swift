@@ -39,7 +39,7 @@ extension UIViewController {
         
         if let chromeURL = url.googleChromeURL(), self.canOpenURL(url: URL(string: "googlechrome://")! as NSURL) {
             
-            let alert = UIAlertController(title: nil, message: "Open with...", preferredStyle: UIAlertControllerStyle.actionSheet)
+            let alert = UIAlertController(title: nil, message: "Open with...", preferredStyle: UIAlertController.Style.actionSheet)
             
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "Safari", style: .default, handler: { (action) -> Void in
